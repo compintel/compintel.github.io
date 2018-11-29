@@ -1,12 +1,12 @@
 # main links
 main:
   - title: "Sobre"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    url: /about/
   - title: "Algoritmos"
     url: https://mmistakes.github.io/minimal-mistakes/about/
   - title: "Tutoriais"
-    url: /year-archive/
+    url: /tutoriais/
   - title: "Artigos"
-    url: /collection-archive/
+    url: /artigos/
   - title: "Cool stuffs"
     url: /sitemap/
