@@ -103,9 +103,8 @@ analytics:
 author:
   name             : "André Pacheco"
   avatar           : "/assets/img/capas/me.jpg"
-  bio              : "I am a Ph.D. student in Computer Science at Federal University of Espirito Santo"
-  location         : "Vitória - ES"
-  email            : "pacheco.comp@gmail.com"
+  bio              : "Sou apenas mais um doutorando em ciência da computação que passa o dia inteiro estudando e codificando algoritmos que um dia pode se voltar contra nós ;D"
+  location         : "Vitória - ES"  
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -116,14 +115,14 @@ author:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/paaatcha"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+    #- label: "Facebook"
+      #icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/paaatcha"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+    #- label: "Instagram"
+      #icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
 # Site Footer

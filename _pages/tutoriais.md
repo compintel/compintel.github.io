@@ -1,7 +1,8 @@
 ---
-layout: posts
+layout: category
 permalink: /tutoriais/
 title: Tutoriais
+taxonomy: Tutoriais
 author_profile: false
-excerpt: "Computação inteligente: máquinas aprendendo a solucionar problemas complexos Conceitos, aplicações e desenvolvimento"
+excerpt: "Acesse todos os posts da categoria Tutoriais do site"
 ---

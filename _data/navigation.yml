@@ -1,12 +1,12 @@
 # main links
 main:
   - title: "Sobre"
-    url: /about/
+    url: /sobre/
   - title: "Algoritmos"
-    url: https://mmistakes.github.io/minimal-mistakes/about/
+    url: /algoritmos/
   - title: "Tutoriais"
     url: /tutoriais/
   - title: "Artigos"
     url: /artigos/
   - title: "Cool stuffs"
-    url: /sitemap/
+    url: /cool-stuffs/

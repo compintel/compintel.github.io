@@ -1,7 +1,8 @@
 ---
-layout: posts
+layout: category
 permalink: /artigos/
 title: Artigos
+taxonomy: Artigos
 author_profile: false
-excerpt: "Computação inteligente: máquinas aprendendo a solucionar problemas complexos Conceitos, aplicações e desenvolvimento"
+excerpt: "Acesse a todos os posts da categoria Artigos do site"
 ---

@@ -1,8 +1,6 @@
 ---
-layout: home
-permalink: /about/
-header:
-    image: /assets/img/capas/fiapo.png
+layout: single
+permalink: /sobre/
 title: Sobre
 classes: wide
 author_profile: false
