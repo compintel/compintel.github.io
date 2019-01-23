@@ -104,7 +104,7 @@ author:
   name             : "André Pacheco"
   avatar           : "/assets/img/capas/me.jpg"
   bio              : "Sou apenas mais um doutorando em ciência da computação que passa o dia inteiro estudando e codificando algoritmos que um dia pode se voltar contra nós ;D"
-  location         : "Vitória - ES"  
+  location         : "Vitória - ES"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -290,4 +290,4 @@ defaults:
       classes: wide
       toc: true
       toc_label: "Resumo"
-      toc_icon: "file-alt"	
+      toc_icon: "file-alt"
