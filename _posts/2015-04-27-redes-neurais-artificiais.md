@@ -1,4 +1,5 @@
 ---
+latexEquation: true
 title: "Redes neurais artificiais"
 categories:
   - Artigos
@@ -14,4 +15,8 @@ Há algumas décadas, surgiu a ideia de modelar, computacionalmente, as conexõe
 
 Uma rede neural artificial é um um sistema de processamento paralelo de informações constituído pela interconexão de unidades básicas de processamento, denominadas neurônios artificiais, que tem a propensão natural para armazenar conhecimento experimental e torná-lo disponível para o uso (Haykin, 1998). Todo conhecimento adquirido pela rede se da através de um algoritmo de aprendizagem, cuja função é modificar os pesos de conexões entre os neurônios da rede, conhecidos como pesos sinápticos, de forma ordenada a fim de alcançar o mapeamento desejado.
 
-O neurônio artificial é a menor unidade de processamento de uma rede neural, que recebe sinais de entrada e produzem sinais de saída. O modelo de neurônio mais utilizado é o perceptron, representado na Fig. 2, que é composto por: `m` entradas `(x1, … ,xm)`, `m` pesos sinápticos `(w1, … ,wm)`, uma variável de deslocamento linear b (do inglês: bias) e uma saída y, que é descrita por:
+O neurônio artificial é a menor unidade de processamento de uma rede neural, que recebe sinais de entrada e produzem sinais de saída. O modelo de neurônio mais utilizado é o perceptron, representado na Fig. 2, que é composto por: `m` entradas `(x1, … ,xm)`, `m` pesos sinápticos `(w1, … ,wm)`, uma variável de deslocamento linear b (do inglês: bias) e uma saída y, que é descrita por: \(x_1\) 
+
+\\[ x_1 \\]
+
+$$x_1$$
