@@ -1,0 +1,67 @@
+2017-04-12
+
+Hoje vamos apresentar uma <em>Extreme Learning Machine </em>(ELM, ou em português, máquina de aprendizado extremo), algoritmo proposto por Huang [1,2] e que nada mais é do que uma <a href="http://www.computacaointeligente.com.br/algoritmos/redes-neurais-artificiais/?preview=true&amp;preview_id=142&amp;preview_nonce=9d8f7d518e&amp;post_format=standard" target="_blank">rede neural artificial</a> (RNA) de apenas uma camada oculta. O princípio de funcionamento da ELM é o mesmo de uma RNA, todavia a metodologia de treinamento de uma ELM não é baseada em gradiente descendente. Com isso o algoritmo escapa das principais deficiências do <em>backpropagation</em>: convergência lenta e convergência para mínimos locais. Segundo [2] o treinamento de uma ELM pode ser milhares de vezes mais rápido do que o treinamento via <em>backpropagation</em> (e de fato é). Para ilustras a arquitetura de uma ELM, podemos utilizar a mesma figura do post de RNA, porém com k = 1, ou seja, temos apenas uma camada oculta. (Se você não se sente confortável com os termos utilizados até aqui, leia nosso post sobre <a href="http://www.computacaointeligente.com.br/algoritmos/redes-neurais-artificiais/?preview=true&amp;preview_id=142&amp;preview_nonce=9d8f7d518e&amp;post_format=standard" target="_blank">RNA</a>)
+
+[caption id="attachment_488" align="aligncenter" width="384"]<a href="http://www.computacaointeligente.com.br/wp-content/uploads/2017/04/redeFeed.png"><img class="wp-image-488" src="http://www.computacaointeligente.com.br/wp-content/uploads/2017/04/redeFeed.png" alt="redeFeed" width="384" height="256" /></a> Fig 1: arquitetura de uma rede neural artificial. A ELM utiliza apenas uma camada oculta, portanto, k = 1[/caption]
+
+O vetor $latex \mathbf{X}$ é a entrada da rede. Os pesos de conexão da camada de entrada são alocados em uma matriz denominada $latex \mathbf{W}$ e já os da camada oculta em uma matriz denominada $latex \boldsymbol{\beta}$. Para facilitar e agilizar os cálculos, os <em>bias</em> dos neurônios da camada oculta também são alocados em na última linha de $latex \mathbf{W}$, e os <em>bias</em> da camada de saída não são utilizados na ELM. A modelagem matricial do ELM é descrita a seguir:
+<p style="text-align: center;">[latex]
+\mathbf{X} = [x_1, \cdots, x_m, 1]
+\qquad
+\mathbf{W} = \begin{bmatrix}
+w_{11}&amp; \cdots &amp; w_{1d} \\
+\vdots &amp; \ddots &amp; \vdots \\
+w_{m1}&amp; \cdots &amp; w_{md} \\
+b_1 &amp; \cdots &amp; b_d
+\end{bmatrix}
+\qquad
+\boldsymbol{\beta} = \begin{bmatrix}
+\beta_{11}&amp; \cdots &amp; \beta_{1s} \\
+\vdots &amp; \ddots &amp; \vdots \\
+\beta_{d1}&amp; \cdots &amp; \beta_{ds}
+\end{bmatrix}
+\qquad
+\mathbf{Y} = [y_1, \cdots , y_s]
+[/latex]</p>
+onde $latex m$ é o número de neurônios de entradas, $latex d$ é o número de neurônios na camada oculta e $latex s$ é o número de neurônios de saída da rede.
+<h3>Treinamento</h3>
+O treinamento da ELM é realizado de maneira analítica, diferentemente da abordagem iterativa do <em>backpropagation</em>. A matriz $latex \mathbf{W}$ é gerada de maneira aleatória e não é alterada até o fim do algoritmo. Portanto, o objetivo do treinamento da ELM é encontrar a matriz de pesos $latex \boldsymbol{\beta}$, baseado na matriz de saída $latex \mathbf{Y}$ e na matriz de pesos aleatórios $latex \mathbf{W}$, por meio da resolução de um sistema linear. Para isso, o primeiro passo é determinar a matriz $latex \mathbf{H}$ da seguinte maneira:
+<p style="text-align: center;">[latex]
+\label{eq:matrizH}
+\mathbf{H}^i = [x^i_1, \cdots, x^i_m, 1]
+\begin{bmatrix}
+w_{11}&amp; \cdots &amp; w_{1d} \\
+\vdots &amp; \ddots &amp; \vdots \\
+w_{m1}&amp; \cdots &amp; w_{md} \\
+b_1 &amp; \cdots &amp; b_d
+\end{bmatrix}
+\Rightarrow
+\mathbf{H} = \begin{bmatrix}
+f(H^1)\\
+f(H^2) \\
+\vdots\\
+f(H^N)
+\end{bmatrix}_{N \times d}
+[/latex]</p>
+onde a função $latex f(.)$ é a função de transferência (pode ser uma sigmoid, por exemplo) da camada e $latex i = \{1, \cdots, N\}$, sendo $latex N$ o número de amostras do conjunto de treinamento. Portanto, a matriz $latex \mathbf{H}$ armazena o resultado de todos os neurônios da camada oculta obtidos a partir da multiplicação entre $latex \mathbf{X}$ e $latex \mathbf{W}$. Uma vez determinada a matriz $latex \mathbf{H}$, para se obter os pesos da matriz $latex \boldsymbol{\beta}$ deve ser solucionado o seguinte sistema linear:
+<p style="text-align: center;">[latex]
+\label{eq:sistLinearELM}
+\mathbf{H} \boldsymbol{\beta} = \mathbf{Y} \rightarrow \boldsymbol{\beta} = \mathbf{H}^\dagger \mathbf{Y}
+[/latex]</p>
+onde $latex \mathbf{H}^\dagger$ é a inversa generalizada de Moore–Penrose [3] da matriz $latex \mathbf{H}$. Caso fosse utilizado a inversa padrão, o algoritmos seria limitado a problemas que essa inversa existisse. A inversa generalizada 'afrouxa' algumas exigências da inversa tradicional, como por exemplo, a matriz não precisa ser quadrada. Para mais informações, consulte [3]. (Para quem usa Python+Numpy e/ou MATLAB, é o comando pinv())
+
+Bom, realizado os passos acima a rede está treinada e pode ser executada. Observe, que devido ao fato do treinamento da ELM ser executado de forma analítica, o mesmo é realizado de maneira mais rápida do que um método iterativo [2]. Todavia a abordagem possui suas fraquezas. A primeira delas é relacionada a inicialização aleatória dos pesos da matriz $latex \mathbf{W}$. Pode ocorrer dos valores obtidos para $latex \mathbf{W}$ desencadear, ao fim do processo, em uma matriz $latex \boldsymbol{\beta}$ que proporcione um resultado final ruim. Por conta disso, existem trabalhos que visam otimizar a escolha dos valores de $latex \mathbf{W}$ por meio de <a href="http://www.computacaointeligente.com.br/algoritmos/o-algoritmo-genetico-ga/" target="_blank">algoritmos evolutivos</a> [4], por exemplo. Outra fraqueza é o fato do algoritmo trabalhar com a inversa generalizada da matriz $latex \mathbf{H}$. Caso a rede possua muitas amostras e muitos neurônios na camada oculta, obter a inversa generalizada de $latex \mathbf{H}$ pode demandar bastante recurso computacional. Por fim, a rede realmente obtem bons resultados e pode ser milhares de vezes mais rápida do que uma rede neural tradicional. Você pode testar por conta própria utilizando o código disponibilizado na sequência, tanto em Python quanto em MATLAB.
+
+<a href="https://github.com/paaatcha/machine-learning/tree/master/ELM" target="_blank">Código ELM em python</a>
+<a href="https://github.com/paaatcha/Agregacao/tree/master/ELM" target="_blank">Código ELM em MATLAB</a>
+Faça bom uso e até a próxima.
+
+&nbsp;
+<h4>Referências</h4>
+[1] Huang, G.-B.; Zhu, Q.-Y.; Siew, C.-K. Extreme learning machine: a new learning scheme of feedforward neural networks. IEEE International Joint Conference on Neural Networks, v. 2, p. 985–990, 2004.
+
+[2] Huang, G.-B.; Zhu, Q.-Y.; Siew, C.-K. Extreme learning machine: theory and applications. Neurocomputing, v. 70, n. 1, p. 489–501, 2006.
+
+[3] Serre, D. Matrices: theory and applications. New York: Springer, 2002.
+
+[4] Han, F.; Yao, H.-F.; Ling, Q.-H. An improved evolutionary extreme learning machine based on particle swarm optimization. Neurocomputing, v. 116, p. 87–93, 2013.

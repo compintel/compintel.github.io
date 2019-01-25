@@ -1,0 +1,27 @@
+2017-03-17
+
+Após um pequeno hiato no blog/site, hoje vamos falar um pouco sobre um dos classificadores classicos conhecidos, o K vizinhos mais próximos (do ingês: <em>K nearest neighboors</em> - KNN). O KNN foi proposto por Fukunaga e Narendra em 1975 [1]. É um dos classificadores mais simples de ser implementado, de fácil compreensão e ainda hoje pode obter bons resultados dependendo de sua aplicação. Antes de iniciar, caso você não tenha afinidade com o problema de classificação, sugiro que leia nosso <a href="http://www.computacaointeligente.com.br/artigos/classificacao-de-dados/" target="_blank">post sobre classificadores</a>. Agora, sem mais delongas, vamos ao que interessa.
+
+A ideia principal do KNN é determinar o rótulo de classificação de uma amostra baseado nas amostras vizinhas advindas de um conjunto de treinamento. Nada melhro do que um exemplo para explicar o fucionamento do algoritmo como o da FIgura 1, na qual temos um problema de classificação com dois rótulos de classe e com k = 7. No exemplo, são aferidas as distâncias de uma nova amostra, representada por uma estrela, às demais amostras de treinamento, representadas pelas bolinhas azuis e amarelas. A variável k representa a quatidade de vizinhos mais próximos que serão utilizados para averiguar de qual classe a nova amostra pertence. Com isso, das sete amostras de treinamento mais próximas da nova amostra, 4 são do rótulo A e 3 do rótulo B. Portanto, como existem mais vizinhos do rótulo A, a nova amostra receberá o mesmo rótulo deles, ou seja, A.
+
+[caption id="attachment_473" align="aligncenter" width="306"]<a href="http://www.computacaointeligente.com.br/wp-content/uploads/2017/03/imgKnn.jpg"><img class="wp-image-473" src="http://www.computacaointeligente.com.br/wp-content/uploads/2017/03/imgKnn.jpg" alt="imgKnn" width="306" height="265" /></a> Figura 1: exemplo de classificação do KNN com dois rótulos de classe e k = 7[/caption]
+
+Dois pontos chaves que devem ser determinados para aplicação do KNN são: a métrica de distância e o valor de k. Para métrica de distância a mais utilizada é a distância Euclidiana, descrita por:
+
+[latex] D = \sqrt{(p_1 - q_1)^2 + \cdots + (p_n - q_n)^2} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2} [/latex]
+
+&nbsp;
+
+onde $latex P = (p_1, \cdots, p_n) $ e $latex Q = (q_1, \cdots, q_n) $ são dois pontos $latex n $-dimensionais. No exemplo da Figura 1, essa distância seria calculada entre as bolinhas (azuis e laranjas) e a estrela (a nova entrada). Como o exemplo é 2D, cada uma cada ponto teria seu valor em x e em y. Para problemas com dimensões maiores a abordagem é a exatamente a mesma.
+
+Em relação ao valor k, não existe um valor único para a constante, a mesma varia de acordo com a base de dados. É recomendável sempre utilizar valores ímpares/primos, mas o valor ótimo varia de base para base. Dependendo do seu problema você pode utilizar um <a href="http://www.computacaointeligente.com.br/artigos/o-problema-de-otimizacao/" target="_blank">algoritmo de otimização</a> (<a href="http://www.computacaointeligente.com.br/algoritmos/otimizacao-por-enxame-de-particulas-pso/" target="_blank">PSO</a>, <a href="http://www.computacaointeligente.com.br/algoritmos/o-algoritmo-genetico-ga/" target="_blank">GA</a>, <a href="http://www.computacaointeligente.com.br/algoritmos/o-algoritmo-evolutivo-differential-evolution/" target="_blank">DE</a>...) para encontrar o melhor valor para o seu problema. Todavia, você pode deixar o desempenho geral do modelo bem lento na etapa de seleção de k. Outra maneira e simplesmente testar um conjunto de valores e encontrar k empiricamente.
+
+Resumidamente, a grande vantagem do KNN é sua abordagem simples de ser compreendida e implementada. Todavia, calcular distância é tarefa custosa e caso o problema possua grande número de amostras o algoritmo pode consumir muito tempo computacional. Além disso, o método é sensível à escolha do k. Na sequência é apresentado um pseudocódigo do algoritmo:
+
+<a href="http://www.computacaointeligente.com.br/wp-content/uploads/2017/03/algknn.jpg"><img class="aligncenter  wp-image-478" src="http://www.computacaointeligente.com.br/wp-content/uploads/2017/03/algknn.jpg" alt="algknn" width="413" height="201" /></a>
+
+Por fim, deixo linkado uma implementação do KNN em Python. No repositório existe bases de dados comuns da literatura, como Iris e <em>Australian Credit</em>. Todavia, você pode utilizar o código para qualquer que seja a base. Bom proveito!
+
+<a href="https://github.com/paaatcha/machine-learning/tree/master/KNN" target="_blank">Link do código</a>
+<h4>Referências</h4>
+[1] Fukunaga, K.; Narendra, P. M. A branch and bound algorithm for computing k-nearest neighbors. IEEE Transactions on Computers, v. 100, n. 7, p. 750–753, 1975.

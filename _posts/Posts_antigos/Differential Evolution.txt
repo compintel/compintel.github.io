@@ -1,0 +1,67 @@
+O algoritmo evolutivo <em>Differential Evolution</em>, em português Evolução Diferencial, abreviado por DE, foi proposto por<strong> Storn e Price, em 1997 [1]</strong>, e é um método heurístico, que não usa derivadas, e visa solucionar problemas de otimização contínua. Desde então, o DE tem se apresentado com um simples, mas poderoso algoritmo de otimização numérica para busca da solução ótima global, sendo aplicado com sucesso na solução de vários problemas de otimização difícil (<a href="http://www.computacaointeligente.com.br/artigos/o-problema-de-otimizacao" target="_blank">veja o post sobre otimização</a>).
+
+Segundo Cheng e Hwang [2], o DE, possui como principais características:
+<ul>
+	<li>É um algoritmo de busca estocástica, originado dos mecanismos de seleção natural;</li>
+	<li>O algoritmo é simples e de fácil entendimento, com poucos parâmetros de controle para conduzir a otimização;</li>
+	<li>É eficaz para solucionar problemas de otimização com função objetivo descontínua, pois não necessita de informações sobre derivadas da mesma;</li>
+	<li>É mais robusto quanto a ótimo locais, pois busca a solução ótima global manipulando uma população de soluções, ou seja, utiliza diferentes regiões no espaço de busca;</li>
+	<li>É eficaz mesmo trabalhando com uma população pequena;</li>
+	<li>Permite as variáveis serem otimizadas como números reais, sem processamento extra;</li>
+</ul>
+O primeiro conceito do DE, assim como o de outros algoritmos evolutivos, é o de população. Uma população é composta por N indivíduos, também chamados de vetores, cobrindo todo espaço de busca, para um problema com n variáveis de projeto, ou seja, a dimensão de cada vetor. <span style="text-decoration: underline;">De maneira geral, a população será simplesmente uma matriz Nxn </span>, no qual cada linha da matriz representa um indivíduo da população. Um exemplo de uma população com 5 indivíduos de dimensão 3 é mostrado na matriz abaixo:
+<p style="text-align: center;">[latex]
+populacao = \begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+2 &amp; 4 &amp; 5\\
+6 &amp; 3 &amp; 1\\
+2 &amp; 2 &amp; 3\\
+3 &amp; 2 &amp; 1
+\end{bmatrix}
+[/latex]</p>
+Normalmente, esta população é criada por uma distribuição de probabilidade uniforme, quando não há nenhum conhecimento sobre o problema. Com isso, a população é submetida a ação de operadores evolutivos, todavia, sempre com número fixo de indivíduos durante todo processo de otimização.
+
+Dado a população, a mesma é submetida a três operadores do DE: mutação, cruzamento e seleção. Essas operações são repetidas até que um critério de parada seja alcançado, pode ser um erro mínimo ou um número pré-fixado de iterações. Os operadores do DE se baseiam no princípio da evolução natural cujos objetivos são: Manter a diversidade da população, evitar convergências prematuras e obter a melhor solução para o problema. A seguir são descritos detalhadamente cada um deles.
+<h3>Mutação</h3>
+Na operação de mutação são escolhidos, de maneira aleatória, três indivíduos distintos dentre todos os N que compões a da população inicial. Para facilitar a compreensão, vamos nomear cada um deles. A população inicial será popC (de população corrente) e seus indivíduos escolhidos aleatoriamente serão:  [latex]X_{\alpha}, X_{\beta}[/latex] e [latex]X_{\gamma}[/latex]. O indivíduo  [latex]X_{\alpha}[/latex] sofre uma pertubação resultante da diferença vetorial entre [latex]X_{\beta}[/latex] e [latex]X_{\gamma}[/latex]. Essa diferenção é multiplica por um fator [latex]F[/latex] conhecido como fator de mutação. Esse operador gera uma nova população de indivíduos mutados, que vamos chamar de popMut (de população mutada). Tudo isso é resumido na seguinte expressão:
+<p style="text-align: center;">[latex] popMut = X_{\alpha} + F (X_{\beta} - X{\gamma}) [/latex], tal que, [latex] (\alpha , \beta , \gamma) \in (1 , 2 , ..N) [/latex] e [latex] \alpha \neq \beta \neq \gamma[/latex]</p>
+Vale ressaltar que para garantir as diferenças entre os indivíduos selecionados aleatoriamente, a população deverá ser igual ou superior a 4 indivíduos. Além disso, o fator de mutação F, que controla a amplitude da diferença vetorial, está no intervalo [0.5 1] [1]. A Figura 1 ilustra a operação de mutação.
+
+[caption id="attachment_260" align="aligncenter" width="302"]<a href="http://www.computacaointeligente.com.br/wp-content/uploads/2015/07/mutacao.jpg"><img class=" wp-image-260" src="http://www.computacaointeligente.com.br/wp-content/uploads/2015/07/mutacao.jpg" alt="A operação de mutação" width="302" height="338" /></a> Figura 1: A operação de mutação[/caption]
+<h3>Cruzamento</h3>
+Com intuito de aumentar a diversidade da população, Storn e Price [1] introduziram o operador de cruzamento. Essa operação é usada para gerar um novo indivíduo advindo de um cruzamento entre indivíduos da população corrente e da população mutada. Para melhor compreensão imagine você e seus pais. Você é um indivíduo que surgiu através do cruzamento dos genes de seu pai e de sua mãe. A ideia é parecida aqui. Ao fim dessa operação, todos os indivíduos cruzados formarão uma nova população que chamaremos de popCross (de população de cruzamento) de mesmo tamanho das populações obtidas anteriormente.
+
+Para ficar bem didático e fácil de compreender, imagine o primeiro indivíduo da população popCross, vamos chamá-lo de Icross. Ele vai ser composto pelo cruzamento, de um indivíduo da popC, Ic, e outro indivíduo da popMut, Imut, ambos selecionados de maneira aleatória. Esses indivíduos possuem dimensão n (lembre-se da matriz que discutimos la em cima, no qual cada linha é um novo indivíduo, um vetor [1,n]) e vamos chamar cada uma dessas n posições de genes (por ex. se o individuo é um vetor de dimensão 5, v = [1 2 3 4 5], ele possui 5 genes, um pra cada posição de v, certo?). A ideia é cruzar os genes dos indivíduos Ic e Imut para gerar o indivíduo Icross. Então, imagine: Ic = [4 4 4 4] e Imut = [5 5 5 5], um individuo Icross possível é igual a [4 5 4 5], no qual os genes 1 e 3 são de Ic e 2 e 4 são de Imut. Para decidir qual gene é transmitido existe a taxa de cruzamento Cr, definida no intervalo [0.8 1] [1]. Sorteia-se um número, rand, e verifica: se Cr for maior do que rand, o gene mutante é transmitido, caso contrário, o gene da população corrente é passado adiante. Então observe, no exemplo com lc = [4 4 4 4] e Imut = [5 5 5 5], o número aleatório é sorteado 4 vezes e verificado qual gene deve ser transmitido para Icross. Para o gene 1, rand foi maior do que Cr, então passa o gene 1 de Ic. Para o gene 2, Cr foi maior do que rand, então passa o gene 2 de Imut e assim por diante. Tudo isso que discutimos foi realizado para gerar apenas um indivíduo da popCross, ideia é continuar para os N indivíduos. A expressão a seguir ilustra o cruzamento:
+<p style="text-align: center;">[latex] Icross_{ij} = \left\{\begin{matrix}
+Imut_{ij},&amp; \texttt{se } rand_{j} \leq Cr \texttt{ ou } j=k \\
+Ic_{ij}, &amp; \texttt{caso contrario }
+\end{matrix}\right. [/latex]
+[latex] \texttt{Sendo: } (i=1..N), (j=1..n), (k=1..N) \texttt{ e } rand_{i} \in [0,1] [/latex]</p>
+&nbsp;
+
+O índice k é um parâmetro escolhido para cada indivíduo com objetivo de dar garantia de que ao menos um gene do indivíduo mutante seja copiado para o indivíduo cruzado. Portanto se o número aleatório, gerado por meio de rand for menor que a taxa de cruzamento ou se o índice k for igual ao índice j, o gene do indivíduo cruzado será proveniente do indivíduo mutante. Caso contrário, o gene será proveniente do indivíduo corrente. A Figura 2 ilustra graficamente a operação de cruzamento.
+
+[caption id="attachment_267" align="aligncenter" width="383"]<a href="http://www.computacaointeligente.com.br/wp-content/uploads/2015/07/crossover.jpg"><img class=" wp-image-267" src="http://www.computacaointeligente.com.br/wp-content/uploads/2015/07/crossover.jpg" alt="A operação de cruzamento" width="383" height="270" /></a> Figura 2: A operação de cruzamento[/caption]
+<h3>Seleção</h3>
+Por fim é realizada a operação de seleção. Mas para falar de seleção, antes temos que conhecer a função objetivo, também conhecida como <em>fitness</em>. A <em>fitness</em> é a função que pretendemos otimizar (minimizar ou maximizar). Então, vamos supor que desejamos otimizar a função seno, com isso nossa <em>fitness </em>será [latex] f(x) = sen (x) [/latex]. Sendo assim, ela será nossa função de avaliação, de onde será gerado um erro. Se o intuito é minimizar, sabemos que o mínimo que a função seno pode atingir é -1, com isso a otimização caminhará para esse valor ao longo das iterações, e toda população (nesse caso unidimensional, pois só existe um gene em cada indivíduo) vai ser avaliada pela função seno. Quanto mais longe de -1, menos apto é aquele indivíduo.
+
+Sabendo o que é uma função objetivo, o operador de seleção visa simplesmente escolher, dentre a população corrente e a população cruzada, os melhores indivíduos. É uma verificação simples. Se a <em>fitness </em>do indivíduo i da popC é maior do que a <em>fitness</em> do indivíduo i da popCross, esse indivíduo passa para próxima geração, como mostra a expressão a seguir.
+<p style="text-align: center;">[latex]
+popBest_{i} = \left\{\begin{matrix}
+popC_{i},&amp; \texttt{se } fitness(popC_{i}) \leq fitness(popCross_{i}) \\
+popCross_{i}, &amp; \texttt{caso contrario }
+\end{matrix}\right.
+[/latex]</p>
+A próxima geração nada mais é do que uma população com os melhores indivíduos da iteração corrente, são os mais aptos, no caso do seno, são os que possuem <em>fitness</em> mais próximos de -1. Se, por exemplo, estivermos na iteração 1 do algoritmo e realizamos a seleção entre a popC e a popCross, vamos gerar um popBest (população dos melhores). A próxima iteração, no caso 2, a popC será igualada a popBest e assim será realizado todo processo novamente até que um critério de parada seja atingido, como mostra a Figura 3. Uma observação importante: o que define se a seleção escolhe o indivíduo com maior ou menor <em>fitness</em> é o tipo de otimização. Se for maximização escolhe o maior e se for minimização escolhe o menor.
+
+[caption id="attachment_273" align="aligncenter" width="257"]<a href="http://www.computacaointeligente.com.br/wp-content/uploads/2015/07/fluxo.png"><img class=" wp-image-273" src="http://www.computacaointeligente.com.br/wp-content/uploads/2015/07/fluxo.png" alt="Fluxograma do Differential Evolution" width="257" height="400" /></a> Figura 3: Fluxograma do Differential Evolution[/caption]
+<h3>Código em MATLAB</h3>
+A seguir disponibilizo um código em MATLAB que implementa o <em>Differential Evolution </em>sinta-se a vontade para utilizá-lo.
+
+<a href="https://www.dropbox.com/s/9s4hf7ao5w2av5m/Differential%20Evolution.rar?dl=0" target="_blank">Download</a>
+
+&nbsp;
+<h3>Referências</h3>
+[1] STORN, R.; PRICE, K. Differential evolution - A simple and efficient heuristic for global optimization over continuous spaces. J. Global Optimiz, v. 11, pp. 341–359, 1997.
+
+[2] CHENG, S. L.; HWANG, C. Optimal approximation of linear systems by a differential evolution algorithm, IEEE Transactions on Systems, Man, and Cybernetics-Part A: Systems and Humans, v. 31, n. 6, pp. 698-707, 2001
