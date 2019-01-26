@@ -289,5 +289,5 @@ defaults:
       related: true
       classes: wide
       toc: true
-      toc_label: "Resumo"
+      toc_label: "Sumário"
       toc_icon: "file-alt"
