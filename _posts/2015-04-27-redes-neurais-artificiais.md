@@ -1,6 +1,9 @@
 ---
 latexEquation: true
 title: "Introdução a Redes Neurais Artificiais"
+header:
+  teaser: "assets/img/posts/redes-neurais/redeFeed.png"
+excerpt: "O cérebro humano é considerado o mais fascinante processador existente. Ele é composto por aproximadamente 10 bilhões de neurônios, que são responsáveis por todas as funções e movimentos do nosso organismo"
 categories:
   - Artigos
 tags:
@@ -15,7 +18,7 @@ O cérebro humano é considerado o mais fascinante processador existente. Ele é
 
 Há algumas décadas, surgiu a ideia de modelar, computacionalmente, as conexões neurais do cérebro humano, com intuito de emergir comportamentos inteligentes em máquinas. Neste contexto, surgiu as Redes Neurais Artificiais (RNA's), inspiradas na própria natureza das redes de neurônios cerebrais e sinapses biológicas.
 
-<figure style="width: 350px; height: 230px" class="align-center">
+<figure style="width: 450px; height: 330px" class="align-center">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/redes-neurais/rede-neural.jpg">
   <figcaption style="text-align: center;">
     Figura 1: Rede neural humana, o melhor processador de informações existente

@@ -1,6 +1,9 @@
 ---
 latexEquation: true
 title: "O problema de otimização"
+header:
+  teaser: "assets/img/posts/problema-otimizacao/otimizacao.png"
+excerpt: "Problemas de otimização são aqueles que visam determinar o pontos extremos de uma função, seja ele mínimo, e então os problemas serão de minimização, ou máximo, problemas de maximização. Otimização é algo extremamente comum em nosso cotidiano"
 categories:
   - Artigos
 tags:
@@ -95,5 +98,8 @@ Imagine que você seja um caixeiro que realiza entregas em $$ N $$ cidades. Para
   </figcaption>
 </figure> 
 
-Caso queira saber mais sobre o problema, [assista este vide](https://www.youtube.com/watch?v=_vKMyRj855A) que descreve de maneira didática e leve a complexidade do problema.
+Caso queira saber mais sobre o problema, assista o video abaixo que descreve de maneira didática e leve a complexidade do problema.
+
+{% include video id="_vKMyRj855A" provider="youtube" %}
+
 

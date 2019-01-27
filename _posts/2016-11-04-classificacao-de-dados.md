@@ -1,11 +1,14 @@
 ---
 latexEquation: true
 title: "Classificação de dados"
+header:
+  teaser: "/assets/img/posts/classificacao-dados/iris-exemplo.png"
+excerpt: "A classificação de dados está presente em diversos problemas reais, tais como: reconhecer padrões em imagens, diferenciar espécies de plantas, classificar tumores benignos e malignos, dentre outros"
 categories:
   - Artigos
 tags:
   - Classificação de dados
-  - machine learning
+  - Machine learning
 ---
 
 # Introdução

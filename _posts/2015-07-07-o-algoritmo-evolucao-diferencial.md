@@ -1,13 +1,14 @@
 ---
 latexEquation: true
-title: "O algoritmo Differential Evolution (DE)"
+title: "O algoritmo Differential Evolution - DE"
+header:
+  teaser: "/assets/img/posts/DE/cruzamento.png"
+excerpt: "O algoritmo Differential Evolution (DE) foi proposto por Storn e Price, em 1997 e é um método heurístico, que não usa derivadas, e visa solucionar problemas de otimização contínua"
 categories:
   - Algoritmos
 tags:
   - Otimização
   - Inteligência computacional
-  - DE
-  - Diffential evolution
   - MATLAB
 ---
 
