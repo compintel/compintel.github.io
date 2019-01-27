@@ -4,14 +4,15 @@ title: "O algoritmo Differential Evolution (DE)"
 categories:
   - Algoritmos
 tags:
-  - otimização
-  - inteligência computacional
+  - Otimização
+  - Inteligência computacional
   - DE
   - Diffential evolution
+  - MATLAB
 ---
 
 # Introdução
-O algoritmo **Differential Evolution** (DE - em português Evolução Diferencial) foi proposto por Storn e Price, em 1997* [[1]](#storn1997). e é um método heurístico, que não usa derivadas, e visa solucionar problemas de otimização contínua. 
+O algoritmo **Differential Evolution** (DE - em português Evolução Diferencial) foi proposto por *Storn e Price, em 1997* [[1]](#storn1997). e é um método heurístico, que não usa derivadas, e visa solucionar problemas de otimização contínua. 
 
 Desde de sua criação, o DE se apresenta como um simples, mas poderoso algoritmo de otimização numérica para busca da solução ótima global, sendo aplicado com sucesso na solução de vários problemas de otimização difícil. Segundo *Cheng e Hwang* [[2]](#cheng2001), o DE, possui como principais características:
  * É um algoritmo de busca estocástica, originado dos mecanismos de seleção natural;
@@ -50,23 +51,23 @@ A seguir são descritos detalhadamente cada uma das operações do algoritmo.
 
 ## Mutação
 
-Na operação de mutação são escolhidos, de maneira aleatória, três indivíduos distintos dentre todos os `N` que compões a da população inicial. Para facilitar a compreensão, vamos nomear cada um deles. A população inicial será $$pop_O$$ (de população original) e seus indivíduos escolhidos aleatoriamente serão:  $$X_\alpha, X_\beta$$ e $$X_\gamma$$. 
+Na operação de mutação são escolhidos, de maneira aleatória, três indivíduos distintos dentre todos os `N` que compões a da população inicial. Para facilitar a compreensão, vamos nomear cada um deles. A população inicial será $$pop_O$$ (de população original) e seus indivíduos escolhidos aleatoriamente serão:  $$I_\alpha, I_\beta$$ e $$I_\gamma$$. 
 
-O indivíduo  $$X_\alpha$$ sofre uma pertubação resultante da diferença vetorial entre $$X_\beta$$ e $$X_\gamma$$. Essa diferenção é multiplica por um fator $$F$$ conhecido como *fator de mutação*. Esse operador gera uma nova população de indivíduos mutados, que vamos chamar de $$pop_M$$ (de população mutada). Tudo isso é resumido na seguinte expressão:
+O indivíduo  $$I_\alpha$$ sofre uma pertubação resultante da diferença vetorial entre $$I_\beta$$ e $$I_\gamma$$. Essa diferenção é multiplica por um fator $$F$$ conhecido como *fator de mutação*. Esse operador gera uma nova população de indivíduos mutados, que vamos chamar de $$pop_M$$ (de população mutada). Tudo isso é resumido na seguinte expressão:
 
 $$ 
-  popMut = X_\alpha + F X_\beta - X_\gamma \tag{2}
+  popMut = I_\alpha + F \times I_\beta - I_\gamma \tag{2}
 $$
 
 Na qual, $$\alpha, \beta, \gamma \in (1 , 2 , ..N)$$  e $$ \alpha \neq \beta \neq \gamma $$. Vale ressaltar que para garantir as diferenças entre os indivíduos selecionados aleatoriamente, a população deverá ser igual ou superior a 4 indivíduos. Além disso, o fator de mutação $$F$$, que controla a amplitude da diferença vetorial, deve está no intervalo entre 0.5 e 1 [[1]](#storn1997). A Figura 1 ilustra a operação de mutação:
 
 
-<figure style="width: 350px; height: 500px;" class="align-center">
+<figure style="width: 390px; height: 450px;" class="align-center">
   
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/DE/mutacao.jpg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/DE/mutacao.png" alt="">
 
-  <figcaption>
-    Figura 1: Ilustração da operação de mutação. A população é formada por 10 indivíduos com dimensão `n`.
+  <figcaption style="text-align: center;">
+    Figura 1: Ilustração da operação de mutação. Neste exemplo, a população possui 8 indivíduos e foram escolhidos aleatoriamente os indivíduos 1, 4 e 7 para realizar a operação
   </figcaption>
 
 </figure> 
@@ -92,15 +93,16 @@ $$
 
 Na qual, $$ (i=1 ... N), (j=1...n), (k=1...N) \texttt{ e } rand_{i} \in [0,1] $$. O índice $$k$$ é um parâmetro escolhido para cada indivíduo com objetivo de dar garantia de que ao menos um gene do indivíduo mutante seja copiado para o indivíduo cruzado. Portanto, se o número aleatório for menor que a taxa de cruzamento ou se o índice $$k$$ for igual ao índice $$j$$, o gene do indivíduo cruzado será proveniente do indivíduo mutante. Caso contrário, o gene será proveniente do indivíduo original. A Figura 2 ilustra essa operação.
 
-<figure style="width: 450px; height: 380px;" class="align-center">
+<figure style="width: 400px; height: 380px;" class="align-center">
   
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/DE/crossover.jpg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/DE/cruzamento.png" alt="">
 
-  <figcaption>
+  <figcaption style="text-align: center;">
     Figura 2: Ilustração da operação de cruzamento.
   </figcaption>
 
 </figure> 
+
 
 ## Seleção
 
@@ -117,20 +119,25 @@ $$
 
 Sendo $f$ a função de *fitness*. 
 
-Sendo assim, os indivíduos mais aptos são passados para a próxima geração, formando a população dos melhores indíviduos. No caso do seno, os indivíduos mais aptos são aquels com valores próximos de -1. Com isso, é finalizada **uma** iteração do algoritmos. Na próxima iteração, a $$pop_O$$ será igualada a $$pop_B$$ e todo o processo é realizado novamente até que um critério de parada seja atingido, como ilustra a Figura 3.
+Sendo assim, os indivíduos mais aptos são passados para a próxima geração, formando a população dos melhores indíviduos. No caso do seno, os indivíduos mais aptos são aquels com valores próximos de -1. Com isso, é finalizada **uma** iteração do algoritmos. Na próxima iteração, a $$pop_O$$ será igualada a $$pop_B$$ e todo o processo é realizado novamente até que um critério de parada seja atingido, como ilustra a Figura 3. Ao final de todo o processo, basta escolher o indíviduo da $$pop_B$$ que possua o melhor valor na avaliação da função de *fitness*.
 
 <figure class="align-center" 
-        style="width: 300px; height: 500px;">
+        style="width: 350px; height: 450px;">
   
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/DE/fluxo.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/DE/fluxograma_DE.png" alt="">
 
-  <figcaption>
-    Figura 3: Fluxograma do *Differential Evolution*.
+  <figcaption style="text-align: center;">
+    Figura 3: Fluxograma do Differential Evolution.
   </figcaption>
 
 </figure> 
 
 **Uma observação importante**: o que define se a seleção escolhe o indivíduo com maior ou menor *fitness* é o tipo de otimização. Se for maximização escolhe-se o maior e se for minimização escolhe-se o menor.
+
+# Código exemplo
+Para finalizar, deixo o link do meu repositório do Github de uma simples implementação do [differential evolution](https://github.com/paaatcha/Otimizacao/tree/master/DE). A implementação foi feita em MATLAB e possui diversos comentários para auxiliar o entendimento. Sinta-se livre para utilizar o código, mas lembre-se de dar os devidos créditos.
+
+Caso encontre algum bug ou tenha alguma sugestão, não exite em entrar em contato comigo. Até a próxima!
 
 # Referências
 <a name="storn1997">[1]</a> STORN, R.; PRICE, K. Differential evolution - A simple and efficient heuristic for global optimization over continuous spaces. J. Global Optimiz, v. 11, pp. 341–359, 1997.
