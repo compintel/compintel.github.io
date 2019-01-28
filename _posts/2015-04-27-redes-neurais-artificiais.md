@@ -98,7 +98,6 @@ Implementar um RNA do zero não é uma tarefa tão complicada, mas sugiro que ut
 Além disso, deixo [um código de uma predição de uma série temporal](https://github.com/compintel/redes-neurais-matlab) utilizando a *toolbox*. A série representa a demanda mensal de energia na Austrália, entre determinado período de tempo, e a rede neural é utilizado como preditor da mesma. É utilizado 70% da série para treinar a rede e 30% para executar e checar se o resultado que a rede obteve é compatível com a realidade. Com o código sugiro que varie o número de neurônios, camadas e função de ativação para observar a influência de cada um deles no resultado final. Do mais, sinta-se livre para utilizá-lo e se encontrar algum bug, nos avise!
 
 
-
 # Referências
 <a name="storn1997">[1]</a> Haykin, S., Neural Networks: A Comprehensive Foundation, Prentice Hall, 2º edition, 1998
 

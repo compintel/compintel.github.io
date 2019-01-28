@@ -2,7 +2,7 @@
 latexEquation: true
 title: "O algoritmo genético - GA"
 header:
-  teaser: "assets/img/posts/redes-neurais/redeFeed.png"
+  teaser: "/assets/img/posts/GA/populacoes.png"
 excerpt: "O algoritmo genético é um método evolutivo de otimização que se inspira nos princípios da teoria da seleção natural, proposta por Charles Darwin, na qual somente os indivíduos mais aptos sobrevivem para uma próxima geração."
 categories:
   - Algoritmos
