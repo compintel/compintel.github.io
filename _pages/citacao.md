@@ -1,0 +1,1 @@
+Como o blog possui um conteúdo que ajuda diversos alunos de graduação e/ou pós-graduação a realizar seus projetos de conclusão de curso, muitas pessoas nos enviava e-mail perguntando como citar um post ou código do blog.
