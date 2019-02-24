@@ -88,7 +88,7 @@ $$
 
 na qual, $$ \alpha $$ é conhecido como taxa de aprendizado, que, resumidamente, indica o 'tamanho do passo' do gradiente rumo a minimização. O sinal negativo indica a busca por uma alteração no peso que reduza $$ E $$. 
 
-Não vou aprofundar muito sobre o *backpropagation* neste post pois tenho a inteção de escrever outro post especificamente sobre ele. Como ele é massivamente utilizado e muito importante para área de aprendizado de máquina, creio que vale muito a pena aprofundar neste assunto. Porém, vale a pena salientar, que podemos, por exemplo, treinar uma rede neural utilizando um dos algoritmos evolutivos que já apresentamos [aqui neste blog](artigos/o-problema-de-otimizacao/). Também vamos fazer um post sobre esse assunto.
+Não vou aprofundar muito sobre o *backpropagation* neste post pois tenho a inteção de escrever outro post especificamente sobre ele. Como ele é massivamente utilizado e muito importante para área de aprendizado de máquina, creio que vale muito a pena aprofundar neste assunto. Porém, vale a pena salientar, que podemos, por exemplo, treinar uma rede neural utilizando um dos algoritmos evolutivos que já apresentamos [aqui neste blog]({% post_url 2015-04-08-o-problema-de-otimizacao %}). Também vamos fazer um post sobre esse assunto.
 
 
 ## Utilizando uma RNA

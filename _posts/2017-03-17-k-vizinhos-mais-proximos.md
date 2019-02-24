@@ -15,7 +15,7 @@ tags:
 
 # Introdução
 
-Após um pequeno hiato no blog, hoje vamos falar um pouco sobre um dos classificadores clássicos mais conhecidos, o K vizinhos mais próximos (do inglês:*K nearest neighboors* – KNN). O KNN foi proposto por Fukunaga e Narendra em 1975 [[1]](#fukunaga). É um dos classificadores mais simples de ser implementado, de fácil compreensão e ainda hoje pode obter bons resultados dependendo de sua aplicação. Antes de iniciar, caso você não tenha afinidade com o problema de classificação, sugiro que leia nosso post sobre [classificação de dados](_posts/classificacao-dados.md). Agora, sem mais delongas, vamos ao que interessa.
+Após um pequeno hiato no blog, hoje vamos falar um pouco sobre um dos classificadores clássicos mais conhecidos, o K vizinhos mais próximos (do inglês:*K nearest neighboors* – KNN). O KNN foi proposto por Fukunaga e Narendra em 1975 [[1]](#fukunaga). É um dos classificadores mais simples de ser implementado, de fácil compreensão e ainda hoje pode obter bons resultados dependendo de sua aplicação. Antes de iniciar, caso você não tenha afinidade com o problema de classificação, sugiro que leia nosso post sobre [classificação de dados]({% post_url 2016-11-04-classificacao-de-dados %}). Agora, sem mais delongas, vamos ao que interessa.
 
 # Funcionamento do KNN
 
@@ -60,7 +60,7 @@ Em todos os casos, $$ p = (p_1, \cdots, p_n) $$ e $$ q = (q_1, \cdots, q_n) $$ s
 
 ## A escolha de K
 
-Em relação a escolha do valor $$ k $$, não existe um valor único para a constante, a mesma varia de acordo com a base de dados. É recomendável sempre utilizar valores ímpares/primos, mas o valor ótimo varia de acordo com a base de dados. Dependendo do seu problema, você pode utilizar um [algoritmo de otimização](link) ([PSO](link), [GA](link), [DE](link) etc) para encontrar o melhor valor para o seu problema. Todavia, você pode deixar o desempenho geral do modelo bem lento na etapa de seleção de $$ k $$. Outra maneira e simplesmente testar um conjunto de valores e encontrar o valor de $$ k $$ empiricamente.
+Em relação a escolha do valor $$ k $$, não existe um valor único para a constante, a mesma varia de acordo com a base de dados. É recomendável sempre utilizar valores ímpares/primos, mas o valor ótimo varia de acordo com a base de dados. Dependendo do seu problema, você pode utilizar um [algoritmo de otimização]({% post_url 2015-04-08-o-problema-de-otimizacao %}) ([PSO]({% post_url 2016-04-09-otimizacao-por-enxame-de-particulas %}), [GA]({% post_url 2017-04-12-o-algoritmo-genetico %}), [DE]({% post_url 2015-07-07-o-algoritmo-evolucao-diferencial %}) etc) para encontrar o melhor valor para o seu problema. Todavia, você pode deixar o desempenho geral do modelo bem lento na etapa de seleção de $$ k $$. Outra maneira e simplesmente testar um conjunto de valores e encontrar o valor de $$ k $$ empiricamente.
 
 
 ## Pseudocódigo

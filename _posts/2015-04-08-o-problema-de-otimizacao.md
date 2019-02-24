@@ -56,11 +56,12 @@ Existem diversos algoritmos de otimização, para os mais variados tipos de prob
 
 * **Simplex**: utilizado para otimizar somente problemas lineares, com ou sem restrição. Garante a solução ótima para o problema, mas por outro lado, a maioria esmagadora dos problemas do mundo real é não linear.
 
-* **PSO - particle swarm optimization**: Algoritmo heurístico utilizado para otimizar qualquer tipo de função, com ou sem restrições (é preciso adaptar o algoritmo para isso). Não garante a solução ótima do problema, mas garante uma boa solução. Para mais informações, acesse o [post sobre o PSO neste site](linkar).
+* **PSO - particle swarm optimization**: Algoritmo heurístico utilizado para otimizar qualquer tipo de função, com ou sem restrições (é preciso adaptar o algoritmo para isso). Não garante a solução ótima do problema, mas garante uma boa solução. Para mais informações, acesse o [post sobre o PSO neste blog]({% post_url 2016-04-09-otimizacao-por-enxame-de-particulas %}).
 
-* **Algoritmo Genético - GA** Segue o mesmo princípio do PSO. Também é heurístico, para qualquer tipo de problema e não garante o ótimo. Você também pode conferir o post sobre o GA [neste link](linkar).
 
-* **DE - differential evolution**: Da mesma família que o GA e com as mesmas características. Também já escrevemos sobre o DE, [acesse aqui](linkar).
+* **Algoritmo Genético - GA** Segue o mesmo princípio do PSO. Também é heurístico, para qualquer tipo de problema e não garante o ótimo. Você também pode conferir o post sobre o GA [neste link]({% post_url 2017-04-12-o-algoritmo-genetico %}).
+
+* **DE - differential evolution**: Da mesma família que o GA e com as mesmas características. Também já escrevemos sobre o DE, [acesse aqui]({% post_url 2015-07-07-o-algoritmo-evolucao-diferencial %}).
 
 * **Gradiente descendente**: Algoritmo baseado em derivadas. Utilizado em otimizações não lineares. Possui um ponto fraco de cair em mínimos locais de maneira fácil.
 
