@@ -2,7 +2,7 @@
 latexEquation: true
 title: "A máquina de aprendizado extremo - ELM"
 header:
-  teaser: "/assets/img/posts/GA/populacoes.png"
+  teaser: "/assets/img/posts/redes-neurais/redeFeed.png"
 excerpt: "A Máquina de Aprendizado Extremo nada mais é do que uma maneira diferente de treinar uma rede neural artificial (RNA) de apenas uma camada oculta. O princípio de funcionamento da ELM é o mesmo de uma RNA, todavia a metodologia de treinamento de uma ELM não é baseada em gradiente descendente"
 categories:
   - Algoritmos
