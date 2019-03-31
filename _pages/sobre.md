@@ -23,9 +23,6 @@ Atualmente, o blog é mantido por três autores. Cada post aparece na lateral os
 * [André Pacheco](http://pachecoandre.com.br):
   Doutorando em Ciência da Computação pela Universidade Federal do Espírito Santo e fundador do blog em 2015. Foca sua pesquisa em técnicas de aprendizado de máquina aplicadas em imagens, principalmente em detecção automática de câncer de pele.
 
-* [Guilherme Tebaldi](site):
-  Mestre em Ciência da Computação pela *University of* . Trabalhou com carro autônomo. Resolve todos os problemas do mundo utilizando Java e atualmente trabalha com aprendizado de máquina em uma empresa do setor cafeeiro.
+* [Guilherme Tebaldi](site)
   
-* [Giuliano Lacerda](site):
-Graduado em Engenharia de Computação pela Universidade Federal do Espírito Santo. ...
-Atualmente, trabalha junto com Guilherme desenvolvendo algoritmos para a mesma empresa.
+* [Giuliano Lacerda](site)
