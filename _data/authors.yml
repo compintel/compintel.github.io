@@ -4,7 +4,7 @@ paaatcha:
   name             : "André Pacheco"
   avatar           : "/assets/img/capas/me.jpg"
   bio              : "Sou apenas mais um doutorando em ciência da computação que passa o dia inteiro estudando e codificando algoritmos que um dia pode se voltar contra nós ;D"
-  location         : "Vitória - ES"  
+  location         : "Vitória - ES"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -23,7 +23,7 @@ paaatcha:
       url: "https://github.com/paaatcha"
     #- label: "Instagram"
       #icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"  
+      # url: "https://instagram.com/"
 
 Fulano:
   name        : "Billy Rick"
@@ -39,3 +39,16 @@ Fulano:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/extravagantman"
+
+gangelo:
+  name        : "Gabriel G. De Angelo"
+  bio         : "Estagiário do blog computação inteligente. Porém, empenhado para conquistar a vaga de titular. Ah, também faço pesquisas em ML e escrevo coisas legais!"
+  avatar      : "/assets/img/capas/gangelo.jpg"
+  location    : "Campinas - SP"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:gabrielgiorisatto@gmail.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://computacaointeligente.com.br"

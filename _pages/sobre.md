@@ -26,3 +26,6 @@ Atualmente, o blog é mantido por três autores. Cada post aparece na lateral os
 * [Guilherme Tebaldi](site)
   
 * [Giuliano Lacerda](site)
+
+* [Gabriel G. De Angelo](site):
+  Mestrando em Ciencência da Computação pela Universidade Estadual de Campinas e estagiário do blog. Realizou pesquisas em aprendizado de máquina em sua graduação e desenvolveu um trabalho de conclusão de curso, orientado pelo André, em segmentação automática de lesão de pele. Atualmente está estudando novos métodos de aprendizado de máquina para o diagnóstico automático de cancêr de pele.
