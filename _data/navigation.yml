@@ -4,9 +4,9 @@ main:
     url: /sobre/
   - title: "Algoritmos"
     url: /algoritmos/
-  - title: "Tutoriais"
-    url: /tutoriais/
   - title: "Artigos"
     url: /artigos/
+  - title: "Curso ML"
+    url: /curso/
   - title: "Cool stuffs"
     url: /cool-stuffs/
