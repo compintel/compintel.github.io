@@ -2,7 +2,7 @@
 latexEquation: false
 title: "Análisando os dados dos finalistas do CBLOL 20019 - 2ª split"
 header:
-  teaser: "/assets/img/capas/machine_learning_a1.png"
+  teaser: "/assets/img/posts/cblol-19-2/logo-cblol.png"
 excerpt: "Neste post eu realizo uma análise exploratória dos dados do CBLOL 2019 - 2ª Split"
 toc: true
 categories:
