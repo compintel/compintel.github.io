@@ -25,7 +25,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : assets/img/capas/teaser.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
-words_per_minute         : 200
+words_per_minute         : 150
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "André Pacheco"
   avatar           : "/assets/img/capas/me.jpg"
-  bio              : "Sou apenas mais um doutorando em ciência da computação que passa o dia inteiro estudando e codificando algoritmos que um dia pode se voltar contra nós ;D"
+  bio              : "Sou apenas mais um doutorando em ciência da computação que passa o dia inteiro estudando e codificando algoritmos e que usa os seus momentos de lazer para escrever posts para este blog ;D"
   location         : "Vitória - ES"
   links:
     - label: "Email"
