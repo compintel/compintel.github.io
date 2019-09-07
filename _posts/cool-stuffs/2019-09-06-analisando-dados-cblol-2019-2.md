@@ -42,7 +42,7 @@ Para começar vamos dar uma olhada no famoso tempo de jogo de cada time. Este qu
 
 Para quem não conhece o _boxplot_ é um diagram que apresenta a distribuição dos dados de acordo com quartis ([clique aqui](https://operdata.com.br/blog/como-interpretar-um-boxplot/) para saber mais). No centro da figura, em cor clara, estão os dados considerando ambos os lados. Na esquerda encontramos o lado azul e na direita o vermelho. De maneira geral, a INTZ tem uma mediana de tempo um pouco superior a do Flamengo. Além disso, Os dados mostram que a INTZ leva mais tempo nos jogos do lado vermelho e menos nos do lado azul. Com o Flamengo é o contrário. O Lado vermelho deles é mais rápido.
 
-Outra pergunta que me fiz: **qual tempo de partida quando time ganha e quando perde?**. A resposta está na Figura 2.
+Outra pergunta que me fiz: **qual tempo de partida quando time ganha e quando perde?** A resposta está na Figura 2.
 
 <figure style="width: 490px; height: 400px;" class="align-center">
   
@@ -56,7 +56,7 @@ Outra pergunta que me fiz: **qual tempo de partida quando time ganha e quando pe
 
 Novamente uma diferença. O Flamengo demora menos pra ganhar e mais para perder. O que é algo bem desejável.
 
-Outra pergunta em relação a vitória/derrotas é: **qual o desempenho das equipes em ambos os lados?**. A Figura 3 responde essa pergunta.
+Outra pergunta em relação a vitória/derrotas é: **qual o desempenho das equipes em ambos os lados?** A Figura 3 responde essa pergunta.
 
 <figure style="width: 490px; height: 400px;" class="align-center">
   
@@ -85,7 +85,7 @@ Recentemente, assitindo a LEC, vi os comentaristas dizendo sobre a variação de
 
 </figure>
 
-No total, o FLA tem 11 picks a mais do que a INTZ. Essa parte é interessante pois, mesmo utilizando mais jogadores no campeonato, a INTZ tem menos picks diferentes. Além disso, o TOP da INTZ é a posição que mais tem campeões diferentes. Ok, mas, **quais são os campeões mais utilizados por cada equipe?**. Não se preocupe, eu tenho a resposta (ou melhor, os dados tem):
+No total, o FLA tem 11 picks a mais do que a INTZ. Essa parte é interessante pois, mesmo utilizando mais jogadores no campeonato, a INTZ tem menos picks diferentes. Além disso, o TOP da INTZ é a posição que mais tem campeões diferentes. Ok, mas, **quais são os campeões mais utilizados por cada equipe?** Não se preocupe, eu tenho a resposta (ou melhor, os dados têm):
 
 <figure style="width: 490px; height: 410px;" class="align-center">
   
@@ -131,7 +131,7 @@ Do lado da INTZ, destaca-se o famoso Gragas do Shini e o Aatrox, que aparece tan
 
 Aparentemente, a INTZ não gosta de jogar contra Sejuani (PEGA SEJUANI SHRIMP!) e o FLA contra o Sylas. Menção honronsa para o FLA banindo o famoso "Yasuo do outro time" 6 vezes. Não estão errados, eu também odeio Yasuo (do meu time).
 
-Para finalizar o assunto picks e bans, outra pergunta levantada foi: **qual os campeões mais pickados por cada jogador?**. Veja a seguir:
+Para finalizar o assunto picks e bans, outra pergunta levantada foi: **quais os campeões mais pickados por cada jogador?** Veja a seguir:
 
 
 <figure style="width: 490px; height: 400px;" class="align-center">
@@ -154,7 +154,7 @@ Para finalizar o assunto picks e bans, outra pergunta levantada foi: **qual os c
 
 </figure>
 
-Olha que interessante, o campeão mais jogado do Shrimp é a Sejuani, a mais banida pela INTZ. Será que ela passa na final? Além disso, Luci pickou TK 10 vezes, maior número dentro os 10 players. Neste ponto, eu não incluir Aoshi, Mills e o Flanalista (Reven), pois eles fizeram poucos jogos. 
+Olha que interessante, o campeão mais jogado do Shrimp é a Sejuani, a mais banida pela INTZ. Será que ela passa na final? Além disso, Luci pickou TK 10 vezes, maior número dentro os 10 players. Neste ponto, eu não inclui Aoshi, Mills e o Flanalista (Reven), pois eles fizeram poucos jogos. 
 
 ## Controle de objetivos
 Para tentar identificar como foi o controle de objetivos de cada equipe ao longo dos jogos, levantei os dados em relação a barões, dragões, arautos, inibidores e torres e cada equipe:
@@ -182,7 +182,7 @@ Observe que o único objetivo que o FLA não leva vantagem é no arauto. Aliás,
 </figure>
 O dados apontam que o FLA consegue controlar melhor os objetivos do lado azul. Se justarmos essa informação com de que a INTZ perdeu 8 das 11 partidas do lado vermelho. Acredito que isso indica o lado que o FLA vai priorizar na final.
 
-Para finalizar essa parte, sempre ouço dos jogadores da INTZ que eles são resilientes dentro do jogo. Bom, é difícil medir isso, mas tentado se aproximar de algo assim e com os dados que possuo, me fiz duas perguntas: **quantas vezes o time perdeu o primeiro barão e venceu o jogo?** e **quantas vezes o time perdeu o primeiro inibidor e venceu o jogo?**. Encontrei esses númeroas para ambas as equipes. Incluir também o número de vitórias quando o  oposto ocorre.
+Para finalizar essa parte, sempre ouço dos jogadores da INTZ que eles são resilientes dentro do jogo. Bom, é difícil medir isso, mas tentado se aproximar de algo assim e com os dados que possuo, me fiz duas perguntas: **quantas vezes o time perdeu o primeiro barão e venceu o jogo?** e **quantas vezes o time perdeu o primeiro inibidor e venceu o jogo?** Encontrei esses númeroas para ambas as equipes. Incluir também o número de vitórias quando o  oposto ocorre.
 
 |                     | INTZ |    |   | FLA |   |
 |---------------------|------|----|---|-----|---|
