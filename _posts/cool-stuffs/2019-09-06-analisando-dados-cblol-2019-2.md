@@ -107,7 +107,7 @@ No total, o FLA tem 11 picks a mais do que a INTZ. Essa parte é interessante po
 
 </figure>
 
-Do lado da INTZ, destaca-se o famoso Gragas do Shini e o Aatrax, que aparece tanto no top quanto no mid. Já do lado do FLA, o TK é o campeão mais frequente. E sobre os bans? Você já se perguntou **quais são os mais frequentes?** Eu já!
+Do lado da INTZ, destaca-se o famoso Gragas do Shini e o Aatrox, que aparece tanto no top quanto no mid. Já do lado do FLA, o TK é o campeão mais frequente. E sobre os bans? Você já se perguntou **quais são os mais frequentes?** Eu já!
 
 <figure style="width: 490px; height: 400px;" class="align-center">
   
