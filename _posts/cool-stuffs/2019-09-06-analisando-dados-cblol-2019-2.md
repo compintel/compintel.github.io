@@ -165,8 +165,8 @@ Para tentar identificar como foi o controle de objetivos de cada equipe ao longo
 | Barão    | 19    | 0.76  |   | 24    | 1.00  |
 | Dragão   | 39    | 1.56  |   | 62    | 2.58  |
 | Arauto   | 16    | 0.64  |   | 13    | 0.54  |
-| Torre    | 165   | 6.60  |   | 36    | 1.50  |
-| Inibidor | 34    | 1.36  |   | 207   | 8.62  |
+| Torre    | 165   | 6.60  |   | 207   | 8.62  |
+| Inibidor | 34    | 1.36  |   | 36    | 1.50  |
 
 Observe que o único objetivo que o FLA não leva vantagem é no arauto. Aliás, este indicativo e o número de dragões, apontam para o que todos dizem: o Flamengo joga para o bot. Além disso, eu me perguntei: **o lado do mapa afeta a equipe na consquista de barão, dragão e arauto?**.  Com isso, eu gerei o as porcentagens de cada monstro em cada lado do mapa:
 
