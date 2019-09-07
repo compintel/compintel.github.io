@@ -242,7 +242,7 @@ Podemos observar que no dano causado diretamente a campeões, Micao se destaca e
 Observe que no dano total, ambos os atiradores são os líderes de dano do do time. Porém, no dano causado diretamente a campeões, o Micao aumenta sua % e brTT cai cerca de 4%, deixando a liderança do seu time para o Robo. Nessa linha, eu investiguei alguns números diretamente relacionados aos atiradores. A gente ouve muita discursão em rede social sobre isso. Portanto, vamos deixar que os números falem. 
 
 ## Análise dos atiradores
-Primeiramente, eu cálculei a razão de dano _vs_ ouro recebido para cada jogador. Neste caso, quanto maior melhor. Isso significa que você está convertendo o ouro que você recebe em dano. Para dano em campeões a razão do Micao é 1.18 e a do brTT é 1.07. Já para dano total, a razão é 14.34 para Micao e 14.41 para brTT. Portanto, ambos os números são próximos, mas Micao leva vantagem no dano a campeões e brTT no dano total. Isso mostra que Micao não fica tão posicionado assim nas TFs xD.
+Primeiramente, eu cálculei a razão de dano _vs_ ouro recebido para cada jogador. Neste caso, quanto maior melhor. Isso significa que você está convertendo o ouro que você recebe em dano. Para dano em campeões a razão do Micao é 1.18 e a do brTT é 1.07. Já para dano total, a razão é 14.34 para Micao e 14.41 para brTT. Portanto, ambos os números são próximos, mas Micao leva vantagem no dano a campeões e brTT no dano total. Isso mostra que Micao não fica tão mal posicionado assim nas TFs xD.
 
 Agora, vamos comparar os números deles no ao longo do tempo de jogo. Esses números estão divididos de 0 a 10 min, de 10 a 20 min e no geral. Todos os dados são médios e considera apenas as partidas que eles participaram (obviamente).
 
