@@ -1,14 +1,16 @@
 ---
 latexEquation: false
-title: "Análisando os dados dos finalistas do CBLOL 20019 - 2ª split"
+title: "Analisando os dados dos finalistas do CBLOL 20019 - 2ª split"
 header:
   teaser: "/assets/img/posts/cblol-19-2/logo-cblol.png"
-excerpt: "Neste post eu realizo uma análise exploratória dos dados do CBLOL 2019 - 2ª Split"
+excerpt: "O cenário competitivo de League of Legends é um dos que mais cresce no Brasil e no mundo. Este post apresenta uma análise exploratória dos dados dos finalistas do CBLOL 2019 - 2ª split."
 toc: true
 categories:
   - CoolStuffs
 tags:
   - Data Science
+  - League of Legends
+  - LOL
 ---
 
 # Introdução
