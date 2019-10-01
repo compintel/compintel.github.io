@@ -3,7 +3,7 @@ latexEquation: true
 title: "Aula 1.1 - Álgebra linear"
 header:
   teaser: "/assets/img/capas/machine_learning_a1.png"
-excerpt: "Aula 1.1 - Curso Machine Learning - Álgebra linear. Nessa aula serão abordados os conceitos básicos em relação a álgebra linear para se iniciar em Machine Learning"
+excerpt: "Aula 1.1 - Curso Machine Learning - Cálculo. Nessa aula serão abordados os conceitos básicos em relação a Cálculo I e II para se iniciar em Machine Learning"
 categories:
   - CursoML
 tags:
