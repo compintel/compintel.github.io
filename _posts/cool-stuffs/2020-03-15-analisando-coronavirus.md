@@ -35,7 +35,7 @@ Felizemente, pesquisadores da [Johns Hopkins University](https://www.jhu.edu/) e
 ## Avisos
 - Primeiramente, não sou virologista. Estou apenas olhando para os dados e tentando traçar um prognóstico. 
 
-- Não vou nem tentar entrar na área biológica do Corona. Para isso, temos material de sobra com o [@atila](https://twitter.com/oatila) e meu amigo [@ToffoliPandini](https://twitter.com/ToffoliPandini), que aliás escreveu dois posts no seu blog que eu recomendo fortemente a leitura: 
+- Não vou nem tentar entrar na área biológica do Corona. Para isso, temos material de sobra com o [@oatila](https://twitter.com/oatila) e meu amigo [@ToffoliPandini](https://twitter.com/ToffoliPandini), que aliás escreveu dois posts no seu blog que eu recomendo fortemente a leitura: 
   - [Coronavírus: além do pânico e da histeria](http://papirosgermesefoguetes.blogspot.com/2020/02/coronavirus-alem-do-panico-e-da-histeria.html)
   - [Coronavírus: atualizações, descobertas e uma lenda envolvendo xadrez](http://papirosgermesefoguetes.blogspot.com/2020/03/com-o-avanco-da-doenca-desde-o-final-de.html)
 
