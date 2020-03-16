@@ -295,11 +295,11 @@ Perceba que do dia 13 para 14 de março o número se manteve. Isso por que o Min
 
 Vamos observar os gráficos dos demais países no começo da epidemia, ou seja, antes de 1000 infectados:
 
-<figure style="width: 550px; height: 1700px;" class="align-center">
+<figure style="width: 550px; height: 2000px;" class="align-center">
   
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/covid-19/prim_casos_conf_italia.png" alt="">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/covid-19/prim_casos_conf_iran.png" alt="">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/covid-19/prim_casos_conf_franca.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/covid-19/prim_casos_conf_france.png" alt="">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/covid-19/prim_casos_conf_espanha.png" alt="">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/covid-19/prim_casos_conf_alemanha.png" alt="">
 
