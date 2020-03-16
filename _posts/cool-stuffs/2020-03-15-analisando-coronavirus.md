@@ -115,7 +115,7 @@ No caso, apenas 5 países no mundo. Porém, pode ser que os casos sejam recentes
 Chama atenção que dos 4 países que cumprem esse requisito, 3 são nórdicos. É um indicativo que o sistema de saúde tem funcionado, mas não é possível afirmar mais do que isso sem um estudo mais aprofundado.
 
 ## Pessoas infectadas ao longo dos dias
-Uma manteira de perceber o quão rápido o vírus se espalha é plotar o número de casos confirmados ao longo do tempo. Como era de se esperar, a Figura 3 mostra que o **espalhamento é exponencial**.
+Uma maneira de perceber o quão rápido o vírus se espalha é plotar o número de casos confirmados ao longo do tempo. Como era de se esperar, a Figura 3 mostra que o **espalhamento é exponencial**.
 
 
 <figure style="width: 550px; height: 400px;" class="align-center">
