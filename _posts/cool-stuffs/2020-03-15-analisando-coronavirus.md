@@ -16,7 +16,7 @@ tags:
 ---
 
 # Introdução
-O novo Coronavírus (Covid-19) foi declarado como uma pandemia na última quarta-feira dia 11 de março de 2020 pela Organização Mundial de Saúde (OMS). Neste momento, acredito que não exista pessoa nesse globo terrestre que não ouviu falar da doença (aliás, a julgar pelos últimos acontecimentos, talvez exista). Diversos países afetados, muitas mortes confirmadas, econômia fortemente afetada etc. 
+O novo Coronavírus (Covid-19) foi declarado como uma pandemia na última quarta-feira dia 11 de março de 2020 pela Organização Mundial de Saúde (OMS). Neste momento, acredito que não exista pessoa nesse globo terrestre que não ouviu falar da doença (aliás, a julgar pelos últimos acontecimentos, talvez exista). Diversos países afetados, muitas mortes confirmadas, economia fortemente afetada etc. 
 
 <figure style="width: 450px; height: 400px;" class="align-center">
   
@@ -28,9 +28,9 @@ O novo Coronavírus (Covid-19) foi declarado como uma pandemia na última quarta
 
 </figure>
 
-Enquanto na China, o foco inicial da pandemia, a situação parece está controlada, do nosso lado do mundo o problema apenas começou. Pensando no Brasil, tivemos os primeiros casos recentemente e já sabemos que o vírus circula entre nós. Mas será que podemos ter uma ideia do que vai acontecer nos próximos dias olhando para os dados de outros países?
+Enquanto na China, o foco inicial da pandemia, a situação parece estar controlada, do nosso lado do mundo o problema apenas começou. Pensando no Brasil, tivemos os primeiros casos recentemente e já sabemos que o vírus circula entre nós. Mas será que podemos ter uma ideia do que vai acontecer nos próximos dias olhando para os dados de outros países?
 
-Felizemente, pesquisadores da [Johns Hopkins University](https://www.jhu.edu/) estão mantendo um [repositório de dados](https://github.com/CSSEGISandData/COVID-19), que é atualizado diariamente, com dados sobre o ~~Corongavirus~~ Coronavirus de todo o mundo. Eu decidi dar uma analisada nesses dados para tentar entender um pouco mais o que pode ocorrer com o Brasil nos próximos dias. Obviamente, prever o futuro é impossível. Mas podemos ter uma ideia ao comparar com o padrão dos dados de outros países.
+Felizmente, pesquisadores da [Johns Hopkins University](https://www.jhu.edu/) estão mantendo um [repositório de dados](https://github.com/CSSEGISandData/COVID-19), que é atualizado diariamente, com dados sobre o ~~Corongavirus~~ Coronavirus de todo o mundo. Eu decidi analisar esses dados para tentar entender um pouco mais o que pode ocorrer com o Brasil nos próximos dias. Obviamente, prever o futuro é impossível. Mas podemos ter uma ideia ao comparar com o padrão dos dados de outros países.
 
 ## Avisos
 - Primeiramente, não sou virologista. Estou apenas olhando para os dados e tentando traçar um prognóstico. 
@@ -89,7 +89,7 @@ Agora vamos olhar os 10 países com os maiores números de pessoas infectadas no
 | Reino Unido      |        1143 |       21 |          19 |    1.83727  | 0.00171908  |
 
 
-Obviamente a China aparece em 1ª. Porém, em % de mortos, a Itália possui **6.81% de taxa de fatalidade**, seguida pelo Iran com **4.80%**. Chama atenção Coréia do Sul e Alemanha com 0.89% e 0.19% respectivamente. Todavia, pode ser que os países não esteja reportando o número de casos. Isso é o que provalmente ocorre na Itália, uma vez que o sistema de saúde do país está extremamente sobrecarregado e não possivel ter teste para todos.
+Obviamente a China aparece em 1ª. Porém, em % de mortos, a Itália possui **6.81% de taxa de fatalidade**, seguida pelo Iran com **4.80%**. Chamam atenção Coréia do Sul e Alemanha com 0.89% e 0.19% respectivamente. Todavia, pode ser que os países não estejam reportando o número de casos. Isso é o que provalmente ocorre na Itália, uma vez que o sistema de saúde do país está extremamente sobrecarregado e não possivel ter teste para todos.
 
 Eu também cruzei os dados de infectados com o número de pessoas que vivem no país. No caso da Itália, o número de infectados representa **0.3% da população**. Esse número parece ser pequeno, mas já é suficiente para causar um impacto gigante na vida das pessoas. Mesmo que o país esteja perdendo caso, e é certo que sim, o número não deixa de chamar atenção.
 
@@ -115,7 +115,7 @@ No caso, apenas 5 países no mundo. Porém, pode ser que os casos sejam recentes
 Chama atenção que dos 4 países que cumprem esse requisito, 3 são nórdicos. É um indicativo que o sistema de saúde tem funcionado, mas não é possível afirmar mais do que isso sem um estudo mais aprofundado.
 
 ## Pessoas infectadas ao longo dos dias
-Uma manteira de perceber o quão raápido o vírus se espalha é plotar o número de casos confirmados ao longo do tempo. Como era de se esperar, a Figura 3 mostra que o **espalhamento é exponencial**.
+Uma manteira de perceber o quão rápido o vírus se espalha é plotar o número de casos confirmados ao longo do tempo. Como era de se esperar, a Figura 3 mostra que o **espalhamento é exponencial**.
 
 
 <figure style="width: 550px; height: 400px;" class="align-center">
@@ -153,7 +153,7 @@ Porém, como a epidemia já teve seu pico na China, os dados de lá distorcem um
 
 </figure>
 
-Agora sim percebemos um comportamento bem mais exponêncial! Os números ainda estão crescendo! E perceba que o vírus começa a realmente se espalhar no mundo por volta do dia 21 de fevereiro. Isso significa que cerca de 25 dias atrás a situação aparentava estar "controlada".
+Agora sim percebemos um comportamento bem mais exponencial! Os números ainda estão crescendo! E perceba que o vírus começa a realmente se espalhar no mundo por volta do dia 21 de fevereiro. Isso significa que cerca de 25 dias atrás a situação aparentava estar "controlada".
 
 Fazendo o mesmo para o número de mortos, ou seja, retirando os dados da China, nós temos a seguinte curva:
 
@@ -291,7 +291,7 @@ Vamos comparar a curva Brasileira com Itália, Iran, França, Espanha e Alemanha
 
 </figure>
 
-Perceba que do dia 13 para 14 de março o número se manteve. Isso por que o Ministério da Saúde anunciou que não vai mais testar todas as pessoas, apenas internados. Segundo especialistas, isso é preocupante. Prejudica um pouco análise, mas é que temos hoje!
+Perceba que do dia 13 para 14 de março o número se manteve. Isso por que o Ministério da Saúde anunciou que [não vai mais testar todas as pessoas, apenas internados](https://saude.estadao.com.br/noticias/geral,internacao-por-gripe-grave-sera-criterio-para-testar-para-novo-coronavirus,70003226350). Segundo especialistas, isso é preocupante. Prejudica um pouco análise, mas é que temos para hoje!
 
 Vamos observar os gráficos dos demais países no começo da epidemia, ou seja, antes de 1000 infectados:
 
@@ -322,7 +322,7 @@ Observe que se os números corretos fossem divulgados pelo governo Brasileiro pa
 
 </figure>
 
-Neste último gráfico, podemos perceber que o Brasil segue o padrão (exceto pelo último dia) dos demais países. A data do dia não especificada no gráfico pois os países apresentaram essas curvas em datas diferentes. 
+Neste último gráfico, podemos perceber que o Brasil segue o padrão (exceto pelo último dia) dos demais países. As datas dos dias não estão especificada no gráfico pois os países apresentaram essas curvas em datas diferentes. 
 
 # Conclusão
 
