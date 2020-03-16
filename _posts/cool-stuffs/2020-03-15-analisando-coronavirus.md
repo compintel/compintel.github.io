@@ -35,7 +35,9 @@ Felizemente, pesquisadores da [Johns Hopkins University](https://www.jhu.edu/) e
 ## Avisos
 - Primeiramente, não sou virologista. Estou apenas olhando para os dados e tentando traçar um prognóstico. 
 
-- Não vou nem tentar entrar na área biológica do Corona. Para isso, temos material de sobra com o [@atila](https://twitter.com/oatila) e meu amigo [@ToffoliPandini](https://twitter.com/ToffoliPandini), que aliás escreveu um post no seu blog que eu recomendo fortemente a leitura: [Coronavírus: além do pânico e da histeria](http://papirosgermesefoguetes.blogspot.com/2020/02/coronavirus-alem-do-panico-e-da-histeria.html)
+- Não vou nem tentar entrar na área biológica do Corona. Para isso, temos material de sobra com o [@atila](https://twitter.com/oatila) e meu amigo [@ToffoliPandini](https://twitter.com/ToffoliPandini), que aliás escreveu dois posts no seu blog que eu recomendo fortemente a leitura: 
+  - [Coronavírus: além do pânico e da histeria](http://papirosgermesefoguetes.blogspot.com/2020/02/coronavirus-alem-do-panico-e-da-histeria.html)
+  - [Coronavírus: atualizações, descobertas e uma lenda envolvendo xadrez](http://papirosgermesefoguetes.blogspot.com/2020/03/com-o-avanco-da-doenca-desde-o-final-de.html)
 
 - O código dessa análise está aberto no meu Github. Caso tenha interesse é só [acessar aqui](https://github.com/paaatcha/covid-19).
 
@@ -181,7 +183,7 @@ O que tem sido reportado é que a China está voltando a vida normal. Portanto, 
 </figure>
 
 
-Olha que interessante, a China está realmente controlando a contaminação. Perceba que a curva segue uma função sigmoid [sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) ($$f(x) = \frac{1}{1 + e^{-ax}}$$). Se você não conhece, essa é curva de uma sigmoid:
+Olha que interessante, a China está realmente controlando a contaminação. Perceba que a curva segue uma função [sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) ($$f(x) = \frac{1}{1 + e^{-ax}}$$). Se você não conhece, essa é curva de uma sigmoid:
 
 <figure style="width: 550px; height: 300px;" class="align-center">
   
