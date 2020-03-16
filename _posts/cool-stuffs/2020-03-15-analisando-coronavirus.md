@@ -89,7 +89,7 @@ Agora vamos olhar os 10 países com os maiores números de pessoas infectadas no
 | Reino Unido      |        1143 |       21 |          19 |    1.83727  | 0.00171908  |
 
 
-Obviamente a China aparece em 1ª. Porém, em % de mortos, a Itália possui **6.81% de taxa de fatalidade**, seguida pelo Iran com **4.80%**. Chamam atenção Coréia do Sul e Alemanha com 0.89% e 0.19% respectivamente. Todavia, pode ser que os países não estejam reportando o número de casos. Isso é o que provalmente ocorre na Itália, uma vez que o sistema de saúde do país está extremamente sobrecarregado e não possivel ter teste para todos.
+Obviamente, a China aparece em 1ª. Porém, em % de mortos, a Itália possui **6.81% de taxa de fatalidade**, seguida pelo Iran com **4.80%**. Chamam atenção Coréia do Sul e Alemanha com 0.89% e 0.19% respectivamente. Todavia, pode ser que os países não estejam reportando o número de casos. Isso é o que provalmente ocorre na Itália, uma vez que o sistema de saúde do país está extremamente sobrecarregado e não é possível testar todas as pessoas com suspeita do vírus.
 
 Eu também cruzei os dados de infectados com o número de pessoas que vivem no país. No caso da Itália, o número de infectados representa **0.3% da população**. Esse número parece ser pequeno, mas já é suficiente para causar um impacto gigante na vida das pessoas. Mesmo que o país esteja perdendo caso, e é certo que sim, o número não deixa de chamar atenção.
 
