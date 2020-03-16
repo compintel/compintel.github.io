@@ -7,6 +7,6 @@ main:
   - title: "Artigos"
     url: /artigos/
   - title: "Curso ML"
-    url: /curso/
+    url: /curso-ml/
   - title: "Cool stuffs"
     url: /cool-stuffs/

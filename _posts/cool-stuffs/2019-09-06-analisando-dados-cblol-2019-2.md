@@ -11,6 +11,7 @@ tags:
   - Data Science
   - League of Legends
   - LOL
+  - Data analysis
 ---
 
 # Introdução
