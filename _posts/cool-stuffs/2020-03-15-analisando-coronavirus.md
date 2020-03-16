@@ -16,7 +16,7 @@ tags:
 ---
 
 # Introdução
-O novo Coronavírus (Covid-19) foi declarado como uma pandemia na última quarta-feira dia 11 de março de 2020 pela Organização Mundial de Saúde (OMS). Neste momento, acredito que não exista pessoa nesse globo terrestre que não ouviu falar da doença (aliás, a julgar pelos últimos acontecimentos, talvez exista). Diversos países afetados, muitas mortes confirmadas, economia fortemente afetada etc. 
+O novo Coronavírus (Covid-19) foi [declarado como uma pandemia](https://www.who.int/dg/speeches/detail/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020) na última quarta-feira dia 11 de março de 2020 pela Organização Mundial de Saúde (OMS). Neste momento, acredito que não exista pessoa nesse globo terrestre que não ouviu falar da doença (aliás, a julgar pelos últimos acontecimentos, talvez exista). Diversos países afetados, muitas mortes confirmadas, economia fortemente afetada etc. 
 
 <figure style="width: 450px; height: 400px;" class="align-center">
   
