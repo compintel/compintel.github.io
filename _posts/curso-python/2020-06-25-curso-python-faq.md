@@ -19,6 +19,9 @@ Seja bem vindo ao FAQ do curso **Mata a cobra e mostra o Python**! Este post é 
 ## Por que este curso foi criado?
 Resumidamente, o curso surgiu durante a quarentena da pandemia do Covid-19. Como Gui Meira estava em casa e um pouco entediado, ele decidiu criar esse curso e chamar alguns amigos para contribuir com ele. 
 
+## Por que colocar este curso neste blog?
+Atualmente, Python é a linguagem base para as principais bibliotecas de Machine Learning. Logo, a ideia de colocar este curso aqui é dar uma base para os códigos dos algoritmos postados neste blog.
+
 ## Para quem é destinado este curso?
 Obviamente qualquer pessoa pode acompanhar o curso. Mas o público alvo do curso são alunos do ensino médio que tem interesse em aprender a programar ou alunos iniciantes em algum curso de graduação ligado a tecnologia.
 
