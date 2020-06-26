@@ -61,7 +61,7 @@ R = \frac{VP}{VP + FN}
 \tag{2}
 $$
 
-O <em>recall</em> pode ser compreendido como uma medida do quão completo é o nosso classificador. Obviamente, um baixo valor de $$ R $$ indica um alto valor de **falsos positivos**. Para o nosso problema, temos  $$ R = \frac{60}{(60+11)} = 0.8451 $$. Este valor de $$ R $$ indica que ~84.51% dos verdadeiros positivos são identificados.
+O <em>recall</em> pode ser compreendido como uma medida do quão completo é o nosso classificador. Obviamente, um baixo valor de $$ R $$ indica um alto valor de **falsos negativos**. Para o nosso problema, temos  $$ R = \frac{60}{(60+11)} = 0.8451 $$. Este valor de $$ R $$ indica que ~84.51% dos verdadeiros positivos são identificados.
 
 ## *F1 Score*
 O <em>F1 score</em> é definido como duas vezes a média harmônica entre $$ R $$ e $$ P $$, ou seja, é um 'meio termo' entre as duas métricas anteriores:
