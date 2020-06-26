@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 7 - Tratamento de Erros"
 header:
   teaser: "/assets/img/capas/python_a7.png"

@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 1 - Apresentação e Introdução"
 header:
   teaser: "/assets/img/capas/python_a1.png"

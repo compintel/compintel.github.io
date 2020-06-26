@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 8 - Bibliotecas"
 header:
   teaser: "/assets/img/capas/python_a8.png"

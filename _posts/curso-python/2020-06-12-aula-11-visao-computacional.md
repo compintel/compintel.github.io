@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 11 - Visão Computacional"
 header:
   teaser: "/assets/img/capas/python_a11.png"

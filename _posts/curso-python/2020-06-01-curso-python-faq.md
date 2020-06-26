@@ -1,6 +1,7 @@
 ---
 latexEquation: false
 title: "Curso Python - FAQ"
+author_profile: false
 header:
   teaser: "assets/img/curso-python/curso-python.png"
 excerpt: "Neste post é discutido basicamente a intenção deste curso, o porque de sua existência, o escopo, pré-requisitos etc. Várias perguntas são respondidas no FAQ"

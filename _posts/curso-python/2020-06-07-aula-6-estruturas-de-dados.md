@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 6 - Estruturas de Dados"
 header:
   teaser: "/assets/img/capas/python_a6.png"

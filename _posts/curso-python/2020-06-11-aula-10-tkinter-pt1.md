@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 10 - TKInter (parte 1)"
 header:
   teaser: "/assets/img/capas/python_a10.png"

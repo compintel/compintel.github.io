@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 5 - Orientação a Objetos"
 header:
   teaser: "/assets/img/capas/python_a5.png"

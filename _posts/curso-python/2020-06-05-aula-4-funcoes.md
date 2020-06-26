@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 4 - Funções"
 header:
   teaser: "/assets/img/capas/python_a4.png"

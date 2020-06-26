@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 9 - Manipulação de arquivos"
 header:
   teaser: "/assets/img/capas/python_a9.png"

@@ -1,5 +1,6 @@
 ---
 latexEquation: true
+author_profile: false
 title: "Aula 2 - Condicionais"
 header:
   teaser: "/assets/img/capas/python_a2.png"
