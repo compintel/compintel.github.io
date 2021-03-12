@@ -1,0 +1,13 @@
+I"�<ul class="toc__menu">
+  <li><a href="#introdução">Introdução</a></li>
+  <li><a href="#funcionamento-do-knn">Funcionamento do KNN</a>
+    <ul>
+      <li><a href="#cálculo-da-distância">Cálculo da distância</a></li>
+      <li><a href="#a-escolha-de-k">A escolha de K</a></li>
+      <li><a href="#pseudocódigo">Pseudocódigo</a></li>
+    </ul>
+  </li>
+  <li><a href="#código-do-knn-em-python">Código do KNN em Python</a></li>
+  <li><a href="#referências">Referências</a></li>
+</ul>
+:ET

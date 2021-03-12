@@ -1,0 +1,13 @@
+I"G<h1 id="introdução">Introdução</h1>
+<p>Nesta aula, veremos como começar a organizar nosso código em funções. Isso permite separar trechos do programa em blocos que podem ser reutilizados ao longo do programa. Vamos aprender a passar parâmetros para funções e retornar valores. Ao final, veremos brevemente alguns usos avançados de funções.</p>
+
+<h1 id="aula">Aula</h1>
+
+<!-- Courtesy of embedresponsively.com //-->
+<div class="responsive-video-container">
+
+  <iframe src="https://www.youtube.com/embed/dPx98WCOar8" frameborder="0" allowfullscreen=""></iframe>
+
+</div>
+
+:ET

@@ -1,0 +1,16 @@
+I"�<ul class="toc__menu">
+  <li><a href="#introdução">Introdução</a></li>
+  <li><a href="#acurácia-de-classificação">Acurácia de classificação</a></li>
+  <li><a href="#matriz-de-confusão">Matriz de confusão</a>
+    <ul>
+      <li><a href="#precision">Precision</a></li>
+      <li><a href="#recall">Recall</a></li>
+      <li><a href="#f1-score">F1 Score</a></li>
+      <li><a href="#acurácia">Acurácia</a></li>
+      <li><a href="#observações">Observações</a></li>
+    </ul>
+  </li>
+  <li><a href="#problemas-com-multiplos-labels">Problemas com multiplos labels</a></li>
+  <li><a href="#referências">Referências</a></li>
+</ul>
+:ET

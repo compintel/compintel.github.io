@@ -1,0 +1,18 @@
+I"7<ul class="toc__menu">
+  <li><a href="#introdução">Introdução</a></li>
+  <li><a href="#conceitos-básicos">Conceitos básicos</a>
+    <ul>
+      <li><a href="#população">População</a></li>
+    </ul>
+  </li>
+  <li><a href="#operações-do-de">Operações do DE</a>
+    <ul>
+      <li><a href="#mutação">Mutação</a></li>
+      <li><a href="#cruzamento">Cruzamento</a></li>
+      <li><a href="#seleção">Seleção</a></li>
+    </ul>
+  </li>
+  <li><a href="#código-exemplo">Código exemplo</a></li>
+  <li><a href="#referências">Referências</a></li>
+</ul>
+:ET

@@ -1,0 +1,49 @@
+I"C	<ul class="toc__menu">
+  <li><a href="#introdução">Introdução</a></li>
+  <li><a href="#escalares-vetores-e-matrizes">Escalares, vetores e matrizes</a></li>
+  <li><a href="#operações-com-matrizes-vetores-e-escalares">Operações com matrizes, vetores e escalares</a>
+    <ul>
+      <li><a href="#tranposição">Tranposição</a></li>
+      <li><a href="#soma-e-subtração">Soma e subtração</a></li>
+      <li><a href="#multiplicação-por-escalares">Multiplicação por escalares</a></li>
+      <li><a href="#produto-escalar-dot-product">Produto escalar (dot product)</a></li>
+      <li><a href="#norma-de-um-vetor">Norma de um vetor</a></li>
+      <li><a href="#broadcasting">Broadcasting</a></li>
+    </ul>
+  </li>
+  <li><a href="#multiplicação-de-matrizes">Multiplicação de matrizes</a>
+    <ul>
+      <li><a href="#propriedades">Propriedades</a></li>
+      <li><a href="#um-simples-sistema-linear">Um simples sistema linear</a></li>
+    </ul>
+  </li>
+  <li><a href="#inversão-de-matriz">Inversão de matriz</a>
+    <ul>
+      <li><a href="#propriedades-1">Propriedades</a></li>
+    </ul>
+  </li>
+  <li><a href="#dependência-linear-span-e-posto">Dependência linear, span e posto</a></li>
+  <li><a href="#determinante-de-uma-matriz">Determinante de uma matriz</a>
+    <ul>
+      <li><a href="#matriz-diagonal">Matriz diagonal</a></li>
+    </ul>
+  </li>
+  <li><a href="#traço-de-uma-matriz">Traço de uma matriz</a></li>
+  <li><a href="#tipos-especiais-de-matrizes-e-vetores">Tipos especiais de matrizes e vetores</a>
+    <ul>
+      <li><a href="#matriz-simétrica">Matriz simétrica</a></li>
+      <li><a href="#vetor-normal-ortogonal-e-ortonormal">Vetor normal, ortogonal e ortonormal</a></li>
+      <li><a href="#matriz-ortogonal">Matriz ortogonal</a></li>
+    </ul>
+  </li>
+  <li><a href="#autovalores-e-autovetores">Autovalores e Autovetores</a>
+    <ul>
+      <li><a href="#definição-e-exemplos">Definição e exemplos</a></li>
+      <li><a href="#determinando-autovalores-e-autovetores">Determinando autovalores e autovetores</a></li>
+      <li><a href="#decomposição-matricial-por-autovalores-e-autovetores">Decomposição matricial por autovalores e autovetores</a></li>
+    </ul>
+  </li>
+  <li><a href="#considerações-finais">Considerações finais</a></li>
+  <li><a href="#principais-referências">Principais referências</a></li>
+</ul>
+:ET

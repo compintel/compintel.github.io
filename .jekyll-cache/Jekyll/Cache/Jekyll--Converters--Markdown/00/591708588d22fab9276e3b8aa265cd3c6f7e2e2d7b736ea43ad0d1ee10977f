@@ -1,0 +1,89 @@
+I"#<h1 id="introdução">Introdução</h1>
+
+<p>Otimização por enxame de partículas (do inglês: <em>Particle Swarm Optmization</em> - PSO) é um algoritmo heurístico (assim como o <a href="/algoritmos/o-algoritmo-evolucao-diferencial/">Differential Evolution</a>) baseado no comportamento social de um bando de pássaros. O método foi proposto por Eberhart e Kennedy em 1995 <a href="#eberhart">[1]</a>, e tem como objetivo buscar a solução ótima, em um espaço de busca, através da troca de informações entre indivíduos de uma população determinando qual trajetória cada um deles deverá tomar no espaço de busca. Caso você não tenha familiariade com problemas de otimização, sugiro o que visite o <a href="/artigos/o-problema-de-otimizacao/">nosso post sobre o assunto</a>.</p>
+
+<h2 id="o-enxame-de-pássaros">O enxame de pássaros</h2>
+
+<p>No PSO, as partículas são os indivíduos da população. Fazendo uma analogia, são os pássaros de um bando. Esses pássaros exploram uma região, determinado pela função objetivo (ou <em>fitness</em>), a fim de encontrar a solução ótima para o problema. A posição da melhor partícula da população será a melhor posição individual, como exemplificado na Figura 1.</p>
+
+<figure style="width: 500px; height: 450px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/pso/pso-birds.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 1: analogia de um bando de pássaros em um espaço de busca de 3D. Considerando um problema de maximização, o pássaro azul é a partícula de solução ótima do problema.
+  </figcaption>
+
+</figure>
+
+<p>A grande vantagen de utilizar o PSO é a sua fácil implementação, usando somente estruturas primitivas e operadores matemáticos sem grande custo computacional. Obviamente, como toda heurística, o PSO não garante a solução ótima e é comum o método cair em mínimos locais. Por conta disso, existem diversas modificações no algoritmo canônico do PSO (mas nenhuma garante o ótimo, apenas aumenta a chance de sair dele). A versão apresentada a seguir é o algoritmo padrão.</p>
+
+<p>Antes de iniciar o algoritmo, como já mencionado, o PSO também é baseado em população de indivíduos. Esse conceito já foi introduzido no post relacionado ao algoritmo de otimização <a href="/algoritmos/o-algoritmo-evolucao-diferencial/">Differential Evolution</a>. Portanto, caso não conheça esse conceito de uma olhada no segundo parágrafo no post do algoritmo.</p>
+
+<h1 id="o-algoritmo-do-pso">O algoritmo do PSO</h1>
+
+<p>O algoritmo do PSO é simples e são necessários poucos parâmetros para ajustes. O primeiro dele é o tamanho da população. Normalmente é utilizado uma população 10x a dimensão do problema, por exemplo, se estivermos otimizando a curva da Figura 1, uma boa escolha da população será 30, pois a função a ser otimizada possui 3 dimensões, \((x,y,z)\).</p>
+
+<h2 id="topologias">Topologias</h2>
+<p>Existem duas formas básicas de organizar a população. Essa formas são conhecidas como topologia do algoritmo e são elas: topologia global e topologia local, como mostra a Figura 2a e 2b, respectivamente. Na topologia global, todas as partículas, representadas pelas bolinhas da figura, possuem informações sobre todas as demais. Já na topologia local, uma partícula só possui informações de sua vizinha esquerda e direita. <strong>A escolha da topologia pode evitar que o algoritmo caia em mínimos locais</strong>. Por exemplo, se a função a ser otimizada é multimodal, ou seja, possui muitos máximos e/ou mínimos, uma topologia global pode convergir para um mínima/máximo local de maneira mais fácil do que a topologia local. Pode ser que agora você não tenha entendido esse conceito, mas tudo vai ficar mais claro a seguir, na qual apresentamos a equação que rege o PSO.</p>
+
+<figure style="width: 500px; height: 450px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/pso/topologias.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 2: Topologias do PSO
+  </figcaption>
+
+</figure>
+
+<h2 id="equacionamento">Equacionamento</h2>
+
+<p>Bom, sabemos que o PSO busca a solução ótima alterando as trajetórias dos indivíduos de sua população. Para fazer isso o algoritmo atualiza a <strong>velocidade</strong> e a <strong>posição</strong> de cada partícula. Considere uma população com \(K\) partículas. As variáveis \(v_k\) e \(x_k\) serão a velocidade e posição da particula \(k\), respectivamente. A velocidade e posição de cada partícula, deve ser atualizada de acordo com as equações 1 e 2, respectivamente.</p>
+
+\[v_{k+1} = wv_k +c_1r_1 (p_{best_k}-x_k) + c_2r_2 (g_{best} - x_k)
+\tag{1}\]
+
+\[x_{k+1} = x_{k} + v_{k}
+\tag{2}\]
+
+<p>As variáveis \(v_{k+1}\) e \(x_{k+1}\) serão, respectivamente, a velocidade e a posição atualizada da partícula de acordo com:</p>
+<ul>
+  <li>\(w\): coeficiente de inércia</li>
+  <li>\(p_{best_k}\): melhor posição conhecida da partícula \(k\)</li>
+  <li>\(g_{best}\): melhor posição conhecida dentre todas as partículas</li>
+  <li>\(c_1\) e \(c_2\): constantes de aceleração referentes ao melhor individual e global, respectivamente.</li>
+  <li>\(r_1\) e \(r_2\): números aleatórios extraídos do intervalo [0,1]</li>
+</ul>
+
+<p>Os valores das constantes são escolhidos de maneira empírica, de acordo com o problema em questão. Segundo <a href="#eberhart">[1]</a> bons valores a serem escolhidos são: \(c_1\) e \(c_2\) iguais a 2.05 e \(w\) igual a 0.5, mas nada impede de tentar outros. As variáveis aleatórias \(r_1\) e \(r_2\), deverão ser extraídas de uma distribuição uniforme e são atualizadas a cada cálculo de velocidade da população. Obviamente as melhores posições, individuais e globais, são obtidas através da função de <em>fitness</em>.</p>
+
+<h2 id="passo-a-passo-do-algoritmo">Passo a passo do algoritmo</h2>
+<p>O passo a passo do algoritmo é apresentado a seguir:</p>
+
+<ol>
+  <li>Inicializar uma população de \(K\) indíviduos de dimensão \(D\). Essa inicialização deve ser uniforme, se o espaço de busca for conhecido. Caso contrário, inicialize aleatoriamente.</li>
+  <li>Determinar os valores das constantes.</li>
+  <li>Verificar se o critério de parada foi atingido, e esse critério pode ser um valor pré-determinado ou número de iterações. Se sim, finalizar o algoritmo.</li>
+  <li>Sortear os números aleatórios para \(r_1\) e \(r_2\).</li>
+  <li>Determinar a melhor posição global e individual.</li>
+  <li>Atualizar a velocidade das particulas.</li>
+  <li>Atualizar as posições das partículas</li>
+  <li>Voltar ao passo 3</li>
+</ol>
+
+<p>Dado o algoritmos e suas duas simples equações, observamos que o PSO nada mais é do que uma atualização de velocidade e posição no espaço de busca até que uma solução suficientemente boa seja encontrada. Por fim, faço algumas observações pertinentes</p>
+
+<ul>
+  <li><strong>Quanto a função de fitness:</strong> obviamente você deve defini-la previamente, ela vai mudar de problema para problema. É ela que vai determinar qual é o seu espaço de busca e o quão difícil ele é. É ela que você deseja otimizar. Não entrei muito em detalhes em relação a ela pois já a discutimos nos linkados na introdução deste post.</li>
+  <li><strong>Quanto a topologia:</strong> voltando a discussão de topologia, agora deve ficar claro o porque ela influência no problema. Observe que a versão apresentada utiliza a topologia global, pois todas as partículas são atualizadas a partir da melhor posição global. Isso pode ser ruim, dependendo do problema. Como já disse, se a função a ser otimizada possui muitos máximos e/ou mínimos, pode acontecer de uma partícula cair em um mínimo/máximo local, e influenciar todas as outras a irem para lá. Com isso, o algoritmo terá uma convergência prematura, atrapalhando no desempenho do mesmo. A topologia local ajuda a evitar esse problema, mas a convergência pode ficar mais lenta. Como as partículas possuem a informação de melhor posição apenas de seus vizinhos, o risco delas convergirem para a mesma posição ao mesmo tempo é mínimo.</li>
+</ul>
+
+<h1 id="código-do-pso">Código do PSO</h1>
+
+<p>Como de costume, deixo linkado o meu repositório pessoal com um <a href="https://github.com/paaatcha/Otimizacao/tree/master/PSO">código do PSO em MATLAB</a>. Para utilizá-lo, basta alterar a função de <em>fitness</em> e suas constantes, caso queira. O código é aberto e você pode utilizá-lo, desde que seja dado os devidos créditos. Nos vemos no próximo post.</p>
+
+<h1 id="referências">Referências</h1>
+<p><a name="eberhart">[1]</a> Eberhart, R. C. and Kennedy, J. (1995). A new optimizer using particle swarm theory. In Proceedings of the sixth international symposium on micro machine and human science, volume 1, pages 39–43. New York, NY.</p>
+
+:ET

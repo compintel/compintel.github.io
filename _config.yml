@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "André Pacheco"
   avatar           : "/assets/img/capas/me.jpg"
-  bio              : "Sou apenas mais um doutorando em ciência da computação que passa o dia inteiro estudando e codificando algoritmos e que usa os seus momentos de lazer para escrever posts para este blog ;D"
+  bio              : "Um doutor em Ciência da Computação que passa boa parte do tempo lendo e aprendendo sobre inteligência artificial e que usa parte do tempo livre para para escrever posts para este blog ;D"
   location         : "Vitória - ES"
   links:
     - label: "Email"

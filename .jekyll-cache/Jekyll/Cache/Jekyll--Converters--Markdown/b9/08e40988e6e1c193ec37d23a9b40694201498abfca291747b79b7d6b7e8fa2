@@ -1,0 +1,16 @@
+I"�<ul class="toc__menu">
+  <li><a href="#introdução">Introdução</a>
+    <ul>
+      <li><a href="#função-objetivo">Função objetivo</a></li>
+    </ul>
+  </li>
+  <li><a href="#áreas-de-otimização">Áreas de otimização</a></li>
+  <li><a href="#algoritmos-de-otimização">Algoritmos de otimização</a></li>
+  <li><a href="#exemplo-de-função-objetivo-para-otimização">Exemplo de função objetivo para otimização</a></li>
+  <li><a href="#exemplo-de-problema-de-otimização---o-problema-do-caixeiro-viajante">Exemplo de problema de otimização - O problema do caixeiro viajante</a>
+    <ul>
+      <li><a href="#formulação-do-problema">Formulação do problema</a></li>
+    </ul>
+  </li>
+</ul>
+:ET

@@ -1,0 +1,45 @@
+I"t<ul class="toc__menu">
+  <li><a href="#introdução">Introdução</a>
+    <ul>
+      <li><a href="#probabilidade-frequentista-e-bayesiana">Probabilidade frequentista e Bayesiana</a></li>
+    </ul>
+  </li>
+  <li><a href="#probabilidade">Probabilidade</a>
+    <ul>
+      <li><a href="#definição">Definição</a></li>
+      <li><a href="#probabilidade-condicional">Probabilidade condicional</a></li>
+      <li><a href="#probabilidade-conjunta">Probabilidade conjunta</a></li>
+      <li><a href="#probabilidade-marginal">Probabilidade marginal</a></li>
+    </ul>
+  </li>
+  <li><a href="#distribuições-de-probabilidade">Distribuições de probabilidade</a>
+    <ul>
+      <li><a href="#variáveis-aleatórias">Variáveis aleatórias</a></li>
+      <li><a href="#histogramas">Histogramas</a></li>
+      <li><a href="#variáveis-aleatórias-discretas-e-fdps">Variáveis aleatórias discretas e FDPs</a>
+        <ul>
+          <li><a href="#exemplo-de-fdp">Exemplo de FDP</a></li>
+        </ul>
+      </li>
+      <li><a href="#variáveis-aleatórias-discretas-e-a-função-de-distribuição-acumulada-fda">Variáveis aleatórias discretas e a função de distribuição acumulada (FDA)</a></li>
+      <li><a href="#valor-esperado-variância-e-covariância">Valor esperado, variância e covariância</a>
+        <ul>
+          <li><a href="#valor-esperado">Valor esperado</a></li>
+          <li><a href="#variância">Variância</a></li>
+          <li><a href="#covariância">Covariância</a></li>
+        </ul>
+      </li>
+      <li><a href="#principais-distribuições-de-probabilidade">Principais distribuições de probabilidade</a>
+        <ul>
+          <li><a href="#distribuição-de-bernoulli">Distribuição de Bernoulli</a></li>
+          <li><a href="#distribuição-de-poisson">Distribuição de Poisson</a></li>
+          <li><a href="#distribuição-gaussiana">Distribuição Gaussiana</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#o-teorema-de-bayes">O Teorema de Bayes</a></li>
+  <li><a href="#considerações-finais">Considerações finais</a></li>
+  <li><a href="#principais-referências">Principais referências</a></li>
+</ul>
+:ET

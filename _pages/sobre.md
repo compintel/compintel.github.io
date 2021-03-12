@@ -16,12 +16,9 @@ A terceira premissa é que tudo que é discutido aqui será aberto e livre para 
 
 Portanto, de maneira resumida, o blog visa ensinar de maneira simples, livre e em português brasileiro. Os posts são divididos em categorias que você encontra no topo da página principal. E caso possua sugestões ou críticas, estamos totalmente dispostos à ouvi-las! Entre em contato conosco via twitter, email ou comentários nos posts, sinta-se a vontade. Esperamos que com nosso conteúdo possa ajudá-lo de alguma forma. Aproveite!
 
-# Autores
+# Autor
 
-Atualmente, o blog é mantido por três autores. Cada post aparece na lateral os dados do autor do mesmo. Mas, de maneira resumida, os três autores são:
+Atualmente, o blog é mantido apenas por um autor:
 
 * [André Pacheco](http://pachecoandre.com.br):
-  Doutorando em Ciência da Computação pela Universidade Federal do Espírito Santo, atualmente está atuando como pesquisador visitante na *Dalhousie University* - Canadá, e fundador do blog em 2015. Foca sua pesquisa em técnicas de aprendizado de máquina aplicadas em imagens, principalmente em detecção automática de câncer de pele.
-
-* [Gabriel G. De Angelo](site):
-  Mestrando em Ciência da Computação pela Universidade Estadual de Campinas e estagiário do blog. Realizou pesquisas em aprendizado de máquina em sua graduação e desenvolveu um trabalho de conclusão de curso, orientado pelo André, em segmentação automática de lesão de pele. Atualmente está estudando novos métodos de aprendizado de máquina para o diagnóstico automático de câncer de pele.
+  Doutor em Ciência da Computação pela Universidade Federal do Espírito Santo, atualmente é pesquisar na área de inteligência artificial na Samsung R&D Institute Brazil. Fundou o blog em 2015 para escrever um pouco sobre o que aprendia. Foca sua pesquisa em técnicas de aprendizado de máquina aplicadas em imagens, principalmente em detecção automática de câncer de pele.

@@ -1,0 +1,533 @@
+I"la<h1 id="introdução">Introdução</h1>
+<p>Desde 2015 eu passei a acompanhar o cenário competitivo de <em>League of Legends</em> no Brasil. Diferentemente do <a href="http://computacaointeligente.com.br/sobre/">Gabriel</a>, que joga LOL desde sua criação e foi <a href="https://www.youtube.com/watch?v=f18hyf2UqSQ">responsável direto</a> para que um dos maiores jogadores do cenário conhecesse o jogo, o  meu caso foi um pouco diferente. Eu não jogava o MOBA da RIOT. Eu cai nesse universo por uma recomendação de vídeo do YouTube. Bom, pelo visto o algoritmo de recomendação da plataforma funcionou bem e aqui estou eu hoje realizado essa análise pré-final do 2ª split de 2019.</p>
+
+<p>Portanto, neste post eu apresento uma análise exploratória dos dados do 2ª split do CBLOL dos dois finalistas: INTZ e Flamengo. Os dados foram obtidos através de um <em>crawler</em> muito simples no site do <a href="https://br.lolesports.com/agenda/cblol-2019-etapa-2">torneio</a> na RIOT. Eu ainda vou montar um <em>dataset</em> com os dados de todos os times e disponibilizar para quem quiser brincar com eles. Por hora, coletei dados apenas dos dois finalistas.</p>
+
+<p>Mas por que estou fazendo este post? Primeiramente, eu estava curioso com algumas opiniões em relação aos times. Logo, nada melhor que olhar para os dados para entendê-las. Segundo, essa é uma maneira de praticar conhecimentos e terceiro, sou torcedor da INTZ e estou <em>hypado</em> para a final. Em relação a isso, torcedores do Flamengo, não se preocupe, vou ser 100% imparcial na análise.</p>
+
+<h1 id="sobre-o-dataset-e-a-análise">Sobre o dataset e a análise</h1>
+<p>Como disse anteriormente, eu obtive os dados diretamente do site da RIOT. O que eu tenho hoje são 25 partidas da INTZ (21 da fase regular + 4 da semifinal) e 24 do Flamengo (21 da fase regular + 3 da semifinal). Para a INTZ são 14v e 11d e para o Flamengo são 18v e 5d.</p>
+
+<p>Obviamente, não é possível cravar muitas coisas com uma quantidade de dados pequenas. Portanto, o que eu faço é uma análise exploratória para encontrar <em>insights</em> para a final que vai acontecer amanhã. Primeiro passo por dados gerais e depois tento responder algumas perguntas que vem sendo levantadas ao longo do split. Eu realmente queria analisar muito mais do que vou apresentar aqui, mas por questões de tempo e disponibilidade, é o que temos pra hoje. Lembrando que faço isso nas minhas horas livres e não estou sendo pago ou financiando para isso (mas caso queira pagar, estamos ai Orgs xD)</p>
+
+<p>Caso você nunca tenha acessado este blog (o que é possível, uma vez que ele é bem técnico e de nicho), sinta-se livre para entrar em contato para saber mais sobre os dados. De antemão, informo que vou fazer outra análise após a final. Só não prometo quando. Mas, sem mais delongas, vamos aos dados!</p>
+
+<h1 id="estatísticas-gerais-dos-times">Estatísticas gerais dos times</h1>
+<h2 id="tempo-de-partida-vitórias-e-derrotas">Tempo de partida, vitórias e derrotas</h2>
+<p>Para começar vamos dar uma olhada no famoso tempo de jogo de cada time. Este que era um critério de desempate importante nas antigas MD2s. Levantei a primeira pergunta: <strong>o lado do mapa afeta o tempo de partida dos times?</strong> Bom, isso me gerou o seguinte <em>boxplot</em>:</p>
+
+<figure style="width: 490px; height: 450px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/time_per_side.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 1: Tempo de partida de cada time considerando os lados do mapa
+  </figcaption>
+
+</figure>
+
+<p>Para quem não conhece o <em>boxplot</em> é um diagram que apresenta a distribuição dos dados de acordo com quartis (<a href="https://operdata.com.br/blog/como-interpretar-um-boxplot/">clique aqui</a> para saber mais). No centro da figura, em cor clara, estão os dados considerando ambos os lados. Na esquerda encontramos o lado azul e na direita o vermelho. De maneira geral, a INTZ tem uma mediana de tempo um pouco superior a do Flamengo. Além disso, Os dados mostram que a INTZ leva mais tempo nos jogos do lado vermelho e menos nos do lado azul. Com o Flamengo é o contrário. O Lado vermelho deles é mais rápido.</p>
+
+<p>Outra pergunta que me fiz: <strong>qual tempo de partida quando time ganha e quando perde?</strong> A resposta está na Figura 2.</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/time_per_victory.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 2: Tempo de partida de cada time considerando vitória ou derrota
+  </figcaption>
+
+</figure>
+
+<p>Novamente uma diferença. O Flamengo demora menos pra ganhar e mais para perder. O que é algo bem desejável.</p>
+
+<p>Outra pergunta em relação a vitória/derrotas é: <strong>qual o desempenho das equipes em ambos os lados?</strong> A Figura 3 responde essa pergunta.</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/win_lose_per_side.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 3: Número de vitórias e derrotas de acordo com o lado das equipes
+  </figcaption>
+
+</figure>
+
+<p>Observe que para o Flamengo, não faz tenta diferença, agora para a INTZ é possível observar que time tem 8v do lado azul e 8d do lado vermelho. Logo, o lado vermelho aparenta ser um ponto fraco da equipe ao longo do split.</p>
+
+<h2 id="picks-e-bans">Picks e bans</h2>
+
+<p>Recentemente, assitindo a LEC, vi os comentaristas dizendo sobre a variação de picks que a G2 possui. Logo, me fiz a seguinte pergunta: <strong>quantos picks diferentes FLA e ITZ utilizaram no CBLOL?</strong>. No gráfico a seguir, é mostrado os picks por rota e o total. É importante ressaltar, que neste caso, é considerado a posição e não os jogadores.</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/champs_variation.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 4: Número de picks diferentes por cada equipe e por rota
+  </figcaption>
+
+</figure>
+
+<p>No total, o FLA tem 11 picks a mais do que a INTZ. Essa parte é interessante pois, mesmo utilizando mais jogadores no campeonato, a INTZ tem menos picks diferentes. Além disso, o TOP da INTZ é a posição que mais tem campeões diferentes. Ok, mas, <strong>quais são os campeões mais utilizados por cada equipe?</strong> Não se preocupe, eu tenho a resposta (ou melhor, os dados têm):</p>
+
+<figure style="width: 490px; height: 410px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/most_common_champs_itz.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 5: Os 7 campeões mais pickados da INTZ
+  </figcaption>
+
+</figure>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/most_common_champs_fla.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 6: Os 7 campeões mais pickados do FLA
+  </figcaption>
+
+</figure>
+
+<p>Do lado da INTZ, destaca-se o famoso Gragas do Shini e o Aatrox, que aparece tanto no top quanto no mid. Já do lado do FLA, o TK é o campeão mais frequente. E sobre os bans? Você já se perguntou <strong>quais são os mais frequentes?</strong> Eu já!</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/most_ban_champs_itz.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 8: Os 7 campeões mais banidos pela INTZ
+  </figcaption>
+
+</figure>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/most_ban_champs_fla.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 9: Os 7 campeões mais banidos pelo FLA
+  </figcaption>
+
+</figure>
+
+<p>Aparentemente, a INTZ não gosta de jogar contra Sejuani (PEGA SEJUANI SHRIMP!) e o FLA contra o Sylas. Menção honronsa para o FLA banindo o famoso “Yasuo do outro time” 6 vezes. Não estão errados, eu também odeio Yasuo (do meu time).</p>
+
+<p>Para finalizar o assunto picks e bans, outra pergunta levantada foi: <strong>quais os campeões mais pickados por cada jogador?</strong> Veja a seguir:</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/most_pick_champ_by_player_itz.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 10: Campeões prediletos de cada jogador da INTZ
+  </figcaption>
+
+</figure>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/most_pick_champ_by_player_fla.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 11: Campeões prediletos de cada jogador do FLA
+  </figcaption>
+
+</figure>
+
+<p>Olha que interessante, o campeão mais jogado do Shrimp é a Sejuani, a mais banida pela INTZ. Será que ela passa na final? Além disso, Luci pickou TK 10 vezes, maior número dentro os 10 players. Neste ponto, eu não inclui Aoshi, Mills e o Flanalista (Reven), pois eles fizeram poucos jogos.</p>
+
+<h2 id="controle-de-objetivos">Controle de objetivos</h2>
+<p>Para tentar identificar como foi o controle de objetivos de cada equipe ao longo dos jogos, levantei os dados em relação a barões, dragões, arautos, inibidores e torres e cada equipe:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>INTZ</th>
+      <th> </th>
+      <th> </th>
+      <th>FLA</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Objetivo</td>
+      <td>Total</td>
+      <td>Média</td>
+      <td> </td>
+      <td>Total</td>
+      <td>Média</td>
+    </tr>
+    <tr>
+      <td>Barão</td>
+      <td>19</td>
+      <td>0.76</td>
+      <td> </td>
+      <td>24</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Dragão</td>
+      <td>39</td>
+      <td>1.56</td>
+      <td> </td>
+      <td>62</td>
+      <td>2.58</td>
+    </tr>
+    <tr>
+      <td>Arauto</td>
+      <td>16</td>
+      <td>0.64</td>
+      <td> </td>
+      <td>13</td>
+      <td>0.54</td>
+    </tr>
+    <tr>
+      <td>Torre</td>
+      <td>165</td>
+      <td>6.60</td>
+      <td> </td>
+      <td>207</td>
+      <td>8.62</td>
+    </tr>
+    <tr>
+      <td>Inibidor</td>
+      <td>34</td>
+      <td>1.36</td>
+      <td> </td>
+      <td>36</td>
+      <td>1.50</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Observe que o único objetivo que o FLA não leva vantagem é no arauto. Aliás, este indicativo e o número de dragões, apontam para o que todos dizem: o Flamengo joga para o bot. Além disso, eu me perguntei: <strong>o lado do mapa afeta a equipe na consquista de barão, dragão e arauto?</strong>.  Com isso, eu gerei o as porcentagens de cada monstro em cada lado do mapa:</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/objective_per_side.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 12: Porcentagem dos monstros épicos em cada lado do mapa para cada equipe
+  </figcaption>
+
+</figure>
+<p>O dados apontam que o FLA consegue controlar melhor os objetivos do lado azul. Se justarmos essa informação com de que a INTZ perdeu 8 das 11 partidas do lado vermelho. Acredito que isso indica o lado que o FLA vai priorizar na final.</p>
+
+<p>Para finalizar essa parte, sempre ouço dos jogadores da INTZ que eles são resilientes dentro do jogo. Bom, é difícil medir isso, mas tentado se aproximar de algo assim e com os dados que possuo, me fiz duas perguntas: <strong>quantas vezes o time perdeu o primeiro barão e venceu o jogo?</strong> e <strong>quantas vezes o time perdeu o primeiro inibidor e venceu o jogo?</strong> Encontrei esses númeroas para ambas as equipes. Incluir também o número de vitórias quando o  oposto ocorre.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>INTZ</th>
+      <th> </th>
+      <th> </th>
+      <th>FLA</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Situação</td>
+      <td>V</td>
+      <td>D</td>
+      <td> </td>
+      <td>V</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>Pegou o 1ª barão</td>
+      <td>12</td>
+      <td>1</td>
+      <td> </td>
+      <td>18</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Perdeu o 1ª barão</td>
+      <td>2</td>
+      <td>10</td>
+      <td> </td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Pegou o 1ª inibidor</td>
+      <td>14</td>
+      <td>2</td>
+      <td> </td>
+      <td>18</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Perdeu o 1ª inibdor</td>
+      <td>0</td>
+      <td>9</td>
+      <td> </td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Observe que pegar o 1ª barão ou o 1ª inibidor é impacta muito no resultado de vitórias. Quando as equipes conseguem, elas tendem a vencer e quando não, tendem a perder. Obviamente, isso era esperado. No entanto, com esses dados, não possível encontrar uma resiliência em relação a INTZ. Temos que ter mais informações em relação a isso.</p>
+
+<h1 id="estatísticas-relacionadas-aos-jogadores">Estatísticas relacionadas aos jogadores</h1>
+<p>Nessa segunda parte, quero analisar algumas características em relação aos jogadores. Eu tenho <em>N</em> perguntas em relação a isso, mas infelizmente não tenho tempo para analisar todas elas. Vou fazer isso com os dados da final nas próximas semanas. Por hora, vou verificar o impacto geral dos jogadores dentro do jogo, se o Envy realmente foi outro jogador na semi-final e o famoso brTT x MicaO.</p>
+
+<p>Para começar, vamos analizar o gráfico de todos os jogadores em relação ao ouro conquistado e o dano total causado na partida. Os valores apresentados são as médias obtidas ao longo do split.</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/gold_per_total_damage.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 13: Scatter plot do ouro conquistado pelo total de dano causado pelos jogadores ao longo do split.
+  </figcaption>
+
+</figure>
+
+<p>Como esperado temos os suportes no canto inferior esquerdo, ou seja, eles quase não tem acesso a recurso e contribui pouco para dano na partida. No canto superior direito, estão os atiradores. Muito recurso e muito dano. Um pouco abaixo, os <em>solo laners</em> e na sequência os <em>junglers</em>. Esre gráfico, mostra que no dano geral, as equipes são parecidas na distribuição de recurso. Porém, no dano diretamente ligado a campeões, o panorama muda sutilmente:</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/gold_per_total_damage_to_champ.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 14: Scatter plot do ouro conquistado pelo total de dano causado a campeões pelos jogadores ao longo do split.
+  </figcaption>
+
+</figure>
+
+<p>Podemos observar que no dano causado diretamente a campeões, Micao se destaca entre os jogadores. Ele recebe um pouco menos de recurso do que o brTT e consegue causar mais dano. Do lado do FLA o mesmo acontece com o Robo, porém, ele recebe ainda menos recurso do que os atiradores. Esse gráfico mostra que ambas as equipes colocaram bastante recurso em suas respectivas <em>bot lanes</em>, o que vai ao encontro com os números da tabela que mostra a % de ouro, dano total e dano a campeões de cada jogador:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jogador</th>
+      <th>% ouro</th>
+      <th>% dano total</th>
+      <th>% dano a campeões</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ITZ Tay</td>
+      <td>21.20</td>
+      <td>22.61</td>
+      <td>21.11</td>
+    </tr>
+    <tr>
+      <td>ITZ Shini</td>
+      <td>19.28</td>
+      <td>22.37</td>
+      <td>17.03</td>
+    </tr>
+    <tr>
+      <td>ITZ Envy</td>
+      <td>21.54</td>
+      <td>24.39</td>
+      <td>21.46</td>
+    </tr>
+    <tr>
+      <td>ITZ micaO</td>
+      <td>23.59</td>
+      <td>26.36</td>
+      <td>28.79</td>
+    </tr>
+    <tr>
+      <td>ITZ RedBert</td>
+      <td>14.36</td>
+      <td>4.25</td>
+      <td>11.58</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FLA Robo</td>
+      <td>21.33</td>
+      <td>23.88</td>
+      <td>25.04</td>
+    </tr>
+    <tr>
+      <td>FLA Shrimp</td>
+      <td>19.64</td>
+      <td>21.64</td>
+      <td>17.38</td>
+    </tr>
+    <tr>
+      <td>FLA Goku</td>
+      <td>21.08</td>
+      <td>22.62</td>
+      <td>21.75</td>
+    </tr>
+    <tr>
+      <td>FLA brTT</td>
+      <td>23.75</td>
+      <td>27.55</td>
+      <td>23.44</td>
+    </tr>
+    <tr>
+      <td>FLA Luci</td>
+      <td>14.17</td>
+      <td>4.28</td>
+      <td>12.36</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Observe que no dano total, ambos os atiradores são os líderes de dano do do time. Porém, no dano causado diretamente a campeões, o Micao aumenta sua % e brTT cai cerca de 4%, deixando a liderança do seu time para o Robo. Nessa linha, eu investiguei alguns números diretamente relacionados aos atiradores. A gente ouve muita discursão em rede social sobre isso. Portanto, vamos deixar que os números falem.</p>
+
+<h2 id="análise-dos-atiradores">Análise dos atiradores</h2>
+<p>Primeiramente, eu cálculei a razão de dano <em>vs</em> ouro recebido para cada jogador. Neste caso, quanto maior melhor. Isso significa que você está convertendo o ouro que você recebe em dano. Para dano em campeões a razão do Micao é 1.18 e a do brTT é 1.07. Já para dano total, a razão é 14.34 para Micao e 14.41 para brTT. Portanto, ambos os números são próximos, mas Micao leva vantagem no dano a campeões e brTT no dano total. Isso mostra que Micao não fica tão mal posicionado assim nas TFs xD.</p>
+
+<p>Agora, vamos comparar os números deles no ao longo do tempo de jogo. Esses números estão divididos de 0 a 10 min, de 10 a 20 min e no geral. Todos os dados são médios e considera apenas as partidas que eles participaram (obviamente).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>0-10</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th>10-20</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th>Geral</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>Ouro</td>
+      <td>Creep</td>
+      <td>XP</td>
+      <td> </td>
+      <td>Ouro</td>
+      <td>Creep</td>
+      <td>XP</td>
+      <td> </td>
+      <td>KDA</td>
+      <td>Visão</td>
+      <td>Ouro</td>
+    </tr>
+    <tr>
+      <td>ITZ micaO</td>
+      <td>296.04</td>
+      <td>8.13</td>
+      <td>325.02</td>
+      <td> </td>
+      <td>435.13</td>
+      <td>9.98</td>
+      <td>459.91</td>
+      <td> </td>
+      <td>6.10</td>
+      <td>41.66</td>
+      <td>13.89k</td>
+    </tr>
+    <tr>
+      <td>FLA brTT</td>
+      <td>296.92</td>
+      <td>8.41</td>
+      <td>325.83</td>
+      <td> </td>
+      <td>453.70</td>
+      <td>9.69</td>
+      <td>472.29</td>
+      <td> </td>
+      <td>4.89</td>
+      <td>30.41</td>
+      <td>14.13k</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>No <em>early game</em> os números são bem parecidos, o que mostra que ambos tem uma fase de rotas sólida. No <em>mid game</em> brTT leva vantagem no ouro e na XP, mas perde no CS. Achei esse resultado estranho, e busquei explicação. Ao analisar a quantidade de monstros neutros que cada atirador pega na sua própria <em>jungle</em> achei uma explicação justa. Ao longo do jogo a média do brTT é 18.04 monstros farmados na própria <em>jungle</em>, enquanto micão é 15.83. Logo, o FLA da um poquinho mais de recurso para o brTT nesse sentido. No geral, o KDA do Micao é melhor e no ouro brTT continua com acesso a mais recurso. Por fim, entra um dado que colabora com os analistas ao chamar Micao de ADC <em>utility</em>. Micao tem mais de 10 pontos de visão a mais do que brTT.</p>
+
+<p>Traçando uma conclusão em relação a todos esses dados dos atiradores, é possível perceber que ambos são bem parecidos de acordo com os dados obtidos. Porém, Micao tem a vatangem de converter mais dano a campeões com menos ouro, refletindo no seu KDA, e de contribuir muito mais com visão do que o brTT. Por outro lado, brTT é o carregador do time dele quando o assunto é dano total e está sempre com farm, ouro e XP a frente. No fim das contas, ambos os times estão bem servidos de atiradores.</p>
+
+<h2 id="a-performance-do-envy-melhorou-na-semi-final">A performance do Envy melhorou na semi-final?</h2>
+<p>Para finalizar esse post e essa análise, gostaria de analisar essa pergunta. Todos falam: o “Envy só joga nos <em>playoffs</em>” ou “Envy carregou a INTZ na semifinal” etc. Bom, vamos aos dados. Para analisar essa pergunta, primeiramente eu plotei o <em>scatter</em> plot do jogador ao longo das partidas do split. A sequência de gráficos abaixo descrevem o dano causado a campeões ao longo do split, o total de dano convertido e o ouro recebido. Cada bolinha é um jogo na ordem cronológica. As últimas 4, representam a semifinal contra a KBM. A ideia é verificar se ele saiu do padrão na semifinal.</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/envy_damage_champs_weeks.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 15: Scatter plot do dano que Envy causou a campeões ao longo do split.
+  </figcaption>
+
+</figure>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/envy_damage_weeks.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 16: Scatter plot do dano total que Envy longo do split.
+  </figcaption>
+
+</figure>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/posts/cblol-19-2/envy_gold_weeks.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 17: Scatter plot do ouro conquistado por Envy do split.
+  </figcaption>
+
+</figure>
+
+<p>Como podemos observar a partir desses dados, o desempenho dele parece estar dentro do padrão que ele exerceu ao longo do split. Assim como fiz para os atiradores, gerei a razão de dando <em>vs</em> ouro para o Envy da fase regular e do da semifinal. Para dano causado a campeões, o valor da fase regular foi de 0.98 e do da semifinal 0.88. Já para o dano total, 14.70 e 13.59. Esses números mostram que durante a fase regular ele conseguiu uma razão melhor do que do da semifinal. Por outro lado, o KDA dele subiu de 3.97 para 10, o que pode causar uma impressão de que a melhora foi absurda.</p>
+
+<p>Por fim, calculei as % de ouro, dano total e dano a campeões em relação a equipe. Esses dados mostram que ele contribuiu um pouco mais nos danos, mas também teve mais acesso a recurso.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jogador</th>
+      <th>% ouro</th>
+      <th>% dano total</th>
+      <th>% dano a campeões</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fase regular</td>
+      <td>21.28</td>
+      <td>23.96</td>
+      <td>21.08</td>
+    </tr>
+    <tr>
+      <td>Semifinal</td>
+      <td>22.60</td>
+      <td>25.99</td>
+      <td>22.75</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Portanto, os dados mostram que Envy melhorou um pouco, mas que ele tambpem teve performances similares na fase regular. Você pode até dizer que ele melhorou a sua <em>gameplay</em>, porém não foi um desempenho completamente absudo como muitos dizem. Por outro lado, isso também mostra que o desempenho dele ao longo do split não foi tão baixo como muitos também disse.</p>
+
+<h1 id="considerações-finais">Considerações finais</h1>
+<p>Primeiramente, gostaria de agradecer você que chegou até aqui! Foi divertido e trabalhoso fazer essa análise. Eu gostaria de ter checar muito mais coisas, como Shini x Shrimp, Tay x Robo, Goku x Envy, mas não tive tempo. Vai ficar para os dados da final.</p>
+
+<p>Como um resultado geral, podemos dizer que, novamente o FLA vem como favorito para essa final. Mas, como na primeira, existem diversos outros fatores que não são expostos nestes números, por exemplo, o psicológico, que foi muito comentado. De qualquer forma, espero que seja uma ótima final e que o time vencedor nos respresente bem lá fora!</p>
+
+<p>Caso você encontre algum problema, tenha alguma sugestão ou por qualquer outro motivo, sinta-se livre para entrar em contato! Até a próxima.</p>
+:ET

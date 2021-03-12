@@ -1,0 +1,456 @@
+I"�q<h1 id="introdução">Introdução</h1>
+<p>Esta é parte 2 da aula 1 do curso de <em>machine learning</em>. Nesta aula vamos abordar os conceitos básicos e necessários sobre Cálculo para se iniciar na área. Este post será basicamente um apanhando geral do livro de <a href="https://www.amazon.com.br/C%C3%A1lculo-1-James-Stewart/dp/8522112584">Cálculo I e II do James Stewart</a>. Este foi o livro que aprendi cálculo e o considero como uma excelente fonte. Existem alguns PDFs dele disponíveis por ai <del>que você encontra no google</del>, mas eu não sei onde encontrá-los.</p>
+
+<p>Essa aula será dividida em 4 partes. Na primeira, vamos fazer uma breve revisão de algumas funções. Na segunda, vamos abordar o conceito de limite. Na terceira o de derivada e na quarta Minimização/Maximização por derivadas, que é conceito mais importante o nosso propósito, ou seja, <em>machine learning</em>. Se você se sente confortável com os conceitos fundamentais, já vá direto para a <a href="#parte4">Parte 4</a>. Novamente, isso é uma aula de revisão. Para saber mais recorra as referências fornecidas.</p>
+
+<h1 id="parte-1---preliminares">Parte 1 - Preliminares</h1>
+<p>Antes de falar sobre limite, vamos abordar alguns conceitos que serão úteis daqui pra frente. Vou tentar ser o mais breve possível.</p>
+
+<h2 id="função-inversa">Função inversa</h2>
+<p>Dado uma função \(g\), a função \(f\) é definida como sua inversa se:</p>
+
+\[g(f(x)) = x  \textrm{ e } f(g(y)) = y \textrm{, }\forall x,y \textrm{ em que } g(y) \textrm{ e } f(x) \textrm{ existem}
+\tag{1}\]
+
+<p>A notação para a essa função é \(g = f^{-1}\). Porém, cuidado para não confundir com \(a^{-1} = \frac{1}{a}\).</p>
+
+<p>Calcular uma inversa é bem simples. Basta igualar uma função \(f(x) = y\) e isolar \(x\). Por exemplo, considere \(f(x) = 3 + \frac{1}{x}\). Para encontrar sua inversa fazemos \(f(x) = y\) e isolamos \(x\) da seguinte maneira:</p>
+
+\[3 + \frac{1}{x} = y \\
+x = \frac{1}{y-3}\]
+
+<p>Dessa forma, \(f^{-1} = \frac{1}{y-3}\).</p>
+
+<h2 id="função-exponencial">Função exponencial</h2>
+<p>Seja \(a\) um número positivo, fixo, chamado de base, sua exponencial é definida como:</p>
+
+\[a^n = a \times a \times \cdots \times a \textrm{ (n vezes) }
+\tag{2}\]
+
+<p>Algumas propriedades interessantes:</p>
+<ul>
+  <li>P1: \(a^m a^n = a^{m+n}\)</li>
+  <li>P2: \((a^m)^n = a^{mn}\)</li>
+  <li>P3: \((ab)^n = a^{n}b^n\)</li>
+</ul>
+
+<p>Além disso, para que a função seja definida para todos os números reais, existem as seguintes definições:</p>
+
+<ul>
+  <li>D1: \(a^0 = 1\)</li>
+  <li>D2: \(a^{-n} = \frac{1}{a^n}\)</li>
+</ul>
+
+<p>O gráfico básico de uma exponencial é exemplificado na Figura 1.</p>
+
+<figure style="width: 490px; height: 400px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/cursoML/aula1-2/exp.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 1: Gráfico básico de uma exponencial. A medida que x cresce, sua imagem y é cada vez mais amplificada. Essa é a caracteristica básica de uma exponencial. <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_exponencial" target="blank"> Fonte </a>
+  </figcaption>
+
+</figure>
+
+<h2 id="função-logaritimica">Função logaritimica</h2>
+<p>Basicamente, o logaritmo é a função inversa da exponencial. Sendo \(a\) a base, um logartimo é definido como:
+\(\log_a x = z \Leftrightarrow a^z = x
+\tag{3}\)</p>
+
+<p>Como por definição \(a^0 = 1\), temos que \(\log_a 1 = 0\) e como \(a^1 = a\), temos que \(\log_a a = 1\). Outro detalhe importante é que não existe solução para equação \(a^z = 0\). Dessa forma, \(\log_a 0\) <strong>não é definido</strong>.</p>
+
+<p>Como veremos mais para frente, o logaritmo é importante para <em>machine learning</em> uma vez que suas propriedades auxiliam nas derivadas de algumas funções. Então, vamos as principais propriedades:</p>
+
+<ul>
+  <li>P1: \(\log_a (xy) = \log_a x + \log_a y\)</li>
+  <li>P2: \(\log_a x^y = y \log_a x\)</li>
+  <li>P3: \(\log_a \frac{x}{y} = \log_a x - \log_a y\)</li>
+</ul>
+
+<p>Além das três propropriedades acima, outra muito importante é a <strong>mudança de base</strong>:</p>
+
+\[\log_b x = \frac{\log_a x}{\log_a b}
+\tag{4}\]
+
+<p>O gráfico básico de um logaritmo é mostrado na Figura 2.</p>
+
+<figure style="width: 490px; height: 450px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/cursoML/aula1-2/log.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 2: Gráfico básico de um logaritmo. Observe que a curva não toca o eixo y para x=0. Como a função não é definida ali, o que temos é uma assíntota. <a href="https://pt.wikipedia.org/wiki/Logaritmo" target="blank"> Fonte </a>
+  </figcaption>
+
+</figure>
+
+<h3 id="logaritmo-neperiano">Logaritmo neperiano</h3>
+<p>Quando a base do logaritmo é igual a \(e = 2.718\cdots\), o logaratimo recebe o nome de neperiano ou natural. Assim como \(\pi\), \(e\) é uma constante fundamental da matemática. Dessa forma temos duas definições:</p>
+
+<ul>
+  <li>A exponencial de \(e\) é definidade como \(e^x\)</li>
+  <li>O logaritmo de \(e\) é definido como: \(\log_e x \rightarrow ln(x)\)</li>
+</ul>
+
+<h1 id="parte-2---limites">Parte 2 - Limites</h1>
+<p>Vamos começar definindo formalmente o que é limite:</p>
+
+<p><strong>Definição 1:</strong> seja \(f\) uma função definida sobre algum intervalo aberto que contém o número \(b\), exceto possivelmente no próprio \(b\), então dizemos que o <strong>limite de</strong> \(f(x)\) <strong>quando</strong> \(x\) <strong>tende a</strong> \(b\) <strong>é</strong> \(L\) se para todo número \(\epsilon &gt; 0\) há um número correspondente \(\delta &gt; 0\) tal que:</p>
+
+\[\mid f(x) - L \mid &lt; \epsilon \textrm{ sempre que } 0 &lt; \mid x - b \mid &lt; \delta\]
+
+<p>A representação matemática do limite é descrita a seguir:</p>
+
+\[\lim_{x \to b} f(x) = L
+\tag{5}\]
+
+<p>Agora largando o formalismo de lado, o que essa definição nos diz é o seguinte:</p>
+<ul>
+  <li>O \(\lim_{x \to b} f(x) = L\) se pudermos tornar os valores de \(f(x)\) arbitrariamente próximos de \(L\) tornando \(x\) próximo de \(b\), mas não igual a \(b\).</li>
+</ul>
+
+<p><strong>Definição 2:</strong> O \(\lim_{x \to b} f(x) = L\) se e somente se \(\lim_{x \to b^+} f(x) = L\) e \(\lim_{x \to b^-} f(x) = L\).</p>
+
+<p>A definição 2 nos diz que aproximando \(x\) a \(b\) pela esquerda ou pela direita, o limite tem que ser o mesmo.</p>
+
+<h2 id="limites-infinitos">Limites infinitos</h2>
+<p>Pode acontecer que a medida que \(x\) se aproxima de \(b\) os valores de \(f(x)\) torna-se muito grandes. Vamos tomar como exemplo a função logaritmica definida anteriormente e plotada no gráfico da Figura 2. Portanto, tomando \(f(x) = \log_2 x\) queremos calcular o \(\lim_{x \to 0} \log_2 x\). Se observarmos a Figura 2, quanto mais o valor de \(x\) se aproxima de \(0\), o valor de \(f(x)\) se torna muito grande, mas negativo. Agora lembre-se que o logaritmo não é definido em \(0\). Nesse caso, dizemos que:</p>
+
+\[\lim_{x \to 0^+} \log_2 x = - \infty\]
+
+<p>Em outras palavras, quando o valor \(x\) se aproxima de \(0\) pela direita, mas não igualando a \(0\), o valor de \(f(x)\) tende a um número muito grande negativo, no qual chamamos de \(- \infty\). O mesmo ocorre se aproximarmos \(x\) a \(0\) pela esquerda, mas neste caso o limite tende a \(+ \infty\).</p>
+
+<p>Com isso, é gerado uma <strong>assíntota</strong>, que já discutimos na parte 1 e é ilustrada na Figura 2. A curva \(f(x)\) se aproxima o quanto imaginarmos, mas jamais toca o eixo \(y\), uma vez que a função não é definida em \(0\).</p>
+
+<h2 id="propriedades">Propriedades</h2>
+<p>Existem dezenas de propriedades para se calcular um limite. Como esta aula é apenas uma revisão, vamos descrever apenas algumas delas. Para isso, considere \(c\) uma constante e suponha que o \(\lim_{x \to a} f(x)\) e \(\lim_{x \to a} f(x)\) existam. Sendo assim:</p>
+
+<ul>
+  <li>
+    <p>P1: \(\lim_{x \to a} [f(x) \pm  g(x)] = \lim_{x \to a} f(x) \pm  \lim_{x \to a} g(x)\)</p>
+  </li>
+  <li>
+    <p>P2: \(\lim_{x \to a} [cf(x)] = c \lim_{x \to a} f(x)\)</p>
+  </li>
+  <li>
+    <p>P3: \(\lim_{x \to a} [f(x) \times g(x)] = \lim_{x \to a} f(x) \times \lim_{x \to a} g(x)\)</p>
+  </li>
+  <li>
+    <p>P4: \(\lim_{x \to a} [f(x) \div g(x)] = \lim_{x \to a} f(x) \div \lim_{x \to a} g(x)\) se \(\lim_{x \to a} g(x) \neq 0\)</p>
+  </li>
+  <li>
+    <p>P5: \(\lim_{x \to a} [f(x)]^n = [\lim_{x \to a} f(x)]^n\)</p>
+  </li>
+  <li>
+    <p>P6: \(\lim_{x \to a} \sqrt[n]{f(x)} = sqrt[n]{\lim_{x \to a} f(x)}\)</p>
+  </li>
+  <li>
+    <p>P7: \(\lim_{x \to a} c = c\)</p>
+  </li>
+  <li>
+    <p>P8: \(\lim_{x \to a} x^n = a^n\)</p>
+  </li>
+</ul>
+
+<p>Portanto, essas definições são extremamente úteis para se calcular o limite de uma função.</p>
+
+<h2 id="regra-da-substituição-direta">Regra da substituição direta</h2>
+<p>Um das regras mais úteis para se calcular limite é o da <strong>substituição direta</strong>. Juntamente com as propriedades anteriores, somos capazes de calcular o limite de uma grande gama de funções. Mas antes de definir a regra, precisamos definir <strong>continuidade</strong>.</p>
+
+<p><strong>Definição 3:</strong> Uma função \(f(x)\) é contínua em \(a\) se:</p>
+
+\[\lim_{x \to a} f(x) = f(a)\]
+
+<p>Da mesma forma, \(f(x)\) é <strong>contínua a direita</strong> se  \(\lim_{x \to a^+} f(x) = f(a)\) e a <strong>esquerda</strong> se \(\lim_{x \to a^-} f(x) = f(a)\). Por fim, \(f(x)\) é <strong>contínua em um intervalo</strong> se a função é contínua para <strong>todos</strong> os pontos deste intervalo.</p>
+
+<p>Para complementar a definição 3, existe o seguinte teorema:</p>
+
+<p><strong>Teorema 1:</strong> os seguintes tipos de função são contínuas em <strong>todo número de seus domínios:</strong></p>
+
+<ul>
+  <li>Polinômio</li>
+  <li>Funções racionais</li>
+  <li>Funções raízes</li>
+  <li>Funções exponenciais</li>
+  <li>Funções trigonométricas</li>
+  <li>Funções logaritmimicas</li>
+  <li>Funções trigonométricas inversas</li>
+</ul>
+
+<p>Agora vamos a definição da regra da substituição direta, que é bem simples:</p>
+
+<p>Portanto, a partir da definição e do teorema acima, temo as <strong>regra da subsituição direta</strong>, ou seja, caso \(f(x)\) seja contínua em \(a\), para calcular o limite de \(x \to a\) basta calcular \(f(a)\).</p>
+
+<h2 id="cálculo-da-reta-tangente">Cálculo da reta tangente</h2>
+<p>Dado o gráfico obtido pela equação \(y = f(x)\), se quisermos encontrar a reta tangente a curva em um ponto \(P(x_0, f(x_0))\), fazemos o seguinte:</p>
+<ul>
+  <li>Definir a reta tangente \(t\) de inclinação \(m\) que passa por \(P\)</li>
+  <li>Considerar um ponto vizinho \(Q(x, f(x))\), com \(x \neq a\)</li>
+  <li>Calcular a inclinação da curva \(PQ\) da seguinte forma (da álgebra linear do ensino médio):</li>
+</ul>
+
+\[m_{PQ} = \frac{f(x) - f(a)}{x-a}
+\tag{6}\]
+
+<p>Ao traçar a reta \(PQ\) obtemos uma reta secante a curva \(y\). A ideia é mover essa curva até ela se tornar uma tangente no ponto \(P\). A Figura 3 ilustra essa operação.</p>
+
+<figure style="width: 490px; height: 450px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/cursoML/aula1-2/tang.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 3: Estratégia para cálculo da reta tangente a partir da reta secante. <a href="http://engenhariaexercicios.com.br" target="blank"> Fonte </a>
+  </figcaption>
+
+</figure>
+
+<ul>
+  <li>Para executar essa estratégia precisamos fazer \(Q\) se aproximar de \(P\). Para isso fazemos \(x \to x_0\).</li>
+  <li>Se \(m_{PQ} \to m\), então a tangente \(t\) será a reta que passa em \(P\) com inclinação \(m\).</li>
+  <li>Isso implica que a reta tangente é a posição <strong>limite</strong> da reta secante, como ilustrado no gráfico.</li>
+</ul>
+
+<p>De acordo com os passos acima, podemos definir a reta tangente da seguinte forma:</p>
+
+<p><strong>Definição 4:</strong> A reta tangente a uma curva \(y = f(x)\) em um ponto \(P(a, f(a))\) é a reta que passa por \(P\) com inclinação:</p>
+
+\[m = \lim_{x \to a} \frac{f(x)-f(a)}{x-a}
+\tag{7}\]
+
+<p>Desde que o limite exista. Também é comum encontrar a equação 7 da seguinte forma:</p>
+
+\[m = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h} \rightarrow h = x - a
+\tag{8}\]
+
+<p>Neste momento você pode está se perguntando: mas pra que estou lendo sobre cálculo da reta tangente em um curso de <em>machine learning</em>? Bom, esse é o passo inicial para a compreensão de derivadas, o que é fundamental no universo de ML. Na verdade, a equação 8 é tão comum na ciência e engenharia que ela ganhou um nome especial: <strong>derivada</strong>. A inclinação da reta tangente no ponto \(P\) é a <strong>interpretação geométrica</strong> do que é derivada. Isso abre caminho para última parte desta aula.</p>
+
+<h1 id="parte-3---derivadas">Parte 3 - Derivadas</h1>
+<p>A definição de derivada é basicamente a mesma da definação 4. Mas de qualquer forma:</p>
+
+<p><strong>Definição 5:</strong> a derivada de uma função \(f\) em um número \(a\), denotada por \(f'(a)\) ou \(\frac{d(fa)}{da}\) é definida como:</p>
+
+\[f'(a) = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h} \rightarrow h = x - a
+\tag{9}\]
+
+<p>se o limite existir.</p>
+
+<p>A interpretação geométrica da derivada nós já sabemos, ou seja, a inclinação da reta tangente no ponto \((a, f(a))\). Porém, a interpretação mais importante é como <strong>taxa de variação</strong>.</p>
+
+<h2 id="derivada-como-taxa-de-variação">Derivada como taxa de variação</h2>
+<p>A derivada pode ser interpretada como a <strong>taxa de variação instântanea</strong> de \(y=f(x)\) em relação a \(x\) quando \(x = a\).</p>
+
+<p>Vamos definir a taxa de variação instântanea de \(y = f(x)\) em relação a \(x\) em \(x=x_1\). Se o intervalor for \([x_1, x_2]\), então a variação \(\Delta x = x_2 - x_1\) é correspondente em \(y\) como \(\Delta y = f(x_2)-f(x_1)\). Com isso, a <strong>taxa de variação instântanea</strong> é cálculada da seguinte forma:</p>
+
+\[t = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{x_1 \to x_2} \frac{f(x_2)-f(x_1)}{x_2 - x_1}
+\tag{10}\]
+
+<p>Com isso, a derivada \(\frac{d f(a)}{da}\) é a taxa de variação instântanea de \(y = f(x)\) em relação a \(x\) quando \(x = a\).</p>
+
+<h2 id="funções-diferenciáveis">Funções diferenciáveis</h2>
+<p>Nem toda função é diferenciável e isso é importante em <em>machine learning</em>. Por isso temos o seguinte teorema:</p>
+
+<p><strong>Teorema 2:</strong> se \(f(x)\) é diferenciável em \(x = a\), então \(f\) é contínua neste ponto.</p>
+
+<p>Este teorema está de acordo com a definição 3. Porém, atenção! A <strong>recíproca não é verdadeira</strong>! Por exemplo, a função \(f(x) = \mid x \mid\) é contínua, porém ela não é diferenciável em \(0\), uma vez que não é possível calcular a reta tangente a este ponto.</p>
+
+<p>De maneira geral, você pode considerar que se uma curva \(y = f(x)\) muda abruptamente de direção, formando uma quina, uma dobra ou uma tangente vertical, a função <strong>não é diferenciável no ponto pois não terá tangente</strong>.</p>
+
+<h2 id="regras-de-diferenciação">Regras de diferenciação</h2>
+<p>Nesta subseção vamos apresentar as principais regras de diferenciação até a regra da cadeia, que é de extrema importância para <em>machine learning</em>. Lembrando que isso é apenas uma revisão, para provas e versões completas, recorra a referência disponibilizada. Para facilitar a escrita, considerando a \(\frac{dq(x)}{dx}\) como \(q'(x)\), sendo \(q(x)\) uma função diferenciável, temos as seguintes regras:</p>
+
+<ul>
+  <li><strong>Constante</strong>: \(f'(c) = 0\)</li>
+  <li><strong>Multiplicação por constante</strong>: \([c f(x)]' = cf'(x)\)</li>
+  <li><strong>Função potência</strong>: \(f'(x^n) = nx^{n-1}\)</li>
+  <li><strong>Regra da soma/diferença</strong>: \([f(x) \pm g(x)]' = f'(x) \pm g'(x)\)</li>
+  <li><strong>Regra do produto</strong>: \([f(x) g(x)]' = f'(x)g(x) + f(x)g'(x)\)</li>
+  <li><strong>Regra do quociente</strong>: \([\frac{f(x)}{g(x)}]' = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}\)</li>
+</ul>
+
+<p>Obviamente podemos compor essas regras para obtermos as derivadas desejadas. Mais pra frente teremos alguns exemplos.</p>
+
+<h3 id="derivadas-de-algumas-funções-especiais">Derivadas de algumas funções especiais</h3>
+<p>Algumas funções são bem frequentes, como as trigonométricas e logaritmicas. As derivadas dessas funções são definidas como:</p>
+
+<ul>
+  <li><strong>Derivada de \(e^x\)</strong>: \([e^x]' = e^x\)</li>
+  <li><strong>Derivadas trigonométricas</strong>:
+    <ul>
+      <li>Seno: \([sen(x)]' = cos(x)\)</li>
+      <li>Cosseno: \([cos(x)]' = -sen(x)\)</li>
+      <li>Tangente: \([tg(x)]' = sen^2(x)\)</li>
+    </ul>
+  </li>
+  <li><strong>Derivada de funções logaritmica</strong>
+    <ul>
+      <li>Base \(a\): \([\log_a x]' = \frac{1}{x \ln a}\)</li>
+      <li>Base \(e\): \([\log x]' = \frac{1}{x}\)</li>
+    </ul>
+
+    <p>O Interessante das derivadas logaritmicas é que ela pode ser usada para facilitar derivadas complicadas. Obviamente isso é utilizado em <em>machine learning</em>. Por exemplo, considere \(y = \frac{x^{3/4} \sqrt{x^2 + 1}}{(3x + 2)^5}\). A primeira vista, calcular essa derivada parece muito difícil! Mas vamos aplicar \(\ln\) em ambos os lados da equação e em seguida aplicar as regras anteriormente definidas:</p>
+
+\[\ln y = \ln \left ( \frac{x^{3/4} \sqrt{x^2 + 1}}{(3x + 2)^5} \right ) \\
+\ln y = \ln(x^{3/4}) + \ln(\sqrt{x^2+1})-5(\ln 3x + \ln 2) \because \textrm{ Regras de log} \\
+\ln y = 3/4 \ln x + 1/2 \ln(x^2 + 1) - 5(\ln 3x + \ln 2) \because \textrm{ Regras de log} \\
+\frac{1}{y}y' = \frac{3}{4} \frac{1}{x} \frac{1}{2} \frac{1}{x² + 1} 2x - 5 \frac{1}{3x} 3 + \frac{1}{2} \because \textrm{ Regras de dif.} \\
+y' = y \left( \frac{3}{4x} + \frac{x}{x^2 + 1} - \frac{15}{3x + 2} \right ) \because \textrm{ Substituir y} \\\]
+  </li>
+</ul>
+
+<h3 id="regra-da-cadeia">Regra da cadeia</h3>
+<p>A regra da cadeia é, talvez, a mais importante regra de diferenciação e é parte fundamental do <em>backpropagation</em>, que você vai ouvir falar muito ainda. Logo, vamos definí-la:</p>
+
+<p><strong>Definição 5:</strong> Seja \(f(x)\) e \(g(x)\) duas funções diferenciáveis e seja \(F = f(g(x))\), então \(F'\) é definida como:
+\(F'(x) = f'(g(x))g'(x)
+\tag{12}\)</p>
+
+<p>A regra também é encontrada na seguinte notação: seja \(y = f(u)\) e \(u = g(x)\), então:</p>
+
+\[\frac{dy}{dx} = \frac{dy}{du} \frac{du}{dx}
+\tag{13}\]
+
+<ul>
+  <li><strong>Exemplo 1:</strong> Calcular deriva de \(F(x) = \sqrt{x^2 + 1}\).
+    <ol>
+      <li>Primeiramente, manipulando a função:  \(F(x) = {x^2 + 1}^{1/2}\)</li>
+      <li>Aplicando a regra da cadeia e as regras de diferenciação:
+\(F'(x) = 1/2(x^2 + 1)^{-1/2}(2x) = x(x^2 + 1)^{-1/2}\)</li>
+    </ol>
+  </li>
+  <li><strong>Exemplo 2:</strong> Calcular deriva de \(F(x) = cos(x^2)\).
+    <ol>
+      <li>Aplicando a regra da cadeia:
+\(F'(x) = 2x (cos(x^2))\)</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="derivadas-superiores">Derivadas superiores</h2>
+<p>Até o momento, foi aprensentado derivadas de primeira ordem. Porém, podemos ter derivadas de 1ª, 2ª, 3ª etc ordens. Portanto, se uma função \(f(x)\) é diferenciável, \(f'(x)\) também é uma função, logo, pode ter sua própria derivadas \((f'(x))'\). Essa derivada é chamada de <strong>derivada segunda</strong>:</p>
+
+\[\frac{d}{dx} \frac{dy}{dx} = \frac{d^2 y}{dx^2}
+\tag{14}\]
+
+<h2 id="derivadas-parciais">Derivadas parciais</h2>
+<p>Até o momento tratamos de função de uma variável, no caso \(f(x)\). Porém, podemos ter funções de mais de uma variável, por exemplo, \(f(x,y)\). É muito comum desejarmos calcular a derivada desse tipo de função. Quando isso ocorre, chamamos essa derivada de <strong>derivada parcial</strong>, e você vai entender o motivo em instantes.</p>
+
+<p>Primeiramente, é importante pontuar que a derivada parcial seguem <strong>os mesmos princípios</strong> da derivada de uma variável. Portanto, vamos seguir as mesmas regras, porém, com duas variáveis. A interpretação também é idêntica aos postulados anteriores, obviamente, levando em consideração as duas variáveis.</p>
+
+<p>O importante aqui é entender que, para duas variáveis, teremos duas derivadas, uma com respeito a \(x\) e outra a \(y\). Para mais variáveis é a mesma ideia. Por isso a ideia de parcial, não temos um único valor, mas parcelas. A notação utilizada é:</p>
+
+<ul>
+  <li>Derivada parcial de \(f(x,y)\) com respeito a \(x\) : \(\frac{\partial f(x,y)}{\partial x}\)</li>
+  <li>Derivada parcial de \(f(x,y)\) com respeito a \(y\) : \(\frac{\partial f(x,y)}{\partial y}\)</li>
+</ul>
+
+<p>A regra geral para deterinar as derivadas parciais de uma função \(z = f(x,y)\) é muito simples e é definida 2 passos:</p>
+<ol>
+  <li>
+    <p>Para calcular \(\frac{\partial f(x,y)}{\partial x}\), olhe para \(y\) como uma constante e derive a função \(f(x,y)\) normalmente com respeito a \(x\)</p>
+  </li>
+  <li>
+    <p>Para calcular \(\frac{\partial f(x,y)}{\partial y}\), olhe para \(x\) como uma constante e derive a função \(f(x,y)\) normalmente com respeito a \(y\)</p>
+  </li>
+</ol>
+
+<ul>
+  <li><strong>Exemplo:</strong> calcular as derivadas parciais de \(f(x,y) = 2x + y^2\)
+    <ol>
+      <li>Com respeito a \(x\) : \(\frac{\partial f(x,y)}{\partial x} = 2\)</li>
+      <li>Com respeito a \(y\) : \(\frac{\partial f(x,y)}{\partial y} = 2y\)</li>
+    </ol>
+  </li>
+</ul>
+
+<p><a name="parte4"></a></p>
+
+<h1 id="parte-4---maximizaçãominimização-via-derivadas">Parte 4 - Maximização/Minimização via derivadas</h1>
+<p>Essa parte é a mais importante desta aula pois será extremamente utilizada nos algoritmos de minimização de redes neurais. Para iniciar o tema, vamos definir o <strong>teorema de Fermat</strong> que é fundamental para que a mágica aconteça:</p>
+
+<p><strong>Teorema 3</strong>: Se uma função \(f(x)\) tiver um máximo ou um mínimo local em \(c\) e \(f'(c)\) existir, então \(f'(c) = 0\).</p>
+
+<p>Em outras palavras, o teorema diz que ao igualar a derivada de uma função a zero, estamos encontrando os mínimos e máximos dessa função. <strong>Porém, o inverso do teorema não se aplica.</strong> Por exemplo, lembra da função \(\mid x \mid\), ela possui mínimo em \(0\), porém, como já discutimos, a derivada não existe neste ponto.</p>
+
+<p>Sendo assim, para encontrar os valores de máximo e mínimo absolutos de uma função contínua \(f(x)\) em um intervalo \([a,b]\), basta seguir os seguintes passos:</p>
+
+<ol>
+  <li>Determinar o(s) ponto(s) na(s) qual(is) a \(f'(x) = 0\) em \([a,b]\).</li>
+  <li>Calcular os valores de \(f(x)\) nos extremos do intervalo</li>
+  <li>O maior valor calculado nos passos anteriores é o máximo absoluto e o menor o mínimo absoluto.</li>
+</ol>
+
+<ul>
+  <li><strong>Exemplo</strong>: calcular os valores do máximo e mínimos global de \(f(x) = x^3 - 3x^2 + 1\) no intervalo \([\frac{-1}{2}, 4]\).
+    <ol>
+      <li>Derivando: \(f'(x) = 3x^2 - 6x = \underline{3x(x - 2)}\)
+        <ul>
+          <li>Fazendo \(f'(x) =\), encontramos os pontos \(x= 0\) e \(x = 2\).</li>
+        </ul>
+      </li>
+      <li>Calculando os valores extremos: \(f(-1/2) = 1/8\) e \(f(4) = 7\)</li>
+      <li>O ponto de máximo é \((4,17)\) e o de mínimo \((2,-3)\).</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Se observarmos o gráfico da função na Figura 4, podemos ver o máximo e o mínimo. Além disso, caso a derivada exista, a reta tangente ao máximo ou ao mínimo é <strong>horizontal</strong>. Podemos observar isso no ponto \((2,-3)\).</p>
+
+<figure style="width: 400px; height: 430px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/cursoML/aula1-2/min-max.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 4: Gráfico da que mostra o mínimo (azul) e máximo (vermelho) global da função no intervalo desejado<a href="https://www.amazon.com.br/C%C3%A1lculo-1-James-Stewart/dp/8522112584" target="blank"> Fonte </a>
+  </figcaption>
+
+</figure>
+
+<h2 id="derivadas-direcionais-e-vetor-gradiente">Derivadas direcionais e vetor gradiente</h2>
+<p>Nesta seção vamos falar um pouco da <strong>derivada direcional</strong>, que é utilizada para determinar a taxa de de variação de uma função de duas ou mais variáveis em qualquer direção.</p>
+
+<p>Da definição de variável, dado \(z = f(x,y)\), sabemos que as derivadas parcias \(\frac{\partial z}{\partial x}\) e \(\frac{\partial z}{\partial y}\) representam as taxas de variação de \(z\) na direção positiva dos eixos \(x\) e \(y\), que também pode ser interpretada como na direção e sentido dos versores \(\vec{i}\) e \(\vec{j}\).</p>
+
+<p>Para iniciar, vamos supor que desejamos calcular a taxa de variação de \(z\) no ponto \((x_0, y_0)\) na direção e sentido de um vetor unitário arbitrário \(\vec{u} = \left \langle a, b  \right \rangle\). Isso é ilustrado na seguinte figura:</p>
+
+<figure style="width: 400px; height: 430px;" class="align-center">
+  
+  <img src="http://0.0.0.0:4000/assets/img/cursoML/aula1-2/vecu.png" alt="" />
+
+  <figcaption style="text-align: center;">
+    Figura 5: representação do vetor u. <a href="https://www.amazon.com.br/C%C3%A1lculo-1-James-Stewart/dp/8522112584" target="blank"> Fonte </a>
+  </figcaption>
+
+</figure>
+
+<p>Agora considere a superfície 3D \(S\) que é gerada a partir de \(z = f(x,y)\) e \(z_0 = f(x_0, y_0)\). O ponto \(P(x_0, y_0, z_0)\) pertence a \(S\). O plano vertical que passa por \(P\) na direção de \(\vec{u}\) intercepta \(S\) em uma curva \(C\). <strong>A inclinação da reta tangente \(T\) a \(C\) em \(P\) é a taxa de variação de \(z\) na direção e sentido de \(\vec{u}\)</strong>. Para calcular essa taxa, é utilizada a mesma estratégia descrita na parte 2 desta aula, porém baseado em 2 variáveis. Dessa forma, vamos descrever apenas o teorema resultado de todas essa manipulação matemática.</p>
+
+<p><strong>Teorema 4:</strong> se \(f(x,y)\) é uma função diferenciável em \(x\) e \(y\), então essa função possui uma derivada direcional de direção e sentido de qualquer versor de \vec{u} = \left \langle a, b  \right \rangle $$ e:</p>
+
+\[D_u f(x,y) = \frac{\partial z}{\partial x}a + \frac{\partial z}{\partial x}b
+\tag{15}\]
+
+<p>Baseado neste teorema, podemos escrever a derivada direcional como produto escalar de dois vetores:</p>
+
+\[D_u f(x,y) = \left \langle \frac{\partial f(x,y)}{\partial x}, \frac{\partial f(x,y)}{\partial x} \right \rangle \left \langle a,b \right \rangle \\
+D_u f(x,y) = \left \langle \frac{\partial f(x,y)}{\partial x}, \frac{\partial f(x,y)}{\partial x} \right \rangle \vec{u}
+\tag{16}\]
+
+<p>O primeiro vetor é tão importante que recebeu um nome especial: <strong>gradiente</strong>.</p>
+
+<p><strong>Definição 6:</strong> seja \(f(x,y)\) uma função no \(\mathbb{R}^2\), o gradiente de \(f\) é a função vetorial \(\nabla f(x,y)\) definida por:</p>
+
+\[\nabla f(x,y) = \frac{\partial f(x,y)}{\partial x}\vec{i} + \frac{\partial f(x,y)}{\partial x} \vec{j} 
+\tag{17}\]
+
+<p>Para funções no \(\mathbb{R}^n\), basta adicionar as variáveis no somatório da equação 17.</p>
+
+<p>Por fim, vamos ao último teorema desta aula, mas que é de suma importância:</p>
+
+<p><strong>Teorema 5:</strong> seja \(f\) uma função diferenciável no \(\mathbb{R}^n\), o valor máximo da derivada direcional é \(\mid \nabla f(\vec{x}) \mid\) e ocorre quando \(\vec{u}\) tem a mesma direção e sentido que o vetor gradiente \(\nabla f(\vec{x})\).</p>
+
+<p>Em outras palavras, esse teorema nos diz que a função \(f\) <strong>aumenta mais depressa na direção e sentido do gradiente \(\nabla f\)</strong>. Isso é um resultado muito importante! Significa que <strong>se desejarmos maximizar uma determinada função, o gradiente da mesma aponta para o valor máximo!</strong> E obviamente, se eu inverter a direção deste vetor, ele vai apontar para o mínimo! Isso é exaustivamente utilizado em <em>machine learning</em> e vamos utilizar esse resultado diretamente muito breve!</p>
+
+<h1 id="considerações-finais">Considerações finais</h1>
+<p>Essa foi mais uma das aulas teóricas que podem até ser chatas, mas são importantes para formar a base necessária para área. No fundo, <em>machine learning</em> é isso, quanto mais você cava, mais matemática você encontra. Como bem disse Dijkstra (se você não sabe que é, faça o dever de casa), <em>“Ciência da computação tem tanto a ver com o computador como a Astronomia com o telescópio, a Biologia com o microscópio, ou a Química com os tubos de ensaio. A Ciência não estuda ferramentas, mas o que fazemos e o que descobrimos com elas.”</em> Portanto, a próxima aula será sobre probabilidade e teoria da informação e assim encerramos todos os conceitos necessários para iniciar na área de <em>machine learning</em>.</p>
+:ET

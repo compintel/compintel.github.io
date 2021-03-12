@@ -1,0 +1,20 @@
+I"�<ul class="toc__menu">
+  <li><a href="#introdução">Introdução</a></li>
+  <li><a href="#o-tradeof-entre-recall-e-precision">O tradeof entre recall e precision</a>
+    <ul>
+      <li><a href="#plotando-recall-e-precision-x-threshold">Plotando recall e precision x threshold</a></li>
+      <li><a href="#plotando-precision-x-recall">Plotando Precision x Recall</a></li>
+    </ul>
+  </li>
+  <li><a href="#a-curva-roc">A curva ROC</a>
+    <ul>
+      <li><a href="#plotando-a-curva-roc">Plotando a curva ROC</a></li>
+      <li><a href="#área-abaixo-da-curva-auc">Área abaixo da curva (AUC)</a></li>
+      <li><a href="#entendendo-melhor-a-roc">Entendendo melhor a ROC</a></li>
+      <li><a href="#como-plotar-roc-e-calcular-auc-para-multiplas-classes">Como plotar ROC e calcular AUC para multiplas classes?</a></li>
+    </ul>
+  </li>
+  <li><a href="#considerações-finais">Considerações finais</a></li>
+  <li><a href="#referências">Referências</a></li>
+</ul>
+:ET

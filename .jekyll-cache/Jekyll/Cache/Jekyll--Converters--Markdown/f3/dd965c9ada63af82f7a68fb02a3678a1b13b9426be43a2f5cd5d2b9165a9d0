@@ -1,0 +1,14 @@
+I"�<ul class="toc__menu">
+  <li><a href="#introdução">Introdução</a></li>
+  <li><a href="#modelagem-matemática">Modelagem matemática</a></li>
+  <li><a href="#treinamento-da-elm">Treinamento da ELM</a>
+    <ul>
+      <li><a href="#derterminando-a-matriz-h">Derterminando a matriz H</a></li>
+      <li><a href="#determinando-a-matriz-de-features-beta">Determinando a matriz de features (\beta)</a></li>
+      <li><a href="#limitações-e-outras-versões-da-elm">Limitações e outras versões da ELM</a></li>
+    </ul>
+  </li>
+  <li><a href="#código-em-python-e-matlab">Código em Python e MATLAB</a></li>
+  <li><a href="#referências">Referências</a></li>
+</ul>
+:ET
