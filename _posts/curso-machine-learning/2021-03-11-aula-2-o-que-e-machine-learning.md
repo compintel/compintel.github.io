@@ -29,7 +29,7 @@ Segundo [François Chollet](https://fchollet.com/), as diferenças entre os para
 
 
 
-<figure style="width: 490px; height: 400px;" class="align-center">
+<figure style="width: 490px; height: 225px;" class="align-center">
   
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/cursoML/aula-2\aixml.png" alt="">
 
