@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "André Pacheco"
   avatar           : "/assets/img/capas/me.jpg"
-  bio              : "Doutor em Ciência da Computação, especiliasta em inteligência artificial, jogador de League of Legends nas horas vagas, apreciador da cultura pop e autor dos posts deste blog."
+  bio              : "Doutor em Ciência da Computação, especialista em inteligência artificial, (mau) jogador de League of Legends nas horas vagas, apreciador da cultura pop e autor dos posts deste blog."
   location         : "Vitória - ES"
   links:
     - label: "Email"
