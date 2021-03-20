@@ -7,7 +7,7 @@ author_profile: false
 excerpt: "Desde sua criação, o blog _computação inteligente_ vêm ajudando diversos alunos de graduação e/ou pós-graduação a realizar seus projetos de conclusão de curso/dissertações."
 ---
 
-Desde sua criação, o blog _computação inteligente_ vêm ajudando diversos alunos de graduação e/ou pós-graduação a realizar seus projetos de conclusão de curso/dissertações. Com isso, muitas pessoas nos enviavam e-mails perguntando agradecendo pelo conteúdo e perguntando como citar um post ou código do blog no seu trabalho.
+Desde sua criação, o blog _computação inteligente_ vêm ajudando diversos alunos de graduação e/ou pós-graduação a realizar seus projetos de conclusão de curso/dissertações. Com isso, muitas pessoas enviam e-mails agradecendo pelo conteúdo e perguntando em como citar um post ou código do blog no seu trabalho.
 
 Sendo assim, geramos um <a href="http://www.seabd.bco.ufscar.br/referencia/comunicacao-cientifica/o-que-e-o-numero-doi-de-um-periodico" target="_blank"> DOI</a> para o blog e seu repositório no <a href="https://github.com/compintel" targe="_blank"> Github </a>. Esse DOI foi gerado em uma plataforma chamada <a href="https://zenodo.org/" target="_blank"> Zenodo </a> e pode ser acessado <a href="https://zenodo.org/record/2551731#.XHMAB3VKi00" target="_blank"> neste link </a>. 
 

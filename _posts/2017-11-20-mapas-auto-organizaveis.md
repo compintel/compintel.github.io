@@ -46,7 +46,7 @@ Para uma dada entrada $$ z $$, calculamos a distância dela em relação a cada 
 
 $$ d(\mathbf{x}, \mathbf{w}) = \sqrt{\sum_{i=1}^k (x_i - w_i)^2} $$
 
-## Etapa cooperativa
+### Etapa cooperativa
 O intuito dessa etapa é ajustar os pesos de cada um dos neurônios da rede. Como o objetivo da rede é criar regiões especialistas, quanto mais longe um neurônio estiver de um neurônio vencedor, menos ele deve ser influenciado pelo mesmo. Além disso, com o passar do tempo, a área de influência do neurônio vencedor deve ir diminuindo. Essa ideia é ilustrada na Figura 2.
 
 
@@ -82,7 +82,7 @@ $$ \alpha(t) = \alpha_0 e^{-\frac{t}{\tau}} $$
 Perceba que a fórmula é bastante similar a de $$ \sigma(t) $$, sendo que $$ \alpha_0 $$ é a taxa de aprendizado inicial, que deve ser informada para o algoritmo.
 
 
-#### Atualização dos pesos
+### Atualização dos pesos
 Por fim, temos que definir uma regra de atualização dos pesos da rede. Portanto, para cada neurônio do mapa, os seus respectivos pesos serão atualizados da seguinte forma:
 
 $$ W_k(t+1) = W_k(t) + \alpha(t) \times h(t) \times d(X_i, W_k) $$

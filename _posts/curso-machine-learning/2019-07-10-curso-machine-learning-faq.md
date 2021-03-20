@@ -20,9 +20,8 @@ Antes de iniciar, gostaria de deixar claro que a intenção do curso é comparti
 ## Por que você está criando este curso?
 Como disse acima, a ideia deste curso é compartilhar o conhecimento que adquiri ao longo dos anos. Toda minha graduação, mestrado e doutorado foi/está sendo custeado pelo governo Brasileiro por meio da universidade pública. Tenho conciência do tamanho do investimento que é realizado para que isso seja possível. **Logo, esta é uma forma de eu retribuir**. Sei que o conhecimento dessa área é valioso e pode ser caro adquirí-lo. Portanto, esse curso é e sempre será gratuito, para que qualquer pessoa de qualquer classe social/renda possa acessá-lo e se introduzir na área.
 
-Todavia, se você acredita que esse curso (ou esse blog de maneira geral) te ajudou de alguma forma, sinta-se livre para fazer uma doação. Seria como se você estivesse comprando o curso, mas com o diferencial já o ter feito antes ;)
+Todavia, se você acredita que esse curso (ou esse blog de maneira geral) te ajudou de alguma forma, sinta-se livre para me [pagar um café](/cafezinho/). Seria como se você estivesse "comprando" o curso, mas com o diferencial já o ter acesso antes ;)
 
-Para isso, você pode acessar a [página de doação do blog](/doacao/) e "comprá-lo" por qualquer valor.
 
 
 ## Para quem é destinado este curso?
@@ -64,10 +63,7 @@ Eu não vou citar a todo momento os livros, mas sempre que houver alguma afirma�
 Não.
 
 ## Qual a frequência que as aulas serão postadas?
-~~Esperamos que 1 ou 2 vezes a cada 15 dias.~~
-Suspenso por motivos de _tenho que terminar minha tese de doutorado_. Voltaremos em breve.
-
-
+Esperamos que 1 ou 2 vezes a cada 15 dias.
 
 ____
 
