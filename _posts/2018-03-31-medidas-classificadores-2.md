@@ -5,7 +5,7 @@ header:
   teaser: "/assets/img/posts/medidas-desempenho/roc.png"
 excerpt: "O desempenho de classificadores de dados pode te enganar dependendo da métrica que você utiliza. Neste post vamos abordar este assunto e mostrar como não ser enganado pelo classificado."
 categories:
-  - Artigos
+  - Conceitos
 tags:
   - Classificação de dados
 ---

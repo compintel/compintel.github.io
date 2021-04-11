@@ -5,7 +5,7 @@ header:
   teaser: "/assets/img/posts/fuzzy/triang.png"
 excerpt: "Neste post pretendo aprofundar um pouco nas operações aritméticas para números _fuzzy_ triangulares e trapezoidais. Vamos começar definindo os números _fuzzy_ triangulares e em seguida os trapezoidais, que possuem uma semelhança muito grande"
 categories:
-  - Artigos
+  - Conceitos
 tags:
   - Fuzzy
   - Python

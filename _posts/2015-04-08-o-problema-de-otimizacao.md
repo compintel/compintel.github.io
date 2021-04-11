@@ -5,7 +5,7 @@ header:
   teaser: "assets/img/posts/problema-otimizacao/otimizacao.png"
 excerpt: "Problemas de otimização são aqueles que visam determinar o pontos extremos de uma função, seja ele mínimo, e então os problemas serão de minimização, ou máximo, problemas de maximização. Otimização é algo extremamente comum em nosso cotidiano"
 categories:
-  - Artigos
+  - Conceitos
 tags:
   - Otimização
   - Inteligência computacional

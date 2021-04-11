@@ -5,7 +5,7 @@ header:
   teaser: "/assets/img/posts/fuzzy/funcoes.png"
 excerpt: "Os conjuntos fuzzy foram inicialmente propostos por Zadeh em 1965 como uma extensão da teoria clássica de Conjuntos e, desde então, tem sido utilizada nas mais diversas áreas"
 categories:
-  - Artigos
+  - Conceitos
 tags:
   - Fuzzy
   - Python

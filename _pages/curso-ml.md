@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: /curso-ml/
+permalink: /curso-ml-desativado/
 title: Curso ML
 taxonomy: CursoML
 author_profile: false
