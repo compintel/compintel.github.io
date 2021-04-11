@@ -1,11 +1,11 @@
 ---
 latexEquation: true
-title: "Aula 1.3 - Teoria da probabilidade"
+title: "Machine learning pré-requistos: Teoria da probabilidade"
 header:
   teaser: "/assets/img/capas/machine_learning_a1.png"
-excerpt: "Aula 1.3 - Curso Machine Learning - Teoria da probabilidade. Nessa aula serão abordados os conceitos básicos em relação a teoria da probabilidade para se iniciar em Machine Learning"
+excerpt: "Machine learning pré-requistos: Teoria da probabilidade. Neste post serão abordados os conceitos básicos em relação a Teoria da probabilidade para se iniciar em Machine Learning"
 categories:
-  - CursoML
+  - Conceitos
 tags:
   - Machine learning
   - Estatística
@@ -13,7 +13,7 @@ tags:
   - Teoria da informação
 ---
 
-Esta é a última parte da nossa aula 1 do curso de _machine learning_. Nesta aula vamos abordar os conceitos básicos e necessários sobre probabilidade e teoria da informação. Um dos pilares de _machine learning_ é probabilidade. Os algoritmos são, em sua maior parte, estocásticos e fortemente baseados em estatística. Portanto, essa aula também é muito importante para se iniciar no assunto. Essa aula é fortemente baseada em três livros que deixo linkado nas referências. Lembrando, que isso é uma revisão do básico necessário. Para mais informações, recorra as [referências](#refs).
+Em mais um post da série de pré-requisitos, vamos abordar os conceitos básicos e necessários sobre probabilidade e teoria da informação. Um dos pilares de _machine learning_ é probabilidade. Os algoritmos são, em sua maior parte, estocásticos e fortemente baseados em estatística. Portanto, esse post também é muito importante para se iniciar no assunto. Esse post é fortemente baseada em três livros que deixo linkado nas referências. Lembrando, que isso é uma revisão do básico necessário. Para mais informações, recorra as [referências](#refs).
 
 # Introdução
 De maneira geral, a teoria de probabilidade é um conjunto de regras, axiomas e teoremas matemáticos para representar incerteza. Fenômenos incertos ocorrem a todo momento. O mundo real é incerto. Por exemplo, a **previsão** do tempo é um modelo probabilístico. Existe uma probabilidade de determinado evento ocorrer, por exemplo, chover, e a teoria da probabilidade nos oferece um ferramental para modelar esses eventos incertos. Por outro lado, a teoria da informação nos permite a quantificar essas incertezas. Por conta disso, ambas teorias são importantíssimas em diversas áreas da ciência e engenharia. Em _machine learning_ não é diferente, uma vez que os algoritmos aprendem a partir dos dados, certamente os modelos também serão incertos, uma vez que é extramente complicado (para não dizer impossível) modelar o mundo real perfeitamente. Neste caso, a incerteza é gerada pois o modelo é **incompleto**. Um exemplos simples é quando discretizamos um sinal contínuo. Ao fazer isso, estamos **descartando** informações, o que gera imprecisão. 
@@ -308,7 +308,7 @@ O gráfico dessa distribuição é ilustrado pela Figura 3:
 
 </figure>
 
-Como disse, a Gaussiana pode ser utilizada para modelar os mais diversos problemas, inclusive o nosso exemplo da seção do histograma, ou seja, modelar a idade de alunos de uma turma. Se você observar bem o gráfico da Figura 2, ele se parece um pouco com a forma de uma Gaussiana. Para plotarmos, teriamos que calcular a média de todas as idades e o desvio padrão. A partir disso é possível modelas a equação 20. Vamos brincar um pouco com essa teoria quando formos trabalhar com o classificador chamado Naive Bayes. E por falar Bayes, ele será o tema da última seção desta aula.
+Como disse, a Gaussiana pode ser utilizada para modelar os mais diversos problemas, inclusive o nosso exemplo da seção do histograma, ou seja, modelar a idade de alunos de uma turma. Se você observar bem o gráfico da Figura 2, ele se parece um pouco com a forma de uma Gaussiana. Para plotarmos, teriamos que calcular a média de todas as idades e o desvio padrão. A partir disso é possível modelas a equação 20. Vamos brincar um pouco com essa teoria quando formos trabalhar com o classificador chamado Naive Bayes. E por falar Bayes, ele será o tema da última seção deste post.
 
 # O Teorema de Bayes
 O Teorema de Bayes é um dos teoremas mais importantes da teoria da probabilidade. Em resumo, ele descreve a probabilidade de um determinado evento baseado em um conhecimento prévio sobre o mesmo. Esse conhecimento é conhecido como _priore_. O teorema mostra que a partir do momento que temos novas evidências alteramos a probabilidade final que é chamada de _posteriori_. 
@@ -328,7 +328,7 @@ p(A \mid B) = \frac{p(B \mid A) p(A)}{p(B)} \\
 \tag{22}
 $$
 
-Dessa maneira, temos o famoso teorema de Bayes. Eu pretendo fazer um post dedicado só a ele. Mas de maneira geral, o que o teorema diz é: queremos estimar $$ A $$ dado que temos uma evidência $$ B $$ que influência $$ A $$. A $$ p(A) $$ é a distribuição a _priori_, ou seja, o que eu sei sobre uma determinada situação antes de tomar conhecimento sobre $$ B $$. $$ p(B \mid A) $$ é conhecido como _likelihood_. Esse é um conceito abstrato para se explicar em um resumo, mas você pode entender como o modelo de uma distribuição de acordo com alguns dados conhecidos. Já $$ p(B) $$ é um fator de normalização e pode ser calculado a partidar da probabilidade marginal, já discutida nessa aula. Por fim, $$ p(A \mid B) $$ é a distribuição _posteriori_, que queremos descobrir.
+Dessa maneira, temos o famoso teorema de Bayes. Eu pretendo fazer um post dedicado só a ele. Mas de maneira geral, o que o teorema diz é: queremos estimar $$ A $$ dado que temos uma evidência $$ B $$ que influência $$ A $$. A $$ p(A) $$ é a distribuição a _priori_, ou seja, o que eu sei sobre uma determinada situação antes de tomar conhecimento sobre $$ B $$. $$ p(B \mid A) $$ é conhecido como _likelihood_. Esse é um conceito abstrato para se explicar em um resumo, mas você pode entender como o modelo de uma distribuição de acordo com alguns dados conhecidos. Já $$ p(B) $$ é um fator de normalização e pode ser calculado a partidar da probabilidade marginal, já discutida neste post. Por fim, $$ p(A \mid B) $$ é a distribuição _posteriori_, que queremos descobrir.
 
 
 Para tentar ilustrar essa ideia com um exemplo, imagine que você esteja viajando e veja um animal que te lembra um cachorro, mas também pode ser outro animal, como um gato ou uma raposa. Mas você infere que, a probabilidade de ser um cachorro dado que estou numa estrada brasileira, é bem alta. Porém, você recebe uma nova informação que faz você mudar essa certeza que tinha que era um cachorro. Você descobre que a 50m do local onde avistou o animal existe uma ONG protetora de gatos. Com isso, automaticamente, aumenta significativamente a probabilidade do animal ser um gato, **por que você teve uma nova evidência**. Logo, você alterou a _posteriori_ de acordo com a _priori_.
@@ -336,9 +336,7 @@ Para tentar ilustrar essa ideia com um exemplo, imagine que você esteja viajand
 Como disse, pretendo fazer um post bem detalhado sobre estimativa Bayesiana e vou referênciá-lo aqui quando estiver pronto. Por hora, considere que o teorema existe e que ele bem importante e muito utilizado na computação em geral.
 
 # Considerações finais
-Essa foi a nossa última aula de conceitos básicos. A teoria da probabilidade é um dos pilares de _machine learning_. Você vai perceber que os algoritmos (não todos, mas boa parte) são estocásticos, ou seja, utilizam da teoria de probabilidade para gerar uma saída probabilística. Você vai entender isso em breve (eu espero).
-
-Então é isso, a partir da próxima aula, entraremos de vez no nosso tema principal. Para você que achou chato até aqui, tavez você encontre mais diversão na sequência deste curso. Até a próxima.
+A teoria da probabilidade é um dos pilares de _machine learning_. Você vai perceber que os algoritmos (não todos, mas boa parte) são estocásticos, ou seja, utilizam da teoria de probabilidade para gerar uma saída probabilística. Para você que achou tudo muito chato chato (neste e nos outros dois post da série), tavez você encontre mais diversão nos posts dos algoritmos. Mas saiba que a teoria é importante para você entender o que acontece por trás da chamadas dos métodos da [scikit-learn](https://scikit-learn.org/stable/).
 
 <a name="refs"></a>
 # Principais referências

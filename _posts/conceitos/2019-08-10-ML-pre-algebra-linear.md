@@ -1,22 +1,23 @@
 ---
 latexEquation: true
-title: "Aula 1.1 - Álgebra linear"
+title: "Machine learning pré-requistos: Álgebra linear"
 header:
   teaser: "/assets/img/capas/machine_learning_a1.png"
-excerpt: "Aula 1.1 - Curso Machine Learning - Cálculo. Nessa aula serão abordados os conceitos básicos em relação a Cálculo I e II para se iniciar em Machine Learning"
+excerpt: "Machine learning pré-requistos: Álgebra linear. Neste post serão abordados os conceitos básicos em relação a álgebra linear para se iniciar em Machine Learning"
 categories:
-  - CursoML
+  - Conceitos
 tags:
   - Machine learning
   - Algebra linear
+  - Prerequisitos
   - Matrizes
   - Vetores
 ---
 
 # Introdução
-Seja bem vindo a aula 1.1 do curso de _machine learning_ do blog. Este é o primeiro post de aula do curso e a ideia da mesma é introduzir os conceitos básicos que formarão a base necessária para iniciar na área. _Machine learning_ é fortemente baseado em **álgebra linear**, **cálculo** e **estatística**. A aula 1 será divida em 3 posts que abordarão cada um deste conceitos básicos. Portanto, começameremos com **Álgebra linear**.
+Olá, hoje vamo começar uma série nova aqui no blog para discutir os pré-requisitos para se iniciar na área de machine learning/inteligência artificial/deep learning. A ideia é introduzir os conceitos básicos que formarão a base necessária para iniciar na área. E para começar, o primeiro post da série será sobre **álgebra linear**.
 
-Eu sei que muitos tem traumas de álgebra (principalmente quem já cursou em alguma graduação). Porém, um bom entendimento da disciplina é necessário para aprender _machine learning_. Portanto, aqui vamos discutir diversos conceitos básicos, mas caso queira se aprofundar, sugiro que procure um livro ou algum curso. Infelizemente, a maioria dos materiais estão em inglês (eis a razão de existência deste blog!) mas você encontra alguns [cursos como este](https://www.youtube.com/watch?v=TP2o31y5_GU&list=PLO3hBdfBc4pFef1zn1oZyYXLomL9MiX-C) no YouTube.
+Eu sei que muitos tem traumas de álgebra (principalmente quem já cursou em alguma graduação na área de exatas). Porém, um bom entendimento da disciplina é necessário para aprender _machine learning_. Portanto, aqui vamos discutir diversos conceitos básicos, mas caso queira se aprofundar, sugiro que procure um livro ou algum curso dedicado. Infelizemente, a maioria dos materiais estão em inglês (eis a razão de existência deste blog!) mas você encontra alguns [cursos como este](https://www.youtube.com/watch?v=TP2o31y5_GU&list=PLO3hBdfBc4pFef1zn1oZyYXLomL9MiX-C) no YouTube.
 
 
 # Escalares, vetores e matrizes
@@ -549,7 +550,7 @@ $$
 
 na qual $$ (x, y) \neq (0, 0) $$. A título de curiosidade, o polinômio $$ p(\lambda) $$ obtido por esta equação é chamado de polinômio característico.
 
-Coincidentemente (só que não), caímos em um sistema linear igual ao da equação 12. Se ainda está por dentro dessa aula, você vai se lembrar que esse sistema possui uma solução não-nula se e somente se:
+Coincidentemente (só que não), caímos em um sistema linear igual ao da equação 12. Se ainda está por dentro deste post, você vai se lembrar que esse sistema possui uma solução não-nula se e somente se:
 
 $$
 \textrm{det}\begin{bmatrix}
@@ -598,7 +599,8 @@ Com já foi dito, essa decomposição é bastante útil para analisar algumas pr
 
 
 # Considerações finais
-Essa primeira aula é bastante teórica e muita gente pode achar ela chata. Mas se você pretende de fato aprender os algoritmos de _machine learning_ para além de uma simples chamada de função em uma biblioteca, é importante saber a teoria por trás deles. Portanto, este começo a assim mesmo, mas acredite em mim, ainda vamos ser capazes de fazer bastante coisa interessante neste curso. A pŕoxima aula vamos entrar nos principais conceitos de Cálculo necessários em _machine learning_. 
+Eu sei que esse post é bastante teórico e muita gente pode achar ela chata. Mas se você pretende de fato aprender os algoritmos de _machine learning_ para além de uma simples chamada de função em uma biblioteca, é importante saber a teoria por trás deles. Portanto, este começo a assim mesmo, mas acredite em mim, você ainda será capaz de fazer bastante coisa interessante usando esse conhecimento. Até a próxima.
+
 
 # Principais referências
 - _Deep learning_ - Ian Goodfellow, Yoshua Bengio e Aaron Courville [link](https://www.deeplearningbook.org/)

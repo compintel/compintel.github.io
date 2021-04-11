@@ -1,11 +1,11 @@
 ---
 latexEquation: true
-title: "Aula 2 - O que é Machine Learning?"
+title: "O que é Machine Learning?"
 header:
   teaser: "/assets/img/capas/machine_learning_a1.png"
-excerpt: "Aula 2 - O que é Machine Learning - Nessa aula os conceitos basicos de machine learning são definidos. Qual a diferença de machine learning para inteligência artificial? Por que um algoritmo é considerado ser desta categoris? Essas e mais perguntas são respondidas aqui."
+excerpt: "O que é Machine Learning - Nesse post os conceitos basicos de machine learning são definidos. Qual a diferença de machine learning para inteligência artificial? Por que um algoritmo é considerado ser desta categoris? Essas e mais perguntas são respondidas aqui."
 categories:
-  - CursoML
+  - Conceitos
 tags:
   - Machine learning
   - Inteligência artificial
@@ -87,4 +87,4 @@ Algoritmos de ML podem lidar com os mais diversos tipos de problema. Lembre-se q
 - **Predição de séries temporais:** como o nome sugere, visa prever dados futuros de uma série. Poder o exemplo mais comum que é prever o próximo valor de uma ação ou a demanda de energia de um país no mês seguinte.
 
 # Considerações finais
-Existem diversos outros conceitos básicos relacionados a ML que vamos trabalhando ao longo do curso. A ideia dessa aula é dar uma noção geral do que é e para que serve ML. Na próxima aula já vamos começar a descrever o nosso primeiro algoritmo. Até a próxima!
+A ideia deste post foi dar uma noção geral do que é e para que serve ML. Existem diversos outros conceitos básicos relacionados a ML que pretendo discutir em um outro posto, como por exemplo, o que é o trade-off entre bias x variância. Então, te vejo no próximo post.

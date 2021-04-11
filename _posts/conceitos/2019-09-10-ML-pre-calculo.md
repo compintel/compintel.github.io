@@ -1,21 +1,22 @@
 ---
 latexEquation: true
-title: "Aula 1.2 - Cálculo"
+title: "Machine learning pré-requistos: Cálculo"
 header:
   teaser: "/assets/img/capas/machine_learning_a1.png"
-excerpt: "Aula 1.2 - Curso Machine Learning - Álgebra linear. Nessa aula serão abordados os conceitos básicos em relação a ao cálculo para se iniciar em Machine Learning"
+excerpt: "Machine learning pré-requistos: Cálculo. Neste post serão abordados os conceitos básicos em relação a Cálculo para se iniciar em Machine Learning"
 categories:
-  - CursoML
+  - Conceitos
 tags:
   - Machine learning
+  - Preresquisitos
   - Cálculo
   - Derivada
 ---
 
 # Introdução
-Esta é parte 2 da aula 1 do curso de _machine learning_. Nesta aula vamos abordar os conceitos básicos e necessários sobre Cálculo para se iniciar na área. Este post será basicamente um apanhando geral do livro de [Cálculo I e II do James Stewart](https://www.amazon.com.br/C%C3%A1lculo-1-James-Stewart/dp/8522112584). Este foi o livro que aprendi cálculo e o considero como uma excelente fonte. Existem alguns PDFs dele disponíveis por ai ~~que você encontra no google~~, mas eu não sei onde encontrá-los. 
+Neste segundo post da série, vamos abordar os conceitos básicos e necessários sobre Cálculo para se iniciar na área. Este post será basicamente um apanhando geral do livro de [Cálculo I e II do James Stewart](https://www.amazon.com.br/C%C3%A1lculo-1-James-Stewart/dp/8522112584). Este foi o livro que aprendi cálculo e o considero como uma excelente fonte. Existem alguns PDFs dele disponíveis por ai ~~que você encontra no google~~, mas eu não sei onde encontrá-los. 
 
-Essa aula será dividida em 4 partes. Na primeira, vamos fazer uma breve revisão de algumas funções. Na segunda, vamos abordar o conceito de limite. Na terceira o de derivada e na quarta Minimização/Maximização por derivadas, que é conceito mais importante o nosso propósito, ou seja, _machine learning_. Se você se sente confortável com os conceitos fundamentais, já vá direto para a [Parte 4](#parte4). Novamente, isso é uma aula de revisão. Para saber mais recorra as referências fornecidas.
+Esse post será dividida em 4 partes. Na primeira, vamos fazer uma breve revisão de algumas funções. Na segunda, vamos abordar o conceito de limite. Na terceira o de derivada e na quarta Minimização/Maximização por derivadas, que é conceito mais importante o nosso propósito, ou seja, _machine learning_. Se você se sente confortável com os conceitos fundamentais, já vá direto para a [Parte 4](#parte4). Novamente, isso é um post de revisão. Para saber mais recorra as referências fornecidas.
 
 # Parte 1 - Preliminares
 Antes de falar sobre limite, vamos abordar alguns conceitos que serão úteis daqui pra frente. Vou tentar ser o mais breve possível.
@@ -147,7 +148,7 @@ Em outras palavras, quando o valor $$ x $$ se aproxima de $$ 0 $$ pela direita, 
 Com isso, é gerado uma **assíntota**, que já discutimos na parte 1 e é ilustrada na Figura 2. A curva $$ f(x) $$ se aproxima o quanto imaginarmos, mas jamais toca o eixo $$ y $$, uma vez que a função não é definida em $$ 0 $$.
 
 ## Propriedades
-Existem dezenas de propriedades para se calcular um limite. Como esta aula é apenas uma revisão, vamos descrever apenas algumas delas. Para isso, considere $$ c $$ uma constante e suponha que o $$ \lim_{x \to a} f(x) $$ e $$ \lim_{x \to a} f(x) $$ existam. Sendo assim:
+Existem dezenas de propriedades para se calcular um limite. Como esse post é apenas uma revisão, vamos descrever apenas algumas delas. Para isso, considere $$ c $$ uma constante e suponha que o $$ \lim_{x \to a} f(x) $$ e $$ \lim_{x \to a} f(x) $$ existam. Sendo assim:
 
 - P1: $$ \lim_{x \to a} [f(x) \pm  g(x)] = \lim_{x \to a} f(x) \pm  \lim_{x \to a} g(x) $$
 
@@ -239,7 +240,7 @@ m = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h} \rightarrow h = x - a
 $$
 
 
-Neste momento você pode está se perguntando: mas pra que estou lendo sobre cálculo da reta tangente em um curso de _machine learning_? Bom, esse é o passo inicial para a compreensão de derivadas, o que é fundamental no universo de ML. Na verdade, a equação 8 é tão comum na ciência e engenharia que ela ganhou um nome especial: **derivada**. A inclinação da reta tangente no ponto $$ P $$ é a **interpretação geométrica** do que é derivada. Isso abre caminho para última parte desta aula.
+Neste momento você pode está se perguntando: mas pra que estou lendo sobre cálculo da reta tangente em um curso de _machine learning_? Bom, esse é o passo inicial para a compreensão de derivadas, o que é fundamental no universo de ML. Na verdade, a equação 8 é tão comum na ciência e engenharia que ela ganhou um nome especial: **derivada**. A inclinação da reta tangente no ponto $$ P $$ é a **interpretação geométrica** do que é derivada. Isso abre caminho para última parte deste post.
 
 # Parte 3 - Derivadas
 A definição de derivada é basicamente a mesma da definação 4. Mas de qualquer forma:
@@ -371,7 +372,7 @@ A regra geral para deterinar as derivadas parciais de uma função $$ z = f(x,y)
 <a name="parte4"></a>
 
 # Parte 4 - Maximização/Minimização via derivadas 
-Essa parte é a mais importante desta aula pois será extremamente utilizada nos algoritmos de minimização de redes neurais. Para iniciar o tema, vamos definir o **teorema de Fermat** que é fundamental para que a mágica aconteça:
+Essa parte é a mais importante do post pois será extremamente utilizada nos algoritmos de minimização de redes neurais. Para iniciar o tema, vamos definir o **teorema de Fermat** que é fundamental para que a mágica aconteça:
 
 **Teorema 3**: Se uma função $$ f(x) $$ tiver um máximo ou um mínimo local em $$ c $$ e $$ f'(c) $$ existir, então $$ f'(c) = 0 $$.
 
@@ -418,7 +419,7 @@ Para iniciar, vamos supor que desejamos calcular a taxa de variação de $$ z $$
 
 </figure>
 
-Agora considere a superfície 3D $$ S $$ que é gerada a partir de $$ z = f(x,y) $$ e $$ z_0 = f(x_0, y_0) $$. O ponto $$ P(x_0, y_0, z_0) $$ pertence a $$ S $$. O plano vertical que passa por $$ P $$ na direção de $$ \vec{u} $$ intercepta $$ S $$ em uma curva $$ C $$. **A inclinação da reta tangente $$T$$ a $$C$$ em $$P$$ é a taxa de variação de $$ z $$ na direção e sentido de $$ \vec{u}$$**. Para calcular essa taxa, é utilizada a mesma estratégia descrita na parte 2 desta aula, porém baseado em 2 variáveis. Dessa forma, vamos descrever apenas o teorema resultado de todas essa manipulação matemática.
+Agora considere a superfície 3D $$ S $$ que é gerada a partir de $$ z = f(x,y) $$ e $$ z_0 = f(x_0, y_0) $$. O ponto $$ P(x_0, y_0, z_0) $$ pertence a $$ S $$. O plano vertical que passa por $$ P $$ na direção de $$ \vec{u} $$ intercepta $$ S $$ em uma curva $$ C $$. **A inclinação da reta tangente $$T$$ a $$C$$ em $$P$$ é a taxa de variação de $$ z $$ na direção e sentido de $$ \vec{u}$$**. Para calcular essa taxa, é utilizada a mesma estratégia descrita na parte 2 deste post, porém baseado em 2 variáveis. Dessa forma, vamos descrever apenas o teorema resultado de todas essa manipulação matemática.
 
 **Teorema 4:** se $$ f(x,y) $$ é uma função diferenciável em $$ x $$ e $$ y $$, então essa função possui uma derivada direcional de direção e sentido de qualquer versor de \vec{u} = \left \langle a, b  \right \rangle $$ e:
 
@@ -447,11 +448,11 @@ $$
 Para funções no $$ \mathbb{R}^n $$, basta adicionar as variáveis no somatório da equação 17. 
 
 
-Por fim, vamos ao último teorema desta aula, mas que é de suma importância:
+Por fim, vamos ao último teorema deste post, mas que é de suma importância:
 
 **Teorema 5:** seja $$ f $$ uma função diferenciável no $$ \mathbb{R}^n $$, o valor máximo da derivada direcional é $$ \mid \nabla f(\vec{x}) \mid $$ e ocorre quando $$ \vec{u} $$ tem a mesma direção e sentido que o vetor gradiente $$ \nabla f(\vec{x}) $$.
 
 Em outras palavras, esse teorema nos diz que a função $$ f $$ **aumenta mais depressa na direção e sentido do gradiente $$ \nabla f $$**. Isso é um resultado muito importante! Significa que **se desejarmos maximizar uma determinada função, o gradiente da mesma aponta para o valor máximo!** E obviamente, se eu inverter a direção deste vetor, ele vai apontar para o mínimo! Isso é exaustivamente utilizado em _machine learning_ e vamos utilizar esse resultado diretamente muito breve!
 
 # Considerações finais
-Essa foi mais uma das aulas teóricas que podem até ser chatas, mas são importantes para formar a base necessária para área. No fundo, _machine learning_ é isso, quanto mais você cava, mais matemática você encontra. Como bem disse Dijkstra (se você não sabe que é, faça o dever de casa), _"Ciência da computação tem tanto a ver com o computador como a Astronomia com o telescópio, a Biologia com o microscópio, ou a Química com os tubos de ensaio. A Ciência não estuda ferramentas, mas o que fazemos e o que descobrimos com elas."_ Portanto, a próxima aula será sobre probabilidade e teoria da informação e assim encerramos todos os conceitos necessários para iniciar na área de _machine learning_.
+Essa foi mais um dos posts teóricos que podem até ser chatas, mas são importantes para formar a base necessária para área. No fundo, _machine learning_ é isso, quanto mais você cava, mais matemática você encontra. Como bem disse Dijkstra (se você não sabe que é, faça o dever de casa), _"Ciência da computação tem tanto a ver com o computador como a Astronomia com o telescópio, a Biologia com o microscópio, ou a Química com os tubos de ensaio. A Ciência não estuda ferramentas, mas o que fazemos e o que descobrimos com elas."_ 

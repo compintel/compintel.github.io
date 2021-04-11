@@ -1,11 +1,11 @@
 ---
 latexEquation: true
-title: "Aula 3 - Modelo de predição linear"
+title: "O modelo de predição linear"
 header:
   teaser: "/assets/img/capas/machine_learning_a1.png"
 excerpt: "Hoje assunto será o modelo de predição linear. Este modelo é bem antigo e vem sendo utilizado na estatística por mais de 50 anos. Como o próprio nome sugere, o modelo linear parte do princípio que o seu problema pode ser aproximado linearmente, ou seja, se ele for um modelo 2D, ele deve ser aproximado por uma reta."
 categories:
-  - CursoML
+  - Algoritmos
 tags:
   - Machine learning
   - Modelo de predição linear
@@ -70,7 +70,7 @@ $$
 \tag{5}
 $$
 
-Para isso, temos que anexar uma entrada unitária ao valor de $$ \mathbf{x} $$, que passará a ser $$ \mathbf{x} = \{1, x_1, \cdots, x_k\} $$. Agora faça os cálculos e perceba que o valor é o mesmo. Agora, vamos vetorizar de fato a equação. Na [aula 1.1]({% post_url 2019-08-10-aula-1-algebra-linear %}) falamos do produto escalar (ou *dot product*). Vamos usá-lo agora para vetorizar a equação 5:
+Para isso, temos que anexar uma entrada unitária ao valor de $$ \mathbf{x} $$, que passará a ser $$ \mathbf{x} = \{1, x_1, \cdots, x_k\} $$. Agora faça os cálculos e perceba que o valor é o mesmo. Agora, vamos vetorizar de fato a equação. No post sobre [álgebra linear]({% post_url 2019-08-10-ML-pre-algebra-linear %}) falamos do produto escalar (ou *dot product*). Vamos usá-lo agora para vetorizar a equação 5:
 
 $$
 \hat{y}(\mathbf{x}) = \mathbf{w}^{\top} \times \mathbf{x}
@@ -83,7 +83,7 @@ Computacionalmente falando, reduzimos o nosso modelo linear a uma multiplicaçã
 O treinamento de qualquer modelo de *machine learning* nada mais é que um processo de otimização na qual temos que descobrir os parâmetros do modelo. O primeiro passo para iniciar um algoritmo de treinamento (além de ter os dados, é claro) é determinar uma métrica de erro.
 
 ## Função de erro
-Para treinar um algoritmo de *machine learning*, como discutimos na aula passada, precisamos de alguma métrica de qualidade. Temos que determinar uma função que determine um erro. Em inglês, essa função pode ser chamada de *loss function*. Normalmente, ela retorna um valor, maior que zero, que **quanto menor melhor**. Predições perfeitas do nosso modelo, retornariam erro zero. Predições ruins, retornariam erros muito alto (esse alto depende da entrada). Uma das funções mais comuns para problemas de regressão é o erro quadrático médio (ou *mean square error*) MSE, que definido da seguinte forma:
+Para treinar um algoritmo de *machine learning*, precisamos de alguma métrica de qualidade. Temos que determinar uma função que determine um erro. Em inglês, essa função pode ser chamada de *loss function*. Normalmente, ela retorna um valor, maior que zero, que **quanto menor melhor**. Predições perfeitas do nosso modelo, retornariam erro zero. Predições ruins, retornariam erros muito alto (esse alto depende da entrada). Uma das funções mais comuns para problemas de regressão é o erro quadrático médio (ou *mean square error*) MSE, que definido da seguinte forma:
 
 $$
 MSE(\mathbf{w})  = \frac{1}{2N} \sum_{i=0}^N(y_i - \hat{y}_i)
@@ -112,10 +112,10 @@ MSE(\mathbf{w})  = \frac{1}{2N} \sum_{i=0}^N(y_i - \mathbf{w}^{\top} \times \mat
 \tag{8}
 $$
 
-Portanto, agora que temos a função de erro, devemos propor um algoritmo de otimização que seja capaz de minimizar esse erro dado os parâmetros, nese caso, $$ \mathbf{w} $$. Se você acompanha este blog, já deve saber que existem diversos algoritmos de otimização. Se você não sabe nada sobre o assunto, de uma olhada no [post sobre o problema de otimização]({% post_url 2015-04-08-o-problema-de-otimizacao %}). Nesta aula, vamos apresentar dois métodos para treinar o modelo linear. Um analítico e outro iterativo.
+Portanto, agora que temos a função de erro, devemos propor um algoritmo de otimização que seja capaz de minimizar esse erro dado os parâmetros, nese caso, $$ \mathbf{w} $$. Se você acompanha este blog, já deve saber que existem diversos algoritmos de otimização. Se você não sabe nada sobre o assunto, de uma olhada no [post sobre o problema de otimização]({% post_url 2015-04-08-o-problema-de-otimizacao %}). Neste post, vamos apresentar dois métodos para treinar o modelo linear. Um analítico e outro iterativo.
 
 ## Método dos mínimos quadrados
-O método dos mínimos quadrados é um método analítico que visa encontrar $$ \mathbf{w} $$ tal que a derivada do erro seja zero. Lembre-se da nossa [aula de cálculo]({% post_url 2019-09-10-aula-1-2-calculo %}), chegou a hora de usar o conhecimento. Quando dizemos que um método é analítico, significa que ele é representado por uma formula que vai nos devolver o ótimo global. Isso é possível porque o modelo linear é simples. Em geral, isso é raríssimo no mundo de *machine learning*. Além disso, esse é método só é possível por que a função quadrática é convexa, ou seja, possui um mínimo global, como já falamos. 
+O método dos mínimos quadrados é um método analítico que visa encontrar $$ \mathbf{w} $$ tal que a derivada do erro seja zero. Lembre-se do nosso post sobre [cálculo]({% post_url 2019-09-10-ML-pre-calculo %}), chegou a hora de usar o conhecimento. Quando dizemos que um método é analítico, significa que ele é representado por uma formula que vai nos devolver o ótimo global. Isso é possível porque o modelo linear é simples. Em geral, isso é raríssimo no mundo de *machine learning*. Além disso, esse é método só é possível por que a função quadrática é convexa, ou seja, possui um mínimo global, como já falamos. 
 
 Para utilizar esse método, vamos fazer uma pequena alteração na equação 8. Vamos retirar o termo $$ \frac{1}{2N} $$ e calcularmos apenas a soma do quadrado da diferença (daí vem o nome mínimos quadrados). Feito isso, vamos utilizar a equação na forma matricial:
 
@@ -124,7 +124,7 @@ RSS(\mathbf{w})  = (\mathbf{y} - \mathbf{w}X)^\top (\mathbf{y} - \mathbf{w} X)
 \tag{9}
 $$
 
-Na qual $$ X $$ é uma matrix $$ N \times k $$, ou seja, cada linha $$ i $$ é uma entrada $$ \mathbf{x}_i $$; e $$ \mathbf{y} $$ é um array $$ N \times 1 $$, na qual cada linha $$ i $$ uma saída $$ y_i $$ relacionada a $$ x_i $$. Dois pontos: o termo RSS vem do inglês *residual sum of squares* e para simplificar a manipulação; retiramos a notação da transposta de $$ \mathbf{w} $$ pois ela não afeta neste ponto, mas lembre-se que é uma multiplicação matricial. Agora, para minimizar o erro, vamos calcular a derivada do mesmo e igualar a zero. Novamente, está boiando? Volte na [aula de cálculo]({% post_url 2019-09-10-aula-1-2-calculo %}).
+Na qual $$ X $$ é uma matrix $$ N \times k $$, ou seja, cada linha $$ i $$ é uma entrada $$ \mathbf{x}_i $$; e $$ \mathbf{y} $$ é um array $$ N \times 1 $$, na qual cada linha $$ i $$ uma saída $$ y_i $$ relacionada a $$ x_i $$. Dois pontos: o termo RSS vem do inglês *residual sum of squares* e para simplificar a manipulação; retiramos a notação da transposta de $$ \mathbf{w} $$ pois ela não afeta neste ponto, mas lembre-se que é uma multiplicação matricial. Agora, para minimizar o erro, vamos calcular a derivada do mesmo e igualar a zero. Novamente, está boiando? De uma olhada no post sobre [cálculo]({% post_url 2019-09-10-ML-pre-calculo %}).
 
 $$
 \frac{\partial RSS(\mathbf{w})}{\partial \mathbf{w}} = X^\top (\mathbf{y}-\mathbf{w}X)
@@ -209,12 +209,12 @@ Mais uma pergunta que pode surgir: **por quanto tempo devo rodar a equaão 15**?
 De maneira geral, devemos monitorar os hiper parâmetros durante o treinamento para garantir a qualidade do mesmo.
 
 ## Melhorando o gradiente descendente
-Para concluir essa aula, vamos apenas introduzir uma ideia para melhorar a convergência do algoritmo. O algoritmo que definimos no momento, leva em consideração que devemos calcular o gradiente para todas as $$ N $$ entradas $$ \mathbf{x}_i $$ para performar uma atualização utilizando a equação 15. Essa ideia funciona, mas podemos melhorar. Acontece, que ela pode ter uma convergência lenta. Para melhorar um pouco, vamos adicionar um pouco mais de aleatoriedade e, além disso, vamos usar *batches* (a tradução dessa palavra é ruim, mas ela significa que vamos usar um grupo de entradas, ou se quiser, uma baciada de dados LoL). 
+Para concluir esse post, vamos apenas introduzir uma ideia para melhorar a convergência do algoritmo. O algoritmo que definimos no momento, leva em consideração que devemos calcular o gradiente para todas as $$ N $$ entradas $$ \mathbf{x}_i $$ para performar uma atualização utilizando a equação 15. Essa ideia funciona, mas podemos melhorar. Acontece, que ela pode ter uma convergência lenta. Para melhorar um pouco, vamos adicionar um pouco mais de aleatoriedade e, além disso, vamos usar *batches* (a tradução dessa palavra é ruim, mas ela significa que vamos usar um grupo de entradas, ou se quiser, uma baciada de dados LoL). 
 
 A ideia é a seguinte: vamos criar diversos *batches* dentro da base de dados, que serão conhecidos como *mini-batches*, e vamos misturá-loas cada época. Para cada *batch* a gente vai calcular uma atualização dos parâmetros através da equação 15. Por exemplo, se $$ N = 100 $$, ou seja, temos 100 entradas $$ \mathbf{x} $$, podemos divir em 10 grupos de 10 entradas. Cada grupo é um *batch*. Para cada *batch*, a gente performa um passo do gradiente. E a cada época, a gente mistura os dados para gerar *batches* diferentes da época anterior. Essa ideia é tão comum que tem um nome: gradiente descendente estocástico (ou *stochastic gradient descent*) SGD. Ela é muito utilizada em ML, mesmo para modelos bem mais complexos, e resulta em um ganho de performance muito interessante.
 
 # Considerações finais
-Bom, nessa aula discutimos sobre o modelo linear. Ele é o modelo mais básico em *machine learning*, mas importante para fixarmos os conceitos básicos. Ao longo da aula fui destilando vários tópicos relevantes em ML, como convergência, inicialização de parâmentros, *mini-batch* etc. Na próxima aula, vamos implementar esse modelo e solucionar o nosso primeiro probleminha de ML. Se você sentiu dificuldade nessa aula, não desanime. Estude novamente e entenda o modelo. Na próxima aula, as coisas ficam mais interessantes, pois vamos abordar um problema na prática.
+Bom, nesse post discutimos sobre o modelo linear. Ele é o modelo mais básico em *machine learning*, mas importante para fixarmos os conceitos básicos. Ao longo do post fui destilando vários tópicos relevantes em ML, como convergência, inicialização de parâmentros, *mini-batch* etc. Fica como desafio você implementar o modelo utilizando os dois tipos de treinamento (ainda vou implementar e linkar o código aqui xD). Se você sentiu dificuldade em entender tudo, não desanime. Estude novamente e entenda o modelo. Se preciso, dê uma olhada nos posts de pré-requisitos =)
 
 Até a próxima!
 
