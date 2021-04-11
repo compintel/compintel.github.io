@@ -2,7 +2,7 @@
 latexEquation: true
 title: "Machine learning pré-requistos: Cálculo"
 header:
-  teaser: "/assets/img/capas/machine_learning_a1.png"
+  teaser: "/assets/img/cursoML/aula1-2/vecu.png"
 excerpt: "Machine learning pré-requistos: Cálculo. Neste post serão abordados os conceitos básicos em relação a Cálculo para se iniciar em Machine Learning"
 categories:
   - Conceitos

@@ -2,7 +2,7 @@
 latexEquation: true
 title: "Machine learning pré-requistos: Teoria da probabilidade"
 header:
-  teaser: "/assets/img/capas/machine_learning_a1.png"
+  teaser: "/assets/img/cursoML/aula1-3/gaussiana.png"
 excerpt: "Machine learning pré-requistos: Teoria da probabilidade. Neste post serão abordados os conceitos básicos em relação a Teoria da probabilidade para se iniciar em Machine Learning"
 categories:
   - Conceitos

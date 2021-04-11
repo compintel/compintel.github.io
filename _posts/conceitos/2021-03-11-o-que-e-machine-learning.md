@@ -2,7 +2,7 @@
 latexEquation: true
 title: "O que é Machine Learning?"
 header:
-  teaser: "/assets/img/capas/machine_learning_a1.png"
+  teaser: "/assets/img/cursoML/aula-2/aixml.png"
 excerpt: "O que é Machine Learning - Nesse post os conceitos basicos de machine learning são definidos. Qual a diferença de machine learning para inteligência artificial? Por que um algoritmo é considerado ser desta categoris? Essas e mais perguntas são respondidas aqui."
 categories:
   - Conceitos
@@ -31,7 +31,7 @@ Segundo [François Chollet](https://fchollet.com/), as diferenças entre os para
 
 <figure style="width: 490px; height: 275px;" class="align-center">
   
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/cursoML/aula-2\aixml.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/cursoML/aula-2/aixml.png" alt="">
 
   <figcaption style="text-align: center;">
     Figura 1: diferenças entre os paradigmas de inteligência artificial e machine learning.
@@ -47,7 +47,6 @@ Ok, entendi as diferenças de paradigma. Mas, o que de fato é um algoritmo de *
 
 Tentando exemplificar, imagine que você queira desenvolver um algoritmo para detectar uma pessoa em uma imagem. Sem utilizar _machine learning_, você vai ter que construir um algoritmo específico pra isso. Logo, você, ser humano, vai passar sua experiência para esse código. Você sabe que uma pessoa tem pernas, braços, cabeça, etc. Logo, você vai desenvolver um código capaz de detectar essas **características** na imagem e retornar se existe ou não uma pessoa. Agora, se você for utilizar algum algoritmo de _machine learning_ você não vai passar essa experiência para diretamente para o código. Você vai codificar um conjunto de regras gerais que vai utilizar **diversos exemplos** para realizar a detecção. Logo, você vai ter que coletar centenas/milhares de fotos de pessoas e apresentar para esse algoritmo. A partir daí o algoritimo vai ser **treinado** para aprender a detectar a existência de uma pessoa na imagem. Esse treinamento leva em consideração alguma métrica de desempenho e se ele for bem sucedido, a deteção será boa. Caso contrário, ruim.
 
-INSERIR IMAGEM EXEMPLO DEU UM ALGORITMO
 
 Portanto, você tem que ter em mente que é **fundamental** você ter **dados** disponíveis para utilizar a técnica. E você pode se perguntar: mas o quanto de dado é suficiente? Bom, essa pergunta é complexa e vamos tentar respondê-la ao longo do curso. Mas ML depende de dados. Se você não tem dados bons e suficientes, essa técnica pode não servir para você. Aliás, é comum engenheiro da área relatares quem a maior parte do tempo se passa preparando os dados ao invés de melhorando o algoritimo.
 

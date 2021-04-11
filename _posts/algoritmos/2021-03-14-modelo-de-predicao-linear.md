@@ -2,7 +2,7 @@
 latexEquation: true
 title: "O modelo de predição linear"
 header:
-  teaser: "/assets/img/capas/machine_learning_a1.png"
+  teaser: "/assets/img/posts/modelo-linear/ex-reg-linear.png"
 excerpt: "Hoje assunto será o modelo de predição linear. Este modelo é bem antigo e vem sendo utilizado na estatística por mais de 50 anos. Como o próprio nome sugere, o modelo linear parte do princípio que o seu problema pode ser aproximado linearmente, ou seja, se ele for um modelo 2D, ele deve ser aproximado por uma reta."
 categories:
   - Algoritmos
