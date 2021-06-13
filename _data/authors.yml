@@ -52,3 +52,13 @@ gangelo:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://computacaointeligente.com.br"
+
+lucastassis:
+  name: "Lucas M. Tassis"
+  links:
+      - label: "Email"
+        icon: "fas fa-fw fa-envelope-square"
+        url: mailto:lucaswfitassis@gmail.com
+      - label: "GitHub"
+        icon: "fab fa-fw fa-github"
+        url: "https://github.com/lucastassis"
