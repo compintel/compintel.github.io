@@ -108,7 +108,7 @@ $masthead-link-color: $primary-color !default;
 $masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
 $navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
 
-/* syntax highlighting (base16) */
+/* syntax highlighting (base16)
 $base00: #263238 !default;
 $base01: #2e3c43 !default;
 $base02: #314549 !default;
@@ -124,6 +124,24 @@ $base0b: #c3e88d !default;
 $base0c: #89ddff !default;
 $base0d: #82aaff !default;
 $base0e: #c792ea !default;
+$base0f: #ff5370 !default;
+*/
+
+$base00: #f7f7f7 !default;
+$base01: #2e3c43 !default;
+$base02: #314549 !default;
+$base03: #546e7a !default;
+$base04: #89989e !default;
+$base05: #444444 !default;
+$base06: #444444 !default;
+$base07: #444444 !default;
+$base08: #f07178 !default;
+$base09: #f78c6c !default;
+$base0a: #e0a73b !default;
+$base0b: #7ca73d !default;
+$base0c: #2f87c2 !default;
+$base0d: #2f87c2 !default;
+$base0e: #be7de9 !default;
 $base0f: #ff5370 !default;
 
 /*
