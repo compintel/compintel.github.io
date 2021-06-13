@@ -55,6 +55,7 @@ gangelo:
 
 lucastassis:
   name: "Lucas M. Tassis"
+  bio: "(Quase) Cientista da computação que gosta de algoritmos e ML."
   links:
       - label: "Email"
         icon: "fas fa-fw fa-envelope-square"
