@@ -19,15 +19,15 @@ tags:
 
 # Introdução
 
-A temporada regular 2020-21 da NBA terminou faz um tempo, e nós já estamos dentro dos playoffs de 2021. E pela primeira vez em oitro anos, o Toronto Raptors estão fora da pós-temporada (pelo menos podemos assistir outros times sofrendo em paz...). E existem diversas razões para isso: a mudança para Tampa, os protocolos de saúde e segurança que desfalcaram o time, lesões, perda de Serge Ibaka e Marc Gasol na *offseason*... podemos continuar por um bom tempo. Porém, nesse artigo, eu tentei fazer algumas visualizações para tentar encontrar algumas razões (particularmente no campo ofensivo) de como um time que terminou a temporada 2019-20 com 53-19 (vitórias e derrotas) caiu para 27-45 na temporada 2020-21.
+A temporada regular 2020-21 da NBA terminou faz um tempo, e nós já estamos dentro dos playoffs de 2021. E pela primeira vez em oito anos, o Toronto Raptors estão fora da pós-temporada (pelo menos podemos assistir outros times sofrendo em paz...). E existem diversas razões para isso: a mudança para Tampa, os protocolos de saúde e segurança que desfalcaram o time, lesões, perda de Serge Ibaka e Marc Gasol na *offseason*... podemos continuar por um bom tempo. Porém, nesse artigo, eu tentei fazer algumas visualizações para tentar encontrar algumas razões (particularmente no campo ofensivo) de como um time que terminou a temporada 2019-20 com 53-19 (vitórias e derrotas) caiu para 27-45 na temporada 2020-21.
 
 Existem diversos artigos que foram escritos por pessoas que entendem muito mais que eu... e é bem provável que essas visualizações não vão prover muito entendimento na situação, dado que existiram uma infinidade de razões extra-basquete que não são contabilizadas nesses gráficos... porém, esse é um bom exercício (bem, pelo menos para mim.)
 
 # Os dados
 
-A primeira coisa que fiz foi juntar alguns dados sobre as temproadas 2019-20 e 2020-21. Eu utilizei a [`nba_api`](https://github.com/swar/nba_api) para buscar esses dados. A partir disso, eu tive que decidir qual os dados que iria utilizar (quais jogadores, etc, etc). Acabei decidindo analisar os dados de todo o time nas duas temporadas e também os dados do que eu chamei de *core four*. O *core four* são: Kyle Lowry, Fred VanVleet, Pascal Siakam e OG Anunoby. Norman Powell ficou de fora porque ele não está mais nos Raptors (infelizmente). E Chris Boucher ficou de fora porque na temporada 2019-20 ele não estava tanto na rotação do time como esteve nessa temporada (se eu fizer isso ano que vem, quem sabe ele não ganhe um lugar aqui dado seu crescimento nessa temporada). Outra coisa importante é que na temporada 2020-21 eu não utilizei os dados dos novatos: Malachi Flynn, Jalen Harris e Freddie Gillespie. Infelizmente, a API não achou os dados deles. Eu não acho que fez tanto impacto nos resultados (posso estar errado), mas é bom levar isso em conta enquanto estivermos analisando os dados.
+A primeira coisa que fiz foi juntar alguns dados sobre as temporadas 2019-20 e 2020-21. Eu utilizei a [`nba_api`](https://github.com/swar/nba_api) para buscar esses dados. A partir disso, eu tive que decidir qual os dados que iria utilizar (quais jogadores, etc, etc). Acabei decidindo analisar os dados de todo o time nas duas temporadas e também os dados do que eu chamei de *core four*. O *core four* são: Kyle Lowry, Fred VanVleet, Pascal Siakam e OG Anunoby. Norman Powell ficou de fora porque ele não está mais nos Raptors (infelizmente). E Chris Boucher ficou de fora porque na temporada 2019-20 ele não estava tanto na rotação do time como esteve nessa temporada (se eu fizer isso ano que vem, quem sabe ele não ganhe um lugar aqui dado seu crescimento nessa temporada). Outra coisa importante é que na temporada 2020-21 eu não utilizei os dados dos novatos: Malachi Flynn, Jalen Harris e Freddie Gillespie. Infelizmente, a API não achou os dados deles. Eu não acho que fez tanto impacto nos resultados (posso estar errado), mas é bom levar isso em conta enquanto estivermos analisando os dados.
 
-De qualquer forma, os dados consistem das localizações dos jogadores durante todos os arremessos de quadra durante as temporadas. Nós também consideramos 7 grande áreas da quadra (sendo 6 mais importantes): Restricted Area (ou seja, dentro da meia lua do garrafão), Paint (garrafão sem contabilizar a restricted area), Mid-range (arremessos de meia distância), Above the break 3 (todos os arremessos de 3 que não são dos cantos), Left Corner 3 (arremessos de 3 do canto esquerdo), Right Corner 3 (arremessos de 3 do canto direito)... e Backcourt (de trás da linha de meio campo, que não é muito importante no todo).
+De qualquer forma, os dados consistem das localizações dos jogadores em todos os arremessos de quadra durante as temporadas. Nós também consideramos 7 grande áreas da quadra (sendo 6 mais importantes): Restricted Area (ou seja, dentro da meia lua do garrafão), Paint (garrafão sem contabilizar a restricted area), Mid-range (arremessos de meia distância), Above the break 3 (todos os arremessos de 3 que não são dos cantos), Left Corner 3 (arremessos de 3 do canto esquerdo), Right Corner 3 (arremessos de 3 do canto direito)... e Backcourt (de trás da linha de meio campo, que não é muito importante no todo).
 
 Com essas definições básicas feitas, podemos começar a análise.
 
@@ -43,7 +43,7 @@ Primeiramente irei começar mostrando os dados do time completo.
 </span>
 
 
-Essa primeira figura apresenta todos os arremessos feitos pelo Toronto Raptors nas duas temporadas. A cor indica a eficiência (FG%) comparada com a média da liga no seu respectivo ano (quanto mais vermelho, melhor). Analisando essa primeira visualização, nós observamos que a distribuição de arremessos parece bem similar. Porém , existem algumas diferenças quanto à eficiência. Na temporada 2019-20, os Raptors tiveram um FG% maior na região *above the break 3*. Dos cantos, eles foram bem próximos da média da liga nas duas temporadas. Nós também percebemos que os Raptors não são um bom time de *mid-range* (bem, pelo menos pra mim, esse resultado é esperado dado o que é visto assistindo os jogos). Eles também só são OK na *paint* e *restricted area*. Porém, é bem claro que eles arremessaram melhor de 3 na temporada 2019-20, mas o númeo de arremessos não é muito claro nesse plot. É por isso que fiz essa próxima figura.
+Essa primeira figura apresenta todos os arremessos feitos pelo Toronto Raptors nas duas temporadas. A cor indica a eficiência (FG%) comparada com a média da liga no seu respectivo ano (quanto mais vermelho, melhor). Analisando essa primeira visualização, nós observamos que a distribuição de arremessos parece bem similar. Porém , existem algumas diferenças quanto à eficiência. Na temporada 2019-20, os Raptors tiveram um FG% maior na região *above the break 3*. Dos cantos, eles foram bem próximos da média da liga nas duas temporadas. Nós também percebemos que os Raptors não são um bom time de *mid-range* (bem, pelo menos pra mim, esse resultado é esperado dado o que é visto assistindo os jogos). Eles também só são OK na *paint* e *restricted area*. Porém, é bem claro que eles arremessaram melhor de 3 na temporada 2019-20, mas o número de arremessos não fica tão claro nesse plot. É por isso que fiz essa próxima figura.
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2019-20/roster_freq_per_feet.png" style="zoom: 20%;" class="align-center"/>
 
@@ -55,13 +55,13 @@ Certo, agora nessas figuras nós temos as ilustrações da frequência de arreme
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2020-21/roster_fg_per_feet.png" style="zoom:20%;" class="align-center"/>
 
-... e a resposta é sim! Eles também arremessaram melhor. De 0 ft (*layup*, *dunk*, e outras coisas) eles tiveram próximo de 80% de acurácia, o que é muito bom quando você está arremessando quase 100% dos seus arremessos de lá. Sim, depois disso é bem semelhante, eu sei. Mas na temporada 2020-21, eles tiveram bem menos arremessos perto da cesta, apesar de ter uma acurácia similar. Dessa forma, eles trocaram bons arremessos por bolas de 3 distantes e *mid-ranges*. Por sinal, o tamanho do círculo representa o número de arremessos por *feet*, então quanto maior, mais arremessos tentados.
+... e a resposta é sim! Eles também arremessaram melhor. De 0 ft (*layup*, *dunk*, e outras coisas) eles tiveram próximo de 80% de acurácia, o que é muito bom quando você está arremessando quase 10% dos seus arremessos de lá. Sim, depois disso é bem semelhante, eu sei. Mas na temporada 2020-21, eles tiveram bem menos arremessos perto da cesta, apesar de ter uma acurácia similar. Dessa forma, eles trocaram bons arremessos por bolas de 3 distantes e *mid-ranges*. Por sinal, o tamanho do círculo representa o número de arremessos por *feet*, então quanto maior, mais arremessos tentados.
 
-Então nós já percebemosalgumas diferenças que podem não ser as principais, mas podem indicar algumas coisas. E eu também já sei que várias pessoas tweetaram isso várias vezes, mas como eu disse anteriormente, agora é apoiado pelos dados (eu acho que algumas pessoas no Twitter também falaram coisas apoiadas por dados... mas eu gastei um tempo fazendo isso, então vamos imaginar que não). De qualquer forma, agora a gente vai para o *core four*.
+Então nós já percebemos algumas diferenças. Elas podem não ser as principais, mas podem indicar algumas coisas. E eu também já sei que várias pessoas tweetaram isso várias vezes, mas como eu disse anteriormente, agora é apoiado pelos dados (eu acho que algumas pessoas no Twitter também falaram coisas apoiadas por dados... mas eu gastei um tempo fazendo isso, então vamos imaginar que não). De qualquer forma, agora a gente vai para o *core four*.
 
 ## O *core four*
 
-O *core four* consiste dos principais jogadores dos Raptors, ou pelo menos que eu considero os principais jogadores. Nós seguiremos de forma similar com o que fiz anteriormente. Então, primeiro, vamos dar uma olhada nos arremessos comparado com a média da liga.
+O *core four* consiste dos principais jogadores dos Raptors, ou pelo menos quem eu considero os principais jogadores. Nós seguiremos de forma similar com o que fiz anteriormente. Então, primeiro, vamos dar uma olhada nos arremessos comparado com a média da liga.
 
 ### Fred VanVleet
 
@@ -70,7 +70,7 @@ Nós começamos mostrando os números do Freddy.
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2019-20/fredvanvleet.png" style="zoom:12.5%;" />
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2020-21/fredvanvleet.png" style="zoom:12.5%;" /> 
 
-Uma coisa que salta a vista é o *mid-range*, *paint* e *restricted area*. Nós já sabemos disso: Fred precisa reforçar seus arremessos de 2 para atingir o próximo nível. Nas bolas de 3 ele também deu um *step back (no pun inteded)*. Ele arremessou bem melhorr dos cantos na temporada 2019-20. Mas Fred teve um caminho difícil com o COVID... então é muito difícil de realmente tirar alguma coisa desses dados, já que ele jogou vários jogos sem estar 100%, ou como ele próprio disso, "batendo em uma parede". Mesmo com seus arremessos estando pior nesse ano, ele foi muito sólido antes de ter COVID. 
+Uma coisa que salta a vista é o *mid-range*, *paint* e *restricted area*. Nós já sabemos disso: Fred precisa reforçar seus arremessos de 2 para atingir o próximo nível. Nas bolas de 3 ele também deu um *step back (no pun intended)*. Ele também arremessou bem melhor dos cantos na temporada 2019-20. Mas Fred teve um caminho difícil por conta da COVID... então é muito difícil de realmente tirar alguma coisa desses dados, já que ele jogou vários jogos sem estar 100%, ou como ele próprio disse, "batendo em uma parede". Mesmo com seus arremessos estando pior nesse ano, ele foi muito sólido antes de entrar nos protocolos de saúde e segurança por conta da COVID. 
 
 Eu também plotei a frequência por *feet*.
 
@@ -87,7 +87,7 @@ O próximo é ninguém mais que o melhor Raptor de todos os tempos: Kyle Lowry. 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2020-21/kylelowry.png" style="zoom: 12.5%;" />
 
 
-Kyle é um veterano do jogo e não aparenta estar desacelerando. Seus arremessos de 3 foram melhores esse ano, especialmente dos cantos (olha aquele lado direito!). Seu jogo de *mid-range* e *paint* parece bem similar. Vamos ser diretos, Kyle teve uma temporada bem sólida e nós sempre teremos o jogo contra o Lakers... Mas só pra manter a consistÊncia, vamos olhar seu FG% por *feet*.
+Kyle é um veterano do jogo e não aparenta estar desacelerando. Seus arremessos de 3 foram melhores esse ano, especialmente dos cantos (olha aquele lado direito!). Seu jogo de *mid-range* e *paint* também parecem bem similar entre os anos. Vamos ser diretos, Kyle teve uma temporada bem sólida e nós sempre teremos o jogo contra o Lakers... Mas só pra manter a consistência, vamos olhar seu FG% por *feet*.
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2019-20/kylelowry_fg_per_feet.png" style="zoom: 20%;" />
 
@@ -111,11 +111,11 @@ Outra coisa promissora nessa temporada é que a sua habilidade de criar jogadas 
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2020-21/pascalsiakam_fg_per_feet.png" style="zoom: 20%;" />
 
-Nessa imagem percebemos que seus arremessos de 2 perto da cesta parecem bem similares, porém ele teve um jogo bem mais sólido nos *mid-ranges*. Porém, é bem claro que seus arremessos de 3 decaíram nessa temporada.
+Nessa imagem percebemos que seus arremessos de 2 perto da cesta parecem bem similares, porém ele teve um jogo bem mais sólido nos *mid-ranges*. Mas também é bem claro que seus arremessos de 3 decaíram nessa temporada.
 
 ###  OG Anunoby
 
-Por último mas não menos importante: OG. OG teve uma temporada SENSACIONAL (sim, eu estou bem animado). Ele mostrou grande crescimento, e eu não estou falando sobre levantar um homem adulto de 1,91 m com apenas um braço, de forma que, só podemos imaginar, deixou Serge orgulhoso. Por sinal, só procurem "Schroder OG" se não souberem do que estou falando. De qualquer forma, ele teve um ano muito bom, e não temos nenhuma razão para não estarmos animados para sua próxima temporada.
+Por último mas não menos importante: OG. OG teve uma temporada SENSACIONAL (sim, eu estou bem animado) e não temos nenhum motivo para não estarmos animados para sua próxima temporada.
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2019-20/oganunoby.png" style="zoom: 12.5%;" />
 <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/raps-shotcharts-imgs/2020-21/oganunoby.png" style="zoom: 12.5%;" />
@@ -164,7 +164,7 @@ Por conta disso, **caótico** é talvez a palavra que melhor defina essa tempora
 
 # Extra
 
-Bem, como eu disse anteriormente, eu fiz esse projeto para aprender e também ter alguma diversão explorando os dados dos Raptors. Eu não sou um especialista em basquete e minhas análises podem sim terem alguns erros em alguns casos. De qualquer forma, se tiver qualquer sugestão, comentários, etc, é só me mandar um email. Espero que vocês tenham gostado desse artigo. Eu sei que utilizei alguns conceitos em inglês, como as regiões da quadra, mas acredito que os mais familiarizados com basquete vão entender bem tranquilamente... e qualquer coisa é só dar uma pesquisada bem rápida que acham.
+Bem, como eu disse anteriormente, eu fiz esse projeto para aprender e também ter alguma diversão explorando os dados dos Raptors. Eu não sou um especialista em basquete e minhas análises podem sim ter alguns erros em alguns casos. De qualquer forma, se tiver qualquer sugestão, comentários, etc, é só me mandar um email. Espero que vocês tenham gostado desse artigo. Eu sei que utilizei alguns conceitos em inglês, como as regiões da quadra, mas acredito que os mais familiarizados com basquete vão entender bem tranquilamente... e qualquer coisa é só dar uma pesquisada bem rápida que acham.
 
 Para quem quiser ver o artigo original em inglês é só entrar no meu [GitHub](https://github.com/lucastassis/raptors-shotcharts).
 
