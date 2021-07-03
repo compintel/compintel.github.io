@@ -48,7 +48,7 @@ De maneira geral, o caminho que a `sklearn` sugere depende principalmente do tip
 De qualquer forma, como o caminho depende dos dados, vamos escolher um problema e trabalhar os conceitos nele.
 
 # Datasets dentro da `sklearn`
-Antes de colocar a mão na massa mesmo, vamos dar uma olhada no subpacore [`sklearn.datasets`](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.datasets).
+Antes de colocar a mão na massa mesmo, vamos dar uma olhada no subpacote [`sklearn.datasets`](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.datasets).
 
 Como já vimos, os algoritmos implementados dentro da `sklearn` consomem os dados em forma de `array-like`. Portanto, você poderia carregar-los utilizando qualquer biblioteca de manipulação de dados disponível no universo do Python. Todavia, para facilitar o aprendizado a biblioteca oferece o subpacote [`sklearn.datasets`](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.datasets) que nada mais é do que uma coleção de funções para carregar dados já conhecidos da comunidade. Além disso, ela oferece maneiras de produzirmos dados fictícios aleatórios para um dado problema (isso serve apenas para fins de aprendizagem e teste). Por exemplo, podemos criar um problema de classificação que possui 200 amostras, 10 atributos e 2 classes da seguinte forma:
 
