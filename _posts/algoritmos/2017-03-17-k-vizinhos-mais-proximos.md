@@ -15,7 +15,7 @@ tags:
 
 # Introdução
 
-Após um pequeno hiato no blog, hoje vamos falar um pouco sobre um dos classificadores clássicos mais conhecidos, o K vizinhos mais próximos (do inglês:*K nearest neighboors* – KNN). O KNN foi proposto por Fukunaga e Narendra em 1975 [[1]](#fukunaga). É um dos classificadores mais simples de ser implementado, de fácil compreensão e ainda hoje pode obter bons resultados dependendo de sua aplicação. Antes de iniciar, caso você não tenha afinidade com o problema de classificação, sugiro que leia nosso post sobre [classificação de dados]({% post_url 2016-11-04-classificacao-de-dados %}). Agora, sem mais delongas, vamos ao que interessa.
+Após um pequeno hiato no blog, hoje vamos falar um pouco sobre um dos classificadores clássicos mais conhecidos, o K vizinhos mais próximos (do inglês: *K-nearest neighboors* – KNN). O KNN foi proposto por Fukunaga e Narendra em 1975 [[1]](#fukunaga). É um dos classificadores mais simples de ser implementado, de fácil compreensão e ainda hoje pode obter bons resultados dependendo de sua aplicação. Antes de iniciar, caso você não tenha afinidade com o problema de classificação, sugiro que leia nosso post sobre [classificação de dados]({% post_url 2016-11-04-classificacao-de-dados %}). Agora, sem mais delongas, vamos ao que interessa.
 
 # Funcionamento do KNN
 
@@ -65,7 +65,7 @@ Em relação a escolha do valor $$ k $$, não existe um valor único para a cons
 
 ## Pseudocódigo
 
-Para melhor compreensão do algoritmo, apresento também o pseudocódigo do mesmo. 
+Para melhor compreensão do algoritmo, apresento também o pseudocódigo do mesmo:
 
 <figure style="width: 490px; height: 300px;" class="align-center">
   
@@ -75,9 +75,12 @@ Para melhor compreensão do algoritmo, apresento também o pseudocódigo do mesm
 
 
 # Código do KNN em Python
-Resumidamente, a grande vantagem do KNN é sua abordagem simples de ser compreendida e implementada. Todavia, calcular distância é tarefa custosa e caso o problema possua grande número de amostras o algoritmo pode consumir muito tempo computacional. Além disso, o método é sensível à escolha do $$ k $$. Por fim, deixo linkado uma implementação do KNN em Python. No repositório existe bases de dados comuns da literatura, como Iris e Australian Credit. Todavia, você pode utilizar o código para qualquer que seja a base. Bom proveito!
+Resumidamente, a grande vantagem do KNN é sua abordagem simples de ser compreendida e implementada. Todavia, calcular distância é tarefa custosa e caso o problema possua grande número de amostras o algoritmo pode consumir muito tempo computacional. Além disso, o método é sensível à escolha do $$ K $$. 
 
-[Implementação do KNN em Python](https://github.com/paaatcha/KNN)
+Por fim, deixo linkado uma implementação do KNN em Python. No meu repositório do Github:
+- [Implementação do KNN em Python](https://github.com/paaatcha/KNN)
+
+Caso esse código seja útil para você, considere deixar a sua estrelinha no repositório!
 
 
 # Referências

@@ -5,6 +5,7 @@ header:
   teaser: "assets/img/posts/redes-neurais/redeFeed.png"
 excerpt: "O cérebro humano é considerado o mais fascinante processador existente. Ele é composto por aproximadamente 10 bilhões de neurônios, que são responsáveis por todas as funções e movimentos do nosso organismo"
 categories:
+  - Algoritmos
   - Conceitos
 tags:
   - Machine learning
