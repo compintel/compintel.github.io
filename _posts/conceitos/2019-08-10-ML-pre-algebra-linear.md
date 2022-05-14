@@ -253,7 +253,7 @@ $$
 \tag{11}
 $$
 
-Se observamos a multiplicação acima, percebemos que nada mais é do que um produto escalar esntre as linhas das matrizes. É comum representar o produto escalar como sendo $$ \mathbf{a}^T \cdot \mathbf{b}$$.
+Se observamos a multiplicação acima, percebemos que nada mais é do que um produto escalar entre as linhas das matrizes. É comum representar o produto escalar como sendo $$ \mathbf{a}^T \cdot \mathbf{b}$$.
 
 ## Propriedades
 A multiplicação de matrizes possuem algumas propriedades que podem ser úteis em alguns casos. Destacamos as seguintes propriedades:
