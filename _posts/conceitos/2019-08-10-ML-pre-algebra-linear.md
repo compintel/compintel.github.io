@@ -180,7 +180,7 @@ A norma $$p$$ é muito utilizada em _machine learning_ e de maneira intuitiva, a
 
 É muito comum medir o tamanho de um vetor elevando essa norma ao quadrado, que é **facilmente calculada fazendo** $$ \mathbf{x}^T \mathbf{x} $$. Isso é importante para facilitar o cálculo de derivadas. Como ainda vamos ver, atualmente, os algoritmos de minimização utilizados em ML são baseados em derivadas. Sendo assim, a derivada do quadrado da norma L2 com respeito a um elemento de $$ \mathbf{x} $$ depende apenas do elemento, enquanto da L2 depende de todo o vetor. 
 
-Por fim, o produto escalar entre dois vetores pode ser escrito em termos da norma: $$ \underline{ \mathbf{x}^T \mathbf{y} = {\parallel  \mathbf{x} \parallel}_2 {\parallel  \mathbf{y} \parallel}_2 \cos \theta } $$, where $$ \theta $$ is the angle between both vectors.
+Por fim, o produto escalar entre dois vetores pode ser escrito em termos da norma: $$ \underline{ \mathbf{x}^T \mathbf{y} = {\parallel  \mathbf{x} \parallel}_2 {\parallel  \mathbf{y} \parallel}_2 \cos \theta } $$, onde $$ \theta $$ é o ângulo entre os dois vetores.
 
 
 
