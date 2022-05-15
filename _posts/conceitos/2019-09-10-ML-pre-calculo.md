@@ -386,7 +386,7 @@ Sendo assim, para encontrar os valores de máximo e mínimo absolutos de uma fun
 
 - **Exemplo**: calcular os valores do máximo e mínimos global de $$ f(x) = x^3 - 3x^2 + 1 $$ no intervalo $$ [\frac{-1}{2}, 4] $$.
   1. Derivando: $$ f'(x) = 3x^2 - 6x = \underline{3x(x - 2)} $$
-    - Fazendo $$ f'(x) = $$, encontramos os pontos $$ x= 0 $$ e $$ x = 2$$.
+    - Fazendo $$ f'(x) = 0$$, encontramos os pontos $$ x= 0 $$ e $$ x = 2$$.
   2. Calculando os valores extremos: $$ f(-1/2) = 1/8 $$ e $$f(4) = 7$$
   3. O ponto de máximo é $$ (4,17) $$ e o de mínimo $$ (2,-3) $$.
 
