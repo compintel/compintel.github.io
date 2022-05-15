@@ -90,7 +90,7 @@ $$
 Tentado explicar de maneira didática a equação acima, imagina o experimento de rolar o dado e lançar uma moeda. Esse experimento vai gerar um conjunto $$ \Omega $$ que é formado por todos os estados de ambos os eventos: $$ \Omega = \{ (\omega_{co}, \omega_1), (\omega_{ca}, \omega_1), \cdots, (\omega_{ca}, \omega_6), (\omega_{co}, \omega_6)  \} $$. Cada um destes estados possui uma probabilidade. Agora imagina que desejamos calcular a probabilidade de se obter cara, ou seja, $$ p(\omega_{ca}) $$. Nesse caso, somamos todas as probabilides que contém esse estado: $$ p(\omega_{ca}) = p(\omega_{ca}, \omega_1) + \cdots + p(\omega_{ca}, \omega_6) $$. É exatamente isso que a equação 5 faz, fixa o estado $$ a $$ e varia o $$ b $$.
 
 # Distribuições de probabilidade
-Até o momento, apresentamos as definições básicas de probabilidade pensando em enventos simples, como lançar uma moeda. Acontece que a teoria da probabilidade é utilizada para modelar eventos muitos mais complexos. Vários problemas podem ser modelados ou aproximados por uma **distribuição de probabilidade** e é disso que vamos tratar nessa seção.
+Até o momento, apresentamos as definições básicas de probabilidade pensando em eventos simples, como lançar uma moeda. Acontece que a teoria da probabilidade é utilizada para modelar eventos muitos mais complexos. Vários problemas podem ser modelados ou aproximados por uma **distribuição de probabilidade** e é disso que vamos tratar nessa seção.
 
 ## Variáveis aleatórias
 Para definir uma variável aleatória, vamos considerar um experimento com um conjunto de resultados $$ \Omega $$. Esse experimento pode ser, novamente, lançar uma moeda, que gera um conjunto $$ \Omega $$ com dois resultados, $$ \{\omega_{ca}, \omega_{co} \} $$, ou seja, cara ou coroa. Sendo assim uma **variável aleatória** nada mais é do que uma variável que pode tomar um dos valores do conjunto $$ \Omega $$. Neste exemplo, a variável aleatória é _lançar um dado_ e ela pode assumir os valores $$ \omega_{ca} $$ ou $$ \omega_{co} $$. Ela é aleatória pois não sabemos o seu resultado, mas podemos ter uma probabilidade dele acontecer.
@@ -259,7 +259,7 @@ $$
 Neste caso, $$+1$$ indica uma correlação crescente perfeita, $$-1$$ uma decrescente perfeita e $$0$$ uma não correlação.
 
 ## Principais distribuições de probabilidade
-Existem diversas distribuições de probabilidade que são muito comuns de serem utilizadas para modelas problemas no mundo real. Nesta seção, vamos introduzir apenas 3: Bernoulli, Gaussiana e Poisson. Porém, existem diversas outras como t-student, exponencial, Beta, Dirichlet etc. Obviamente, não vamos abordar todas elas e caso você precise, recorra as referências.
+Existem diversas distribuições de probabilidade que são muito comuns de serem utilizadas para modelar problemas no mundo real. Nesta seção, vamos introduzir apenas 3: Bernoulli, Gaussiana e Poisson. Porém, existem diversas outras como t-student, exponencial, Beta, Dirichlet etc. Obviamente, não vamos abordar todas elas e caso você precise, recorra as referências.
 
 ### Distribuição de Bernoulli
 A distribuição de Bernoulli é uma das mais básicas existentes, na qual a variável aleatória pode tomar apenas dois valores, $$0$$ ou $$1$$. Em outras palavras, ela é **binária.** A distribuição é especificado por um único parâmetro $$p$$ e por convenção a distribuição retorna a probabilidade da variável aleatória ser igual a $$1$$, ou seja, $$P(\textrm{x}=1)$$.
@@ -276,7 +276,7 @@ Apenas para exemplificar podemos modelar a variável aleatória _cara ou coroa_ 
 Obviamente podemos calular o valor esperado e variância da distribuição, que serão iguais a $$p$$ e $$p(1-p)$$, respectivamente. 
 
 ### Distribuição de Poisson
-Outra distribuição famosa é a de Poisson, que é muito utilizada para modelas problemas que envolve uma série de eventos em um certo período de tempo. Esses eventos devem possuir uma taxa média fixa de ocorrência e ocorrem independentemente do último evento ocorrido. Sendo $$ \lambda $$ a taxa média de ocorrência, a distribuição e descrita da seguinte forma:
+Outra distribuição famosa é a de Poisson, que é muito utilizada para modelar problemas que envolve uma série de eventos em um certo período de tempo. Esses eventos devem possuir uma taxa média fixa de ocorrência e ocorrem independentemente do último evento ocorrido. Sendo $$ \lambda $$ a taxa média de ocorrência, a distribuição e descrita da seguinte forma:
 
 $$
 P(\textrm{x}) = \frac{e^{-\lambda} \lambda^x}{x!}
@@ -286,7 +286,7 @@ $$
 Nesta distribuição, tanto o valor esperado quanto a variância são iguais a $$ \lambda $$. Dois exemplos de problemas que podem ser modelados por Poisson são: batimentos cardíacos e chamadas telefônicas, ambas por unidades de tempo.
 
 ### Distribuição Gaussiana
-A distribuição Gaussina ou Normal é uma das distribuições mais utilizadas para modelas fenômenos naturais. Ela é extremamente versátil e pode ser utilizada para uma grande variedade de contextos. Obviamente, será muito utilizada em _machine learning_.
+A distribuição Gaussina ou Normal é uma das distribuições mais utilizadas para modelar fenômenos naturais. Ela é extremamente versátil e pode ser utilizada para uma grande variedade de contextos. Obviamente, será muito utilizada em _machine learning_.
 
 A Gaussiana é especificada por dois parâmetros, a média ($$\mu$$) e o desvio padrão ($$\sigma$$). Sua FDP é descrita por:
 
@@ -308,7 +308,7 @@ O gráfico dessa distribuição é ilustrado pela Figura 3:
 
 </figure>
 
-Como disse, a Gaussiana pode ser utilizada para modelar os mais diversos problemas, inclusive o nosso exemplo da seção do histograma, ou seja, modelar a idade de alunos de uma turma. Se você observar bem o gráfico da Figura 2, ele se parece um pouco com a forma de uma Gaussiana. Para plotarmos, teriamos que calcular a média de todas as idades e o desvio padrão. A partir disso é possível modelas a equação 20. Vamos brincar um pouco com essa teoria quando formos trabalhar com o classificador chamado Naive Bayes. E por falar Bayes, ele será o tema da última seção deste post.
+Como disse, a Gaussiana pode ser utilizada para modelar os mais diversos problemas, inclusive o nosso exemplo da seção do histograma, ou seja, modelar a idade de alunos de uma turma. Se você observar bem o gráfico da Figura 2, ele se parece um pouco com a forma de uma Gaussiana. Para plotarmos, teriamos que calcular a média de todas as idades e o desvio padrão. A partir disso é possível modelar a equação 20. Vamos brincar um pouco com essa teoria quando formos trabalhar com o classificador chamado Naive Bayes. E por falar Bayes, ele será o tema da última seção deste post.
 
 # O Teorema de Bayes
 O Teorema de Bayes é um dos teoremas mais importantes da teoria da probabilidade. Em resumo, ele descreve a probabilidade de um determinado evento baseado em um conhecimento prévio sobre o mesmo. Esse conhecimento é conhecido como _priore_. O teorema mostra que a partir do momento que temos novas evidências alteramos a probabilidade final que é chamada de _posteriori_. 
