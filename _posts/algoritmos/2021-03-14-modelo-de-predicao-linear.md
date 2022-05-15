@@ -77,7 +77,7 @@ $$
 \tag{6}
 $$
 
-Computacionalmente falando, reduzimos o nosso modelo linear a uma multiplicação de arrays, na qual $$ \mathbf{x} = [1, x_1, \cdots, x_k] $$ e $$ \mathbf{w} = [w_0, w_1, \cdots, w_k] $$. No momento, usar a transposta de $$\mathbf{w}$$ não faz muita diferença. Mas será útil mais para frente. Logo, já vamos começar com essa notação. Ótimo, mas a pergunta ainda persiste: como determinar os valores de $$ \mathbf{x} $$. Bom, precisamos treinar o nosso modelo!
+Computacionalmente falando, reduzimos o nosso modelo linear a uma multiplicação de arrays, na qual $$ \mathbf{x} = [1, x_1, \cdots, x_k] $$ e $$ \mathbf{w} = [w_0, w_1, \cdots, w_k] $$. No momento, usar a transposta de $$\mathbf{w}$$ não faz muita diferença. Mas será útil mais para frente. Logo, já vamos começar com essa notação. Ótimo, mas a pergunta ainda persiste: como determinar os valores de $$ \mathbf{w} $$. Bom, precisamos treinar o nosso modelo!
 
 # Treinando um modelo linear
 O treinamento de qualquer modelo de *machine learning* nada mais é que um processo de otimização na qual temos que descobrir os parâmetros do modelo. O primeiro passo para iniciar um algoritmo de treinamento (além de ter os dados, é claro) é determinar uma métrica de erro.
