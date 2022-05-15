@@ -421,7 +421,7 @@ Para iniciar, vamos supor que desejamos calcular a taxa de variação de $$ z $$
 
 Agora considere a superfície 3D $$ S $$ que é gerada a partir de $$ z = f(x,y) $$ e $$ z_0 = f(x_0, y_0) $$. O ponto $$ P(x_0, y_0, z_0) $$ pertence a $$ S $$. O plano vertical que passa por $$ P $$ na direção de $$ \vec{u} $$ intercepta $$ S $$ em uma curva $$ C $$. **A inclinação da reta tangente $$T$$ a $$C$$ em $$P$$ é a taxa de variação de $$ z $$ na direção e sentido de $$ \vec{u}$$**. Para calcular essa taxa, é utilizada a mesma estratégia descrita na parte 2 deste post, porém baseado em 2 variáveis. Dessa forma, vamos descrever apenas o teorema resultado de todas essa manipulação matemática.
 
-**Teorema 4:** se $$ f(x,y) $$ é uma função diferenciável em $$ x $$ e $$ y $$, então essa função possui uma derivada direcional de direção e sentido de qualquer versor de \vec{u} = \left \langle a, b  \right \rangle $$ e:
+**Teorema 4:** se $$ f(x,y) $$ é uma função diferenciável em $$ x $$ e $$ y $$, então essa função possui uma derivada direcional de direção e sentido de qualquer versor de $$ \vec{u} = \left \langle a, b  \right \rangle $$ e:
 
 $$
 D_u f(x,y) = \frac{\partial z}{\partial x}a + \frac{\partial z}{\partial x}b
