@@ -38,25 +38,25 @@ Dois pontos chaves que devem ser determinados para aplicação do KNN são: a m�
 Calcular a distância é fundamental para o KNN. Existem diversas métricas de distância, e a escolha de qual usar varia de acordo com o problema. A mais utilizada é a distância Euclidiana, descrita pela equação 1. 
 
 $$
-D_E(p,q) = \sqrt{(p_1 - q_1)^2 + \cdots + (p_n - q_n)^2} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}
+D_E(\mathbf{p},\mathbf{q}) = \sqrt{(p_1 - q_1)^2 + \cdots + (p_n - q_n)^2} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}
 \tag{1}
 $$
 
 Outros exemplos de distância, é a de Minkowsky:
 
 $$
-D_M(p,q) = \begin{pmatrix} \sum_{i=1}^n |p_i-q_i|^r \end{pmatrix}^\frac{1}{r}
+D_M(\mathbf{p},\mathbf{q})= \begin{pmatrix} \sum_{i=1}^n |p_i-q_i|^r \end{pmatrix}^\frac{1}{r}
 \tag{2}
 $$
 
 E também, a distância de Chebyshev:
 
 $$
-D_C(p,q) = max_i(|p_i, q_i|)
+D_C(\mathbf{p},\mathbf{q}) = max_i(|p_i, q_i|)
 \tag{3}
 $$
 
-Em todos os casos, $$ p = (p_1, \cdots, p_n) $$ e $$ q = (q_1, \cdots, q_n) $$ são dois pontos $$ n $$-dimensionais e na equação 2, $$ r $$ é uma constante que deve ser escolhida. No exemplo da Figura 1, essas distâncias seriam calculadas entre as bolinhas (azuis e laranjas) e a estrela (a nova entrada). Como o exemplo é 2D, cada uma cada ponto teria seu valor em $$ x $$ e em $$ y $$. Para problemas com dimensões maiores a abordagem é a exatamente a mesma, porém, a visualização das amostras no espaço é mais complicada.
+Em todos os casos, $$ \mathbf{p} = (p_1, \cdots, p_n) $$ e $$ \mathbf{q} = (q_1, \cdots, q_n) $$ são dois pontos $$ n $$-dimensionais e na equação 2, $$ r $$ é uma constante que deve ser escolhida. No exemplo da Figura 1, essas distâncias seriam calculadas entre as bolinhas (azuis e laranjas) e a estrela (a nova entrada). Como o exemplo é 2D, cada uma cada ponto teria seu valor em $$ x $$ e em $$ y $$. Para problemas com dimensões maiores a abordagem é a exatamente a mesma, porém, a visualização das amostras no espaço é mais complicada.
 
 ## A escolha de K
 
