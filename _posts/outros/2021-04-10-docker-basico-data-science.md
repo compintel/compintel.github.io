@@ -15,7 +15,7 @@ tags:
 
 # Introdução
 
-Atualmente, Docker se tornou uma ferramenta essencial para computação moderna. Não importa sua posição em uma organização (*data scientist*, dev, etc), **você precisa saber o básico de Docker!**. Como esse blog é voltado para área de *machine learning/*inteligência artificial, o foco desse post (que terá 2 partes), é introduzir o básico de Docker para desenvolver projetos na área. **Não é intenção desse post**:
+Atualmente, Docker se tornou uma ferramenta essencial para computação moderna. Não importa sua posição em uma organização (*data scientist*, dev, etc), **você precisa saber o básico de Docker!** Como esse blog é voltado para área de *machine learning/*inteligência artificial, o foco desse post (que terá 2 partes), é introduzir o básico de Docker para desenvolver projetos na área. **Não é intenção desse post**:
 - Discutir todos os conceitos do Docker ou algo do tipo
 - Ser um guia definitivo para MLOps
 - Definir tudo que envolve o Docker
