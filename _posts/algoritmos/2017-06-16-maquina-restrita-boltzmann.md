@@ -1,6 +1,6 @@
 ---
 latexEquation: true
-title: "Introdução a Máquina Restrita de Boltzmann (RBM)"
+title: "Introdução a Máquina Restrita de mann (RBM)"
 header:
   teaser: "assets/img/posts/redes-neurais/redeFeed.png"
 excerpt: "O cérebro humano é considerado o mais fascinante processador existente. Ele é composto por aproximadamente 10 bilhões de neurônios, que são responsáveis por todas as funções e movimentos do nosso organismo"
@@ -13,12 +13,12 @@ tags:
 ---
 
 # Introdução
-Neste post vamos discutir um pouco sobre a Máquina Restrita de Boltzmann (em inglês: *Restricted Boltzmann Machine*, RBM) [1,2]. A RBM ganhou destaque na primeira década dos anos 2000. Ela foi muito utilizada para compor camadas de redes neurais profundas (em inglês: *Deep Neural Networks*, DNNs) ou também conhecidas como redes de crenças profundas (em inglês:*Deep Belief Networks*, DBN). Esses tipos de redes possuem diversas camadas de neurônios para extração de características e por isso recebem o nome de **redes profundas**. Em um passado não muito distante elas quase não eram utilizadas pois era extremamente difícil treiná-las. Os algoritmos não eram eficazes e nem eficientes, tomando um longo tempo computacional quando executados. Algo que pode ser considerado um marco para o treinamento das redes profundas foi o desenvolvimento do algoritmo divergência contrastiva (do inglês: *contrastive divergence*, CD), proposto por Geoffrey Hinton (2006) para treinamento de RBM's de forma gulosa. Ao longo do post chegaremos nele e vamos discutir o porque dele ser esse marco. Antes de continuar, se você se sentiu perdido com os termos utilizados até então, sugiro que leia nosso post sobre [redes neurais]({% post_url 2015-04-27-redes-neurais-artificiais %}). Além disso, a fundamentação teórica de uma RBM exige um bom nível de conhecimento em probabilidade e estatística, então não se assuste a primeira vista.
+Neste post vamos discutir um pouco sobre a Máquina Restrita de mann (em inglês: *Restricted mann Machine*, RBM) [1,2]. A RBM ganhou destaque na primeira década dos anos 2000. Ela foi muito utilizada para compor camadas de redes neurais profundas (em inglês: *Deep Neural Networks*, DNNs) ou também conhecidas como redes de crenças profundas (em inglês:*Deep Belief Networks*, DBN). Esses tipos de redes possuem diversas camadas de neurônios para extração de características e por isso recebem o nome de **redes profundas**. Em um passado não muito distante elas quase não eram utilizadas pois era extremamente difícil treiná-las. Os algoritmos não eram eficazes e nem eficientes, tomando um longo tempo computacional quando executados. Algo que pode ser considerado um marco para o treinamento das redes profundas foi o desenvolvimento do algoritmo divergência contrastiva (do inglês: *contrastive divergence*, CD), proposto por Geoffrey Hinton (2006) para treinamento de RBM's de forma gulosa. Ao longo do post chegaremos nele e vamos discutir o porque dele ser esse marco. Antes de continuar, se você se sentiu perdido com os termos utilizados até então, sugiro que leia nosso post sobre [redes neurais]({% post_url 2015-04-27-redes-neurais-artificiais %}). Além disso, a fundamentação teórica de uma RBM exige um bom nível de conhecimento em probabilidade e estatística, então não se assuste a primeira vista.
 
 
 
 # Modelagem da RBM
-Bom, iniciando a parte teórica, a máquina de Boltzmann restrita [1,2] é, basicamente, uma rede estocástica constituída por duas camadas: uma visível e outra oculta. A camada de unidades visíveis representam os dados observados e está conectada à camada oculta, que por sua vez, deverá aprender a extrair características desses dados. Originalmente, a RBM foi desenvolvida para dados binários, tanto na camada visível quanto na camada oculta. Essa abordagem é conhecida como Bernoulli-Bernoulli RBM (BBRBM). Devido ao fato de existir problemas onde é necessário processar outros tipos de dados, [3] propuseram a Gaussian-Bernoulli RBM (GBRBM), que utiliza uma distribuição normal para modelar os neurônios da camada visível. Neste post, serão descritos os conceitos básicos referentes a abordagem GBRBM.
+Bom, iniciando a parte teórica, a máquina de mann restrita [1,2] é, basicamente, uma rede estocástica constituída por duas camadas: uma visível e outra oculta. A camada de unidades visíveis representam os dados observados e está conectada à camada oculta, que por sua vez, deverá aprender a extrair características desses dados. Originalmente, a RBM foi desenvolvida para dados binários, tanto na camada visível quanto na camada oculta. Essa abordagem é conhecida como Bernoulli-Bernoulli RBM (BBRBM). Devido ao fato de existir problemas onde é necessário processar outros tipos de dados, [3] propuseram a Gaussian-Bernoulli RBM (GBRBM), que utiliza uma distribuição normal para modelar os neurônios da camada visível. Neste post, serão descritos os conceitos básicos referentes a abordagem GBRBM.
 
 Na RBM as conexões entre neurônios são bidirecionais e simétricas. Isso significa que existe tráfego de informação em ambos os sentidos da rede. Além disso, para simplificar procedimentos de inferência, neurônios de uma mesma camada não estão conectados entre si. Sendo assim, só existe conexão entre neurônios de camadas diferentes, **por isso a máquina é restrita**. Na Figura 1 é mostrado uma RBM com $$ m $$ neurônios na camada visível ($$ v_{1},\cdots,v_{m}$$), $$ n $$ neurônios na camada oculta ($$ h_{1},\cdots,h_{n} $$), sendo ($$ a_1,\cdots, a_m $$) e ($$ b_1,\cdots, b_n $$) os vetores de *bias* e por fim $$ \mathbf{W} $$ a matriz de pesos das conexões. Daqui até o fim deste post, o conjunto $$ \{\mathbf{W}, \mathbf{a}, \mathbf{b}\} $$ será denominado $$ \boldsymbol{\theta} $$.
 
@@ -28,7 +28,7 @@ Na RBM as conexões entre neurônios são bidirecionais e simétricas. Isso sign
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/posts/rbm/rbm.png" alt="">
 
   <figcaption style="text-align: center;">
-    Figura 1: Ilustração da máquina restrita de Boltzmann (RBM)
+    Figura 1: Ilustração da máquina restrita de mann (RBM)
   </figcaption>
 
 </figure> 
@@ -126,7 +126,7 @@ $$
 $$
 
 
-Sendo que $$ \{ \mathbf{W}, \mathbf{a}, \mathbf{b} \}$ são inicializados de maneira aleatória. Um passo a passo do algoritmo CD é apresentado a seguir:
+Sendo que $$ \{ \mathbf{W}, \mathbf{a}, \mathbf{b} \} $$ são inicializados de maneira aleatória. Um passo a passo do algoritmo CD é apresentado a seguir:
 
 1. **Inicialização**:
    1. Preparar conjunto de dados de entrada;
@@ -158,4 +158,4 @@ Esse post descreveu os conceitos básicos de uma RBMs. Como já disse, existem v
 
 [3] Hinton, G. E.; Salakhutdinov, R. R. Reducing the dimensionality of data with neural networks. Science, v. 313, n. 5786, p. 504–507, 2006.
 
-[4] Hinton, G. A practical guide to training restricted Boltzmann machines. Momentum, v. 9, n. 1, p. 926, 2010.
+[4] Hinton, G. A practical guide to training restricted mann machines. Momentum, v. 9, n. 1, p. 926, 2010.
